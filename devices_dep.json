@@ -16,26 +16,48 @@
          "branch":"9.0"
       }
    ],
-   "mido":[
-      {
+   "mido":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_mido",
          "target_path":"device/xiaomi/mido",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/Datta0/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/Datta0/proprietary_vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/penglezos/android_kernel_xiaomi_msm8953",
-         "target_path": "kernel/xiaomi/msm8953",
-         "branch": "pie"
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"pie"
+      }
+   ],
+   "sanders":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_motorola_sanders",
+         "target_path":"device/motorola/sanders",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/PixysOS-Devices/vendor_motorola_sanders",
+         "target_path":"vendor/motorola/sanders",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {  
+         "url":"https://github.com/PixysOS-Devices/kernel_motorola_msm8953",
+         "target_path":"kernel/motorola/msm8953",
+         "branch":"9.0-eas-caf"
       }
    ],
    "tissot":[  
