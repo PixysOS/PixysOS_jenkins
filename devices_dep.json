@@ -86,5 +86,32 @@
          "target_path":"kernel/xiaomi/msm8953",
          "branch":"pie"
       }
+   ],
+   "z2_plus":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_zuk_z2_plus",
+         "target_path":"device/zuk/z2_plus",
+         "branch":"pie"
+      },
+      {
+         "url":"https://github.com/aswin7469/vendor_zuk",
+         "target_path":"vendor/zuk",
+         "branch":"pixys"
+      },
+      {
+         "url":"https://github.com/aswin7469/android_kernel_zuk_msm8996",
+         "target_path":"kernel/zuk/msm8996",
+         "branch":"kernel/zuk/msm8996"
+      },
+      {
+         "url":"https://github.com/aswin7469/device_zuk_msm8996-common",
+         "target_path": "device/zuk/msm8996-common",
+         "branch": "pixys"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      }
    ]
 }
