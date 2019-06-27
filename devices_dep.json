@@ -1,4 +1,21 @@
 {  
+   "markw":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_markw",
+         "target_path":"device/xiaomi/markw",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/DarkAngelGR/olympian_kernel",
+         "target_path":"kernel/xiaomi/markw",
+         "branch":"Zeus"
+      },
+      {  
+         "url":"https://github.com/DarkAngelGR/vendor_xiaomi",
+         "target_path":"vendor/xiaomi",
+         "branch":"9.0"
+      }
+   ],
    "tissot":[  
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_tissot",
