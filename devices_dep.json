@@ -60,23 +60,23 @@
          "branch":"9.0-eas-caf"
       }
    ],
-   "santoni":[
-      {
+   "santoni":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_santoni",
          "target_path":"device/xiaomi/santoni",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_santoni",
          "target_path":"vendor/xiaomi",
          "branch":"pie"
       },
-      { 
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8937-common",
          "target_path":"device/xiaomi/msm8937-common",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/Dhruvgera/RockstarKernel_r4x",
          "target_path":"kernel/xiaomi/msm8937",
          "branch":"rom-non_oc"
@@ -109,26 +109,48 @@
          "branch":"pie"
       }
    ],
-   "z2_plus":[
-      {
+   "vince":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_vince",
+         "target_path":"device/xiaomi/vince",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common",
+         "target_path":"device/xiaomi/msm8953-common",
+         "branch":"vince"
+      },
+      {  
+         "url":"https://https://github.com/BeastRoms-Devices/kernel_xiaomi_vince",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"lineage-16.0"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      }
+   ],
+   "z2_plus":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_zuk_z2_plus",
          "target_path":"device/zuk/z2_plus",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/aswin7469/vendor_zuk",
          "target_path":"vendor/zuk",
          "branch":"pixys"
       },
-      {
+      {  
          "url":"https://github.com/aswin7469/android_kernel_zuk_msm8996",
          "target_path":"kernel/zuk/msm8996",
          "branch":"kernel/zuk/msm8996"
       },
-      {
+      {  
          "url":"https://github.com/aswin7469/device_zuk_msm8996-common",
-         "target_path": "device/zuk/msm8996-common",
-         "branch": "pixys"
+         "target_path":"device/zuk/msm8996-common",
+         "branch":"pixys"
       },
       {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
