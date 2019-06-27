@@ -109,6 +109,27 @@
          "branch":"pie"
       }
    ],
+   "vince":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_vince",
+         "target_path":"device/xiaomi/vince",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common",
+         "target_path":"device/xiaomi/msm8953-common",
+         "branch":"vince"
+      },
+      {
+         "url":"https://https://github.com/BeastRoms-Devices/kernel_xiaomi_vince",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"lineage-16.0"
+      
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+   
    "z2_plus":[
       {
          "url":"https://github.com/PixysOS-Devices/device_zuk_z2_plus",
