@@ -6,6 +6,11 @@
          "branch":"pie"
       },
       {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {  
          "url":"https://github.com/DarkAngelGR/olympian_kernel",
          "target_path":"kernel/xiaomi/markw",
          "branch":"Zeus"
@@ -75,6 +80,11 @@
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8937-common",
          "target_path":"device/xiaomi/msm8937-common",
          "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
       },
       {  
          "url":"https://github.com/Dhruvgera/RockstarKernel_r4x",
