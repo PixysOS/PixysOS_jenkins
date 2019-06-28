@@ -1,4 +1,41 @@
-{  
+{ 
+   "evert":[  
+      {  
+         "url":"https://github.com/Evert-Dev/proprietary_vendor_motorola_evert",
+         "target_path":"vendor/motorola/evert",
+         "branch":"PixysOS"
+      },
+      {  
+         "url":"https://github.com/Evert-Dev/proprietary_vendor_motorola_sdm660-common",
+         "target_path":"vendor/motorola/sdm660-common",
+         "branch":"PixysOS"
+      },
+      {  
+         "url":"https://github.com/Evert-Dev/android_device_motorola_evert",
+         "target_path":"device/motorola/evert",
+         "branch":"PixysOS"
+      },
+      {  
+         "url":"https://github.com/Evert-Dev/android_device_motorola_sdm660-common",
+         "target_path":"device/motorola/sdm660-common",
+         "branch":"PixysOS"
+      },
+      {  
+         "url":"https://github.com/TeamDeluxe/android_kernel_motorola_msm8998",
+         "target_path":"kernel/motorola/msm8998",
+         "branch":"p9x-caf"
+      },
+      {  
+         "url":"LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_external_bson",
+         "target_path":"external/bson",
+         "branch":"lineage-16.0"
+      }
+   ], 
    "markw":[  
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_markw",
