@@ -161,7 +161,7 @@
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
-      }
+      },
       {
          "url":"https://github.com/thephotogenicbug/vendor_xiaomi_4.9",
          "target_path":"vendor/xiaomi",
