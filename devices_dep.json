@@ -168,6 +168,23 @@
          "branch":"evo-4.9"
       }
    ],
+   "X00TD":[
+      {
+         "url":"git@gitlab.com:X00T-Devs/subinem/device_asus_X00TD.git",
+         "target_path":"device/asus/X00TD",
+         "branch":"pie"
+      },
+      {
+         "url":"git@gitlab.com:X00T-Devs/subinem/kernel_asus_sdm660.git",
+         "target_path":"kernel/asus/sdm660",
+         "branch":"pie"
+      },
+      {
+         "url":"git@gitlab.com:X00T-Devs/subinem/proprietary_vendor_asus.git",
+         "target_path":"vendor/asus",
+         "branch":"pie"
+      }
+   ],
    "z2_plus":[
       {
          "url":"https://github.com/PixysOS-Devices/device_zuk_z2_plus",
