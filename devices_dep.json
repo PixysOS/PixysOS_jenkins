@@ -21,28 +21,6 @@
          "branch":"9.0"
       }
    ],
-   "rolex":[
-      {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_rolex",
-         "target_path":"device/xiaomi/rolex",
-         "branch":"lineage-16.0"
-      },
-      {
-         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
-         "target_path":"packages/resources/devicesettings",
-         "branch":"lineage-16.0"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_rolex",
-         "target_path":"vendor_xiaomi",
-         "branch":"lineage-16.0"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/platform_kernel_xiaomi_msm8917",
-         "target_path":"kernel/xiaomi/msm8917",
-         "branch":"lineage-16.0"
-      }
-   ],
    "mido":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_mido",
@@ -63,6 +41,28 @@
          "url":"https://github.com/penglezos/android_kernel_xiaomi_msm8953",
          "target_path":"kernel/xiaomi/msm8953",
          "branch":"pie"
+      }
+   ],
+   "rolex":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_rolex",
+         "target_path":"device/xiaomi/rolex",
+         "branch":"lineage-16.0"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_rolex",
+         "target_path":"vendor_xiaomi",
+         "branch":"lineage-16.0"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/platform_kernel_xiaomi_msm8917",
+         "target_path":"kernel/xiaomi/msm8917",
+         "branch":"lineage-16.0"
       }
    ],
    "sanders":[
