@@ -162,6 +162,11 @@
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
       }
+      {
+         "url":"https://github.com/thephotogenicbug/vendor_xiaomi_4.9",
+         "target_path":"vendor/xiaomi",
+         "branch":"evo-4.9"
+      }
    ],
    "z2_plus":[
       {
