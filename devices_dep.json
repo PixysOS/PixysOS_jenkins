@@ -1,212 +1,239 @@
-{
-   "markw":[
-      {
+{  
+   "markw":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_markw",
          "target_path":"device/xiaomi/markw",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
       },
-      {
+      {  
          "url":"https://github.com/DarkAngelGR/olympian_kernel",
          "target_path":"kernel/xiaomi/markw",
          "branch":"Zeus"
       },
-      {
+      {  
          "url":"https://github.com/DarkAngelGR/vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"9.0"
       }
    ],
-   "mido":[
-      {
+   "mido":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_mido",
          "target_path":"device/xiaomi/mido",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/Datta0/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/Datta0/proprietary_vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/penglezos/android_kernel_xiaomi_msm8953",
          "target_path":"kernel/xiaomi/msm8953",
          "branch":"pie"
       }
    ],
-   "rolex":[
-      {
+   "rolex":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_rolex",
          "target_path":"device/xiaomi/rolex",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_rolex",
          "target_path":"vendor_xiaomi",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/platform_kernel_xiaomi_msm8917",
          "target_path":"kernel/xiaomi/msm8917",
          "branch":"lineage-16.0"
       }
    ],
-   "sanders":[
-      {
-         "url":"https://github.com/PixysOS-Devices/device_motorola_sanders",
-         "target_path":"device/motorola/sanders",
+   "rosy":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_rosy",
+         "target_path":"device/xiaomi/rosy",
          "branch":"pie"
       },
-      {
-         "url":"https://github.com/PixysOS-Devices/vendor_motorola_sanders",
-         "target_path":"vendor/motorola/sanders",
-         "branch":"pie"
+      {  
+         "url":"https://github.com/shreejoy/android_kernel_xiaomi_rosy-1",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"p-318"
       },
-      {
+      {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
       },
-      {
+      {  
+         "url":"https://github.com/PixelExperience-Devices/vendor_xiaomi_rosy",
+         "target_path":"vendor/xiaomi/rosy",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/shreejoy/vendor_xiaomi_MiuiCamera",
+         "target_path":"vendor/xiaomi/MiuiCamera",
+         "branch":"lineage-16.0"
+      }
+   ],
+   "sanders":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_motorola_sanders",
+         "target_path":"device/motorola/sanders",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/PixysOS-Devices/vendor_motorola_sanders",
+         "target_path":"vendor/motorola/sanders",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {  
          "url":"https://github.com/PixysOS-Devices/kernel_motorola_msm8953",
          "target_path":"kernel/motorola/msm8953",
          "branch":"9.0-eas-caf"
       }
    ],
-   "santoni":[
-      {
+   "santoni":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_santoni",
          "target_path":"device/xiaomi/santoni",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_santoni",
          "target_path":"vendor/xiaomi",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8937-common",
          "target_path":"device/xiaomi/msm8937-common",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
       },
-      {
+      {  
          "url":"https://github.com/Dhruvgera/RockstarKernel_r4x",
          "target_path":"kernel/xiaomi/msm8937",
          "branch":"rom-non_oc"
       }
    ],
-   "tissot":[
-      {
+   "tissot":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_tissot",
          "target_path":"device/xiaomi/tissot",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common",
          "target_path":"device/xiaomi/msm8953-common",
          "branch":"tissot"
       },
-      {
+      {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/proprietary_vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"tissot"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_msm8953",
          "target_path":"kernel/xiaomi/msm8953",
          "branch":"pie"
       }
    ],
-   "vince":[
-      {
+   "vince":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_vince",
          "target_path":"device/xiaomi/vince",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common",
          "target_path":"device/xiaomi/msm8953-common",
          "branch":"vince"
       },
-      {
+      {  
          "url":"https://github.com/BeastRoms-Devices/kernel_xiaomi_vince",
          "target_path":"kernel/xiaomi/msm8953",
          "branch":"lineage-16.0"
       },
-      {
+      {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
       },
-      {
+      {  
          "url":"https://github.com/thephotogenicbug/vendor_xiaomi_4.9",
          "target_path":"vendor/xiaomi",
          "branch":"evo-4.9"
       }
    ],
-   "X00TD":[
-      {
+   "X00TD":[  
+      {  
          "url":"git@gitlab.com:X00T-Devs/subinem/device_asus_X00TD.git",
          "target_path":"device/asus/X00TD",
          "branch":"pie"
       },
-      {
+      {  
          "url":"git@gitlab.com:X00T-Devs/subinem/kernel_asus_sdm660.git",
          "target_path":"kernel/asus/sdm660",
          "branch":"pie"
       },
-      {
+      {  
          "url":"git@gitlab.com:X00T-Devs/subinem/proprietary_vendor_asus.git",
          "target_path":"vendor/asus",
          "branch":"pie"
       }
    ],
-   "z2_plus":[
-      {
+   "z2_plus":[  
+      {  
          "url":"https://github.com/PixysOS-Devices/device_zuk_z2_plus",
          "target_path":"device/zuk/z2_plus",
          "branch":"pie"
       },
-      {
+      {  
          "url":"https://github.com/aswin7469/vendor_zuk",
          "target_path":"vendor/zuk",
          "branch":"pixys"
       },
-      {
+      {  
          "url":"https://github.com/aswin7469/android_kernel_zuk_msm8996",
          "target_path":"kernel/zuk/msm8996",
          "branch":"kernel/zuk/msm8996"
       },
-      {
+      {  
          "url":"https://github.com/aswin7469/device_zuk_msm8996-common",
          "target_path":"device/zuk/msm8996-common",
          "branch":"pixys"
       },
-      {
+      {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-16.0"
