@@ -47,7 +47,7 @@
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_rolex",
          "target_path":"device/xiaomi/rolex",
-         "branch":"lineage-16.0"
+         "branch":"pie"
       },
       {
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
@@ -57,7 +57,7 @@
       {
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_rolex",
          "target_path":"vendor_xiaomi",
-         "branch":"lineage-16.0"
+         "branch":"pie"
       },
       {
          "url":"https://github.com/PixysOS-Devices/platform_kernel_xiaomi_msm8917",
