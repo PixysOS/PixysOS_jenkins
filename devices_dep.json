@@ -153,7 +153,7 @@
          "branch":"vince"
       },
       {
-         "url":"https://https://github.com/BeastRoms-Devices/kernel_xiaomi_vince",
+         "url":"https://github.com/BeastRoms-Devices/kernel_xiaomi_vince",
          "target_path":"kernel/xiaomi/msm8953",
          "branch":"lineage-16.0"
       },
