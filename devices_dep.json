@@ -43,6 +43,28 @@
          "branch":"pie"
       }
    ],
+   "platina":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_platina",
+         "target_path":"device/xiaomi/platina",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {  
+         "url":"https://github.com/melvingb/vendor_xiaomi_platina",
+         "target_path":"vendor/xiaomi/platina",
+         "branch":"master"
+      },
+      {  
+         "url":"https://github.com/melvingb/acrux_xiaomi_platina",
+         "target_path":"kernel/xiaomi/platina",
+         "branch":"pie"
+      }
+   ],
    "rolex":[  
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_rolex",
