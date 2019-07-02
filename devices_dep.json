@@ -115,7 +115,7 @@
       },
       {  
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_rolex",
-         "target_path":"vendor_xiaomi",
+         "target_path":"vendor/xiaomi",
          "branch":"pie"
       },
       {  
