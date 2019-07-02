@@ -231,7 +231,7 @@
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_vince",
          "target_path":"device/xiaomi/vince",
-         "branch":"pie"
+         "branch":"pixy"
       },
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common",
@@ -251,7 +251,7 @@
       {  
          "url":"https://github.com/thephotogenicbug/vendor_xiaomi_4.9",
          "target_path":"vendor/xiaomi",
-         "branch":"evo-4.9"
+         "branch":"pixy"
       }
    ],
    "X00TD":[  
