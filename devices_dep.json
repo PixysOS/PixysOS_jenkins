@@ -168,7 +168,7 @@
          "branch":"lineage-16.0"
       },
       {  
-         "url":"https://github.com/PixysOS-Devices/kernel_motorola_msm8953",
+         "url":"https://github.com/PixysOS-Devices/android_kernel_motorola_msm8953",
          "target_path":"kernel/motorola/msm8953",
          "branch":"9.0-eas-caf"
       }
