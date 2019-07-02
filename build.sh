@@ -81,7 +81,7 @@ function build_init() {
        branch=$(jq -r --argjson i "$i" '.[$i].branch' /home/pixys/source/json/${DEVICE}.json)
        target=$(jq -r --argjson i "$i" '.[$i].target_path' /home/pixys/source/json/${DEVICE}.json)
        printf "\n>>> ${Blue}Cloning to $target...\n${Color_Off}\n"
-       git clone --depth=1 --quiet $repo_url -b $branch $target
+       git clone --recurse-submodules --depth=1 --quiet $repo_url -b $branch $target
        printf "${Color_Off}"
        if [ -e /home/pixys/source/$target ]
           then
@@ -114,12 +114,11 @@ function build_main() {
 function upload_ftp() {
    if [ -f /home/pixys/source/out/target/product/$DEVICE/PixysOS*.zip ]
    then
-   TGlogs "#${DEVICE} build passed"
+   TGlogs "#${DEVICE} build passed [link]($BUILD_URL)"
    cd /home/pixys/source/out/target/product/$DEVICE
        ZIP=$(ls PixysOS*.zip)
        printf "${Yellow}Uploading test artifact ${ZIP}${Color_Off}"
        LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
-       printf "${Green}Build for $DEVICE completed successfully\n${Color_Off}"
        ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "rm -rf /home/ftp/uploads/.test/${DEVICE}"
        ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "mkdir /home/ftp/uploads/.test/${DEVICE}"
        scp -P 5615 -o StrictHostKeyChecking=no ${ZIP} root@downloads.pixysos.com:/home/ftp/uploads/.test/${DEVICE}
