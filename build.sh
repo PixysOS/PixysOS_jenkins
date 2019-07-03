@@ -154,8 +154,9 @@ function upload_ftp() {
 
 DEVICE="$1" # Enter the codename of the device
 DEVICE_MAINTAINER="$2" # The maintainer of that device
-clean_device="$3" # if the device is different from last one
-make_clean="$4" # make a clean build or not 
+use_ccache="$3" # Ccache time
+clean_device="$4" # if the device is different from last one
+make_clean="$5" # make a clean build or not 
 
 colors
 exports
