@@ -31,27 +31,25 @@ function sendTG() {
 
 function use_ccache() {
     # CCACHE UMMM!!! Cooks my builds fast
-	if [ "$use_ccache" = "yes" ];
-	then
-	echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
-	export USE_CCACHE=1
-	export CCACHE_DIR=/home/subins/ccache/$username
-	prebuilts/misc/linux-x86/ccache/ccache -M 50G
-	fi
-
-	if [ "$use_ccache" = "clean" ];
-	then
-	export CCACHE_DIR=/home/subins/ccache/$username
-	ccache -C
-	export USE_CCACHE=1
-	prebuilts/misc/linux-x86/ccache/ccache -M 50G
-	wait
-	echo -e ${grn}"CCACHE Cleared"${txtrst};
-	fi
+   if [ "$use_ccache" = "yes" ];
+   then
+      printf "CCACHE is enabled for this build"
+      export USE_CCACHE=1
+      export CCACHE_DIR=/home/subins/ccache/pixys
+      prebuilts/misc/linux-x86/ccache/ccache -M 50G
+    elif [ "$use_ccache" = "clean" ];
+    then
+       export CCACHE_DIR=/home/subins/ccache/pixys
+       ccache -C
+       export USE_CCACHE=1
+       prebuilts/misc/linux-x86/ccache/ccache -M 50G
+       wait
+       printf "CCACHE Cleared"
+    fi
 }
 
 function clean_up() {
-    # Its Clean Time
+  # Its Clean Time
    if [ "$make_clean" = "true" ]
    then
       make clean && make clobber
@@ -110,7 +108,7 @@ function build_init() {
              echo "$target" >> /home/pixys/source/clone_path.txt
            else
              sendTG "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
-             TGlogs "Build for $DEVICE Failed due to dep issues"
+	     TGlogs "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
              printf "\n\n${Red}Repo clone fail...\n\n${Color_Off}"
              printf "${Cyan}Exiting${Color_Off}"
              sleep 5
@@ -125,7 +123,7 @@ function build_main() {
     source build/envsetup.sh
     lunch pixys_${DEVICE}-userdebug
     printf "${BICyan}Starting build for ${DEVICE}${Color_Off}"
-    TGlogs "Build for $DEVICE started"
+    TGlogs "Starting build for [$DEVICE]($BUILD_URL) on ${NODE_NAME}"
     sendTG "Starting build for [$DEVICE]($BUILD_URL) on ${NODE_NAME}"
     make bacon -j24
     BUILD_END=$(date +"%s")
@@ -135,19 +133,21 @@ function build_main() {
 function upload_ftp() {
    if [ -f /home/pixys/source/out/target/product/$DEVICE/PixysOS*.zip ]
    then
-   TGlogs "#${DEVICE} build passed [link]($BUILD_URL)"
+
    cd /home/pixys/source/out/target/product/$DEVICE
        ZIP=$(ls PixysOS*.zip)
+       DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
        printf "${Yellow}Uploading test artifact ${ZIP}${Color_Off}"
-       LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
        ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "rm -rf /home/ftp/uploads/.test/${DEVICE}"
        ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "mkdir /home/ftp/uploads/.test/${DEVICE}"
        scp -P 5615 -o StrictHostKeyChecking=no ${ZIP} root@downloads.pixysos.com:/home/ftp/uploads/.test/${DEVICE}
        sendTG "Build for [$DEVICE]($BUILD_URL) passed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
-       sendTG "Maintainer of $DEVICE, Please test [$ZIP]($LINK) and inform administrator if its ready for the release."
+       sendTG "Maintainer of $DEVICE, Please test [$ZIP](${DL_LINK}) and inform administrator if its ready for the release."
+       TGlogs "Build for [$DEVICE]($BUILD_URL) passed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
+       TGlogs "Maintainer of $DEVICE, Please test [$ZIP](${DL_LINK}) and inform administrator if its ready for the release."
     else
         sendTG "Build for [$DEVICE]($BUILD_URL) failed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
-        TGlogs "#${DEVICE} build failed"
+	TGlogs "Build for [$DEVICE]($BUILD_URL) failed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
      exit 1
     fi
 }
@@ -160,6 +160,7 @@ make_clean="$5" # make a clean build or not
 
 colors
 exports
+use_ccache
 clean_up
 build_main
 upload_ftp
