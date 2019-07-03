@@ -29,6 +29,27 @@ function sendTG() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=Markdown" > /dev/null
 }
 
+function use_ccache() {
+    # CCACHE UMMM!!! Cooks my builds fast
+	if [ "$use_ccache" = "yes" ];
+	then
+	echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
+	export USE_CCACHE=1
+	export CCACHE_DIR=/home/subins/ccache/$username
+	prebuilts/misc/linux-x86/ccache/ccache -M 50G
+	fi
+
+	if [ "$use_ccache" = "clean" ];
+	then
+	export CCACHE_DIR=/home/subins/ccache/$username
+	ccache -C
+	export USE_CCACHE=1
+	prebuilts/misc/linux-x86/ccache/ccache -M 50G
+	wait
+	echo -e ${grn}"CCACHE Cleared"${txtrst};
+	fi
+}
+
 function clean_up() {
     # Its Clean Time
    if [ "$make_clean" = "true" ]
