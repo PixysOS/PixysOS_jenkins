@@ -254,6 +254,33 @@
          "branch":"pixy"
       }
    ],
+   "whyred":[
+      {
+         "url":"https://github.com/PixysOS-Devices/android_device_xiaomi_whyred",
+         "target_path":"device/xiaomi/whyred",
+         "branch":"pie"
+      },
+      {
+         "url":"https://github.com/Sajidjnl/vendor_xiaomi_whyred",
+         "target_path":"vendor/xiaomi/whyred",
+         "branch":"pie"
+      },
+      {
+         "url":"https://github.com/srfarias/kernel_xiaomi_whyred",
+         "target_path":"kernel/xiaomi/whyred",
+         "branch":"caf-pie"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {
+         "url":"https://github.com/Sajidjnl/vendor_MiuiCamera",
+         "target_path":"vendor/MiuiCamera",
+         "branch":"pie-whyred"
+      }
+   ],
    "X00TD":[  
       {  
          "url":"git@gitlab.com:X00T-Devs/subinem/device_asus_X00TD.git",
