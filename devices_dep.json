@@ -151,6 +151,28 @@
          "branch":"lineage-16.0"
       }
    ],
+   "sakura":[  
+      {  
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sakura",
+         "target_path":"device/xiaomi/sakura",
+         "branch":"pie"
+      },
+      {  
+         "url":"https://github.com/mahajant99/vendor_xiaomi_sakura",
+         "target_path":"vendor/xiaomi",
+         "branch":"lineage-16.0-4.9"
+      },
+      {  
+         "url":"https://github.com/mahajant99/kernel_xiaomi_msm8953",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"lineage-16.0-4.9"
+      }
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+   ],
    "sanders":[  
       {  
          "url":"https://github.com/PixysOS-Devices/device_motorola_sanders",
