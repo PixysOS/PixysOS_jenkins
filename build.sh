@@ -21,12 +21,25 @@ function exports() {
    export KBUILD_BUILD_USER=${DEVICE_MAINTAINER}
 }
 
+# function to store logs
 function TGlogs() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001322414571&parse_mode=Markdown" > /dev/null
 }
 
+#function to send messages on maintainers group
 function sendTG() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=Markdown" > /dev/null
+}
+
+# Function to upload to del.dog
+function deldog() {
+    RESULT=$(curl -sf --data-binary @${1:--} https://del.dog/documents) || {
+        echo "ERROR: failed to post document" >&2
+        exit 1
+    }
+    KEY=$(jq -r .key <<< ${RESULT})
+    echo "https://del.dog/${KEY}"
+    echo "https://del.dog/raw/${KEY}"
 }
 
 function use_ccache() {
