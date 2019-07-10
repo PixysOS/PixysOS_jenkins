@@ -175,12 +175,12 @@
    ],
    "sanders":[  
       {  
-         "url":"https://github.com/PixysOS-Devices/device_motorola_sanders",
+         "url":"https://github.com/PixysOS-Devices/android_device_motorola_sanders",
          "target_path":"device/motorola/sanders",
          "branch":"pie"
       },
       {  
-         "url":"https://github.com/PixysOS-Devices/vendor_motorola_sanders",
+         "url":"https://github.com/Sajidjnl/vendor_motorola_sanders",
          "target_path":"vendor/motorola/sanders",
          "branch":"pie"
       },
@@ -190,9 +190,9 @@
          "branch":"lineage-16.0"
       },
       {  
-         "url":"https://github.com/PixysOS-Devices/android_kernel_motorola_msm8953",
+         "url":"https://github.com/Sajidjnl/kernel_motorola_msm8953",
          "target_path":"kernel/motorola/msm8953",
-         "branch":"9.0-eas-caf"
+         "branch":"pie"
       }
    ],
    "santoni":[  
