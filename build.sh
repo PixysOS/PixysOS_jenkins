@@ -18,6 +18,7 @@ function exports() {
    export PIXYS_BUILD_PATH=/home/pixys/source
    export PIXYS_BUILD_TYPE=OFFICIAL
    export KBUILD_BUILD_HOST="PixysBuildBot"
+   export DEVICE_MAINTAINERS="${DEVICE_MAINTAINER}"
    export KBUILD_BUILD_USER=${DEVICE_MAINTAINER}
 }
 
