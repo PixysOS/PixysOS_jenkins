@@ -9,11 +9,6 @@
 #
 # PixysOS ROM building script.
 
-function colors() {
-   export TERM=xterm
-   bash color.sh
-}
-
 function exports() {
    export PIXYS_BUILD_PATH=/home/pixys/source
    export PIXYS_BUILD_TYPE=OFFICIAL
@@ -71,7 +66,7 @@ function clean_up() {
    then
       rm -rf out/target/product/*
       wait
-      echo -e ${Cyan}"OUT dir from your repo deleted"${Color_Off};
+      echo -e "OUT dir from your repo deleted";
    else
       echo "No need to clean"
    fi
@@ -87,7 +82,7 @@ function clean_up() {
          else
             for WORD in `cat /home/pixys/source/clone_path.txt`
             do
-              printf "${Blue}Deleting obsolete path /home/pixys/source/${WORD}\n${Color_Off}"
+              printf "Deleting obsolete path /home/pixys/source/${WORD}\n"
               rm -rf $WORD
             done
             rm -rf /home/pixys/source/clone_path.txt
@@ -107,24 +102,24 @@ function build_init() {
     wget -O /home/pixys/source/devices_dep.json -q https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/master/devices_dep.json
     jq --arg DEVICE "$DEVICE" '. | .[$DEVICE]' /home/pixys/source/devices_dep.json > /home/pixys/source/json/"${DEVICE}".json
     export dep_count=$(jq length /home/pixys/source/json/${DEVICE}.json)
-    printf "\n${UYellow}Cloning device specific dependencies \n\n${Color_Off}"
+    printf "\nCloning device specific dependencies \n\n"
     for ((i=0;i<${dep_count};i++));
     do
        repo_url=$(jq -r --argjson i "$i" '.[$i].url' /home/pixys/source/json/${DEVICE}.json)
        branch=$(jq -r --argjson i "$i" '.[$i].branch' /home/pixys/source/json/${DEVICE}.json)
        target=$(jq -r --argjson i "$i" '.[$i].target_path' /home/pixys/source/json/${DEVICE}.json)
-       printf "\n>>> ${Blue}Cloning to $target...\n${Color_Off}\n"
+       printf "\n>>> Cloning to $target...\n\n"
        git clone --recurse-submodules --depth=1 --quiet $repo_url -b $branch $target
        printf "${Color_Off}"
        if [ -e /home/pixys/source/$target ]
           then
-             printf "\n${Green}Repo clone success...\n${Color_Off}"
+             printf "\nRepo clone success...\n"
              echo "$target" >> /home/pixys/source/clone_path.txt
            else
              sendTG "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
 	     TGlogs "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
-             printf "\n\n${Red}Repo clone fail...\n\n${Color_Off}"
-             printf "${Cyan}Exiting${Color_Off}"
+             printf "\n\nRepo clone fail...\n\n"
+             printf "Exiting in 5secs"
              sleep 5
              exit 1
             fi
@@ -136,7 +131,7 @@ function build_main() {
     BUILD_START=$(date +"%s")
     source build/envsetup.sh
     lunch pixys_${DEVICE}-userdebug
-    printf "${BICyan}Starting build for ${DEVICE}${Color_Off}"
+    printf "Starting build for ${DEVICE}"
     TGlogs "Starting build for [$DEVICE]($BUILD_URL) on ${NODE_NAME}"
     sendTG "Starting build for [$DEVICE]($BUILD_URL) on ${NODE_NAME}"
     make bacon -j24
@@ -151,7 +146,7 @@ function upload_ftp() {
    cd /home/pixys/source/out/target/product/$DEVICE
        ZIP=$(ls PixysOS*.zip)
        DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
-       printf "${Yellow}Uploading test artifact ${ZIP}${Color_Off}"
+       printf "Uploading test artifact ${ZIP}"
        ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "rm -rf /home/ftp/uploads/.test/${DEVICE}"
        ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "mkdir /home/ftp/uploads/.test/${DEVICE}"
        scp -P 5615 -o StrictHostKeyChecking=no ${ZIP} root@downloads.pixysos.com:/home/ftp/uploads/.test/${DEVICE}
