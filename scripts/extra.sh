@@ -59,34 +59,38 @@ function deldog() {
 }
 
 function upload_ftp() {
-    test_log=$(mktemp)
-	   {
-	      echo -e "🏷 *Build Completed*"
-		  echo 
-		  echo -e "Device :- #${DEVICE}"
-		  echo -e "Build URL :- [LINK](${BUILD_URL}/console)"
-		  if [ "$status" == "passed" ]
-		  then 
-		     echo
-		     echo -e "Status :- Passed ✅"
-		     echo
-			 if [ "$upload" == "true" ]
-			 then
-			    DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
-                printf "\n\nUploading test artifact ${ZIP}\n"
-                ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "rm -rf /home/ftp/uploads/.test/${DEVICE}"
-                ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "mkdir /home/ftp/uploads/.test/${DEVICE}"
-                scp -P 5615 -o StrictHostKeyChecking=no "${ZIP}" root@downloads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"
-                scp -P 5615 -o StrictHostKeyChecking=no "${JSON}" root@downloads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"
-		        echo -e "⬇️[Download](${DL_LINK})"
-		     fi
-		  elif [ "$status" == "failed" ]
-		  then
-		     echo -e "Status :- Failed ❌"
-			 echo -e "Maintainer fix the error and inform the server admin"
-	      fi
-		} > "${test_log}"
-	MESSAGE=$(cat "${test_log}")
-    TGlogs "$MESSAGE"
-	sendTG "$MESSAGE"
+
+   if [ "$upload" == "true" ]
+   then
+     DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
+     printf "\n\nUploading test artifact ${ZIP}\n"
+     ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "rm -rf /home/ftp/uploads/.test/${DEVICE}"
+     ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "mkdir /home/ftp/uploads/.test/${DEVICE}"
+     scp -P 5615 -o StrictHostKeyChecking=no "${ZIP}" root@downloads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"
+     scp -P 5615 -o StrictHostKeyChecking=no "${JSON}" root@downloads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"
+   fi
+   test_log=$(mktemp)
+   {
+      echo -e "🏷 *Build Completed*"
+      echo 
+      echo -e "Device :- #${DEVICE}"
+      echo -e "Build URL :- [LINK](${BUILD_URL}/console)"
+      echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
+      if [ "$status" == "passed" ]
+      then 
+         echo
+	 echo -e "Status :- Passed ✅"
+	 if [ "$upload" == "true" ]
+         then
+	    echo -e "⬇️[Download](${DL_LINK})"
+	 fi
+     elif [ "$status" == "failed" ]
+     then
+	 echo -e "Status :- Failed ❌"
+	 echo -e "Maintainer fix the error."
+      fi
+   } > "${test_log}"
+   MESSAGE=$(cat "${test_log}")
+   TGlogs "$MESSAGE"
+   sendTG "$MESSAGE"
 }
