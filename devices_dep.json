@@ -249,6 +249,33 @@
          "branch":"pie"
       }
    ],
+   "jasmine_sprout":[  
+      {  
+         "url": "https://github.com/pqhaz/device_xiaomi_jasmine_sprout-pixys",
+         "target_path": "device/xiaomi/jasmine_sprout",
+         "branch": "pie"
+      },
+      {  
+         "url": "https://github.com/pqhaz/device_xiaomi_sdm660-common-pixys",
+         "target_path": "device/xiaomi/sdm660-common",
+         "branch": "pie"
+      },
+      {  
+         "url": "https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path": "packages/resources/devicesettings",
+         "branch": "lineage-16.0"
+      },
+      {  
+         "url": "https://github.com/pqhaz/vendor_xiaomi",
+         "target_path": "vendor/xiaomi",
+         "branch": "pie"
+      },
+      {  
+         "url": "https://github.com/kenny3fcb/kernel_xiaomi_jasmine",
+         "target_path": "kernel/xiaomi/sdm660",
+         "branch": "pie"
+      }
+   ],
    "vince":[  
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_vince",
