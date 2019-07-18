@@ -9,38 +9,14 @@
 #
 # PixysOS ROM building script.
 
-function colors() {
-   export TERM=xterm
-   bash color.sh
-}
 
 function exports() {
    export PIXYS_BUILD_PATH=/home/pixys/source
    export PIXYS_BUILD_TYPE=OFFICIAL
    export KBUILD_BUILD_HOST="PixysBuildBot"
-   export DEVICE_MAINTAINERS="${DEVICE_MAINTAINER}"
-   export KBUILD_BUILD_USER=${DEVICE_MAINTAINER}
-}
-
-# function to store logs
-function TGlogs() {
-    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001322414571&parse_mode=Markdown" > /dev/null
-}
-
-#function to send messages on maintainers group
-function sendTG() {
-    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=Markdown" > /dev/null
-}
-
-# Function to upload to del.dog
-function deldog() {
-    RESULT=$(curl -sf --data-binary @${1:--} https://del.dog/documents) || {
-        echo "ERROR: failed to post document" >&2
-        exit 1
-    }
-    KEY=$(jq -r .key <<< ${RESULT})
-    echo "https://del.dog/${KEY}"
-    echo "https://del.dog/raw/${KEY}"
+   export DJSON="https://raw.githubusercontent.com/PixysOS-Devices/official_devices/master/devices.json"
+   export DEVICE_MAINTAINERS=$(jq -r --arg DEVICE "$DEVICE" '.[] | select(.codename==$DEVICE) | .maintainer_name' <<< ${DJSON}) # The maintainer of that device
+   export KBUILD_BUILD_USER=${DEVICE_MAINTAINERS}
 }
 
 function use_ccache() {
@@ -71,9 +47,7 @@ function clean_up() {
    then
       rm -rf out/target/product/*
       wait
-      echo -e ${Cyan}"OUT dir from your repo deleted"${Color_Off};
-   else
-      echo "No need to clean"
+      echo -e "OUT dir from your repo deleted";
    fi
    # Clean old device dependencies
    if [ "$clean_device" = "true" ];
@@ -122,7 +96,7 @@ function build_init() {
              echo "$target" >> /home/pixys/source/clone_path.txt
            else
              sendTG "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
-	     TGlogs "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
+	         TGlogs "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
              printf "\n\n${Red}Repo clone fail...\n\n${Color_Off}"
              printf "${Cyan}Exiting${Color_Off}"
              sleep 5
@@ -144,37 +118,35 @@ function build_main() {
     BUILD_TIME=$(date +"%Y%m%d-%T")
     DIFF=$((BUILD_END - BUILD_START))
 }
-function upload_ftp() {
+   
+	  
+function build_end() {
    if [ -f /home/pixys/source/out/target/product/$DEVICE/PixysOS*.zip ]
    then
-
-   cd /home/pixys/source/out/target/product/$DEVICE
-       ZIP=$(ls PixysOS*.zip)
-       DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
-       printf "${Yellow}Uploading test artifact ${ZIP}${Color_Off}"
-       ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "rm -rf /home/ftp/uploads/.test/${DEVICE}"
-       ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "mkdir /home/ftp/uploads/.test/${DEVICE}"
-       scp -P 5615 -o StrictHostKeyChecking=no ${ZIP} root@downloads.pixysos.com:/home/ftp/uploads/.test/${DEVICE}
-       sendTG "Build for [$DEVICE]($BUILD_URL) passed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
-       sendTG "Maintainer of $DEVICE, Please test [$ZIP](${DL_LINK}) and inform administrator if its ready for the release."
-       TGlogs "Build for [$DEVICE]($BUILD_URL) passed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
-       TGlogs "Maintainer of $DEVICE, Please test [$ZIP](${DL_LINK}) and inform administrator if its ready for the release."
-    else
-        sendTG "Build for [$DEVICE]($BUILD_URL) failed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
-	TGlogs "Build for [$DEVICE]($BUILD_URL) failed on ${NODE_NAME} in $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds."
-     exit 1
-    fi
+      cd /home/pixys/source/out/target/product/$DEVICE
+      ZIP=$(ls PixysOS*.zip)
+	  JSON="${DEVICE}.json"
+	  status="passed"
+	  build_json
+      upload_ftp
+   else
+      status="failed"
+	  upload_ftp
+      exit 1
+   fi
 }
 
+wget -O /home/pixys/source/extra.sh https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/master/scripts/extra.sh
+source /home/pixys/source/extra.sh
 DEVICE="$1" # Enter the codename of the device
-DEVICE_MAINTAINER="$2" # The maintainer of that device
-use_ccache="$3" # Ccache time
-clean_device="$4" # if the device is different from last one
-make_clean="$5" # make a clean build or not 
+use_ccache="$2" # Ccache time
+clean_device="$3" # if the device is different from last one
+make_clean="$4" # make a clean build or not 
+upload="$5"
 
-colors
 exports
 use_ccache
 clean_up
 build_main
 upload_ftp
+build_end
