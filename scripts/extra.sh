@@ -64,32 +64,44 @@ function upload_ftp() {
    then
      DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
      printf "\n\nUploading test artifact ${ZIP}\n"
-     ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "rm -rf /home/ftp/uploads/.test/${DEVICE}"
-     ssh -p 5615 -o StrictHostKeyChecking=no root@downloads.pixysos.com "mkdir /home/ftp/uploads/.test/${DEVICE}"
-     scp -P 5615 -o StrictHostKeyChecking=no "${ZIP}" root@downloads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"
-     scp -P 5615 -o StrictHostKeyChecking=no "${JSON}" root@downloads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"
+     ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me "rm -rf /home/ftp/uploads/.test/${DEVICE}"
+     ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me "mkdir /home/ftp/uploads/.test/${DEVICE}"
+     scp -P 5615 -o StrictHostKeyChecking=no "${ZIP}" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
+     scp -P 5615 -o StrictHostKeyChecking=no "${JSON}" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
+     uploads=$(mktemp)
+     echo -e "⬇️[Download](${DL_LINK})" > "${uploads}"
    fi
+   
+   
+   log=$(mktemp)
+   if [ "$status" == "passed" ]
+   then 
+      USTATUS=$(cat ${uploads})
+      {
+         echo 
+	 echo -e "*Status* :- Passed ✅"
+	 echo -e "${USTATUS}"
+       } > "$logs"
+    else 
+       {
+         echo 
+	 echo -e "*Status* :- Failed ❌"
+	 echo -e "Maintainer fix the error."
+       } > "$logs"
+    fi
+    LOG=$(cat $logs)
    test_log=$(mktemp)
+   
    {
       echo -e "🏷 *Build Completed*"
       echo 
       echo -e "Device :- #${DEVICE}"
       echo -e "Build URL :- [LINK](${BUILD_URL}/console)"
       echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
-      if [ "$status" == "passed" ]
-      then 
-         echo
-	 echo -e "Status :- Passed ✅"
-	 if [ "$upload" == "true" ]
-         then
-	    echo -e "⬇️[Download](${DL_LINK})"
-	 fi
-     elif [ "$status" == "failed" ]
-     then
-	 echo -e "Status :- Failed ❌"
-	 echo -e "Maintainer fix the error."
-      fi
+      echo 
+      echo -e "${LOG}"
    } > "${test_log}"
+   
    MESSAGE=$(cat "${test_log}")
    TGlogs "$MESSAGE"
    sendTG "$MESSAGE"
