@@ -47,6 +47,16 @@ function sendTG() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=Markdown" > /dev/null
 }
 
+#function to connect to ssh 
+function sshc() {
+  sshpass -p '${spass}' ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me '"${1}"'
+}
+
+#function to make scp upload
+function scpc() {
+  sshpass -p '${spass}' scp -P 5615 -o StrictHostKeyChecking=no "'"${1}"'" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
+}
+
 # Function to upload to del.dog
 function deldog() {
     RESULT=$(curl -sf --data-binary @"${1:--}" https://del.dog/documents) || {
@@ -65,11 +75,11 @@ function upload_ftp() {
       if [ "$upload" == "true" ]
       then
          DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
-         printf "\n\nUploading test artifact ${ZIP}\n"
-         ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me "rm -rf /home/ftp/uploads/.test/${DEVICE}"
-         ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me "mkdir /home/ftp/uploads/.test/${DEVICE}"
-         scp -P 5615 -o StrictHostKeyChecking=no "${ZIP}" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
-         scp -P 5615 -o StrictHostKeyChecking=no "${JSON}" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
+         echo -e "Uploading test artifact ${ZIP}"
+         sshc "rm -rf /home/ftp/uploads/.test/${DEVICE}"
+         sshc "mkdir /home/ftp/uploads/.test/${DEVICE}"
+         scpc "${ZIP}"
+         scpc "${JSON}"
 	 {
              echo -e "🏷 *Build Completed*"
              echo 
@@ -108,3 +118,5 @@ function upload_ftp() {
    TGlogs "$MESSAGE"
    sendTG "$MESSAGE"
 }
+
+
