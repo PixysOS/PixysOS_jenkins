@@ -128,7 +128,8 @@ function build_end() {
 	  JSON="${DEVICE}.json"
 	  status="passed"
 	  build_json
-      upload_ftp
+          upload_ftp
+          exit 0
    else
       status="failed"
 	  upload_ftp
