@@ -101,7 +101,8 @@ function upload_ftp() {
              echo -e "*Status* :- Passed ✅"
 	  } > "${msg}"
        fi
-    else
+    elif [ "$status" == "failed" ]
+    then
  	  {
              echo -e "🏷 *Build Completed*"
              echo 
