@@ -92,7 +92,7 @@ function upload_ftp() {
              echo -e "*Status* :- Passed ✅"
 	     echo -e "⬇️[Download](${DL_LINK})"
 	  } > "${msg}"
-       elif [ "$upload" == "false" ].
+       elif [ "$upload" == "false" ]
        then
  	 {
              echo -e "🏷 *Build Completed*"
