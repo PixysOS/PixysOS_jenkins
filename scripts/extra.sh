@@ -49,12 +49,14 @@ function sendTG() {
 
 #function to connect to ssh 
 function sshc() {
-  sshpass -p '${spass}' ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me '"${1}"'
+  export spass
+  sshpass -p "${spass}" ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me "${1}"
 }
 
 #function to make scp upload
 function scpc() {
-  sshpass -p '${spass}' scp -P 5615 -o StrictHostKeyChecking=no "'"${1}"'" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
+  export spass
+  sshpass -p "${spass}" scp -P 5615 -o StrictHostKeyChecking=no "${1}" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
 }
 
 # Function to upload to del.dog
@@ -90,7 +92,8 @@ function upload_ftp() {
              echo -e "*Status* :- Passed ✅"
 	     echo -e "⬇️[Download](${DL_LINK})"
 	  } > "${msg}"
-       else 
+       elif [ "$upload" == "false" ].
+       then
  	 {
              echo -e "🏷 *Build Completed*"
              echo 
