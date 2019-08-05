@@ -15,7 +15,7 @@ function build_json() {
    name=$(stat -c %n "${ZIP}" | sed 's/.*\///')
    filehash=$(md5sum "${ZIP}" | cut -d " " -f 1)
    size=$(cat "${ZIP}" | wc -c)
-   MAIN_URL="https://download.pixysos.com/${DEVICE}/${ZIP}"
+   MAIN_URL="https://sourceforge.net/projects/pixys-os/files/pie/${DEVICE}/${ZIP}/download"
    msg=$(mktemp)
    {
       echo -e "{"
@@ -66,8 +66,8 @@ function deldog() {
         exit 1
     }
     KEY=$(jq -r .key <<< "${RESULT}")
-    echo "https://del.dog/${KEY}"
-    echo "https://del.dog/raw/${KEY}"
+    DEL_NORM="https://del.dog/${KEY}"
+    DEL_RAW="https://del.dog/raw/${KEY}"
 }
 
 function upload_ftp() {
@@ -76,7 +76,9 @@ function upload_ftp() {
    then 
       if [ "$upload" == "true" ]
       then
-         DL_LINK="http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}"
+         echo "http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}" > "${msg}"
+         deldog "${msg}"
+	 DL_LINK="${DEL_RAW}"
          echo -e "Uploading test artifact ${ZIP}"
          sshc "rm -rf /home/ftp/uploads/.test/${DEVICE}"
          sshc "mkdir /home/ftp/uploads/.test/${DEVICE}"
