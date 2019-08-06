@@ -78,7 +78,7 @@ function upload_ftp() {
       then
          echo "http://downloads.pixysos.com/.test/${DEVICE}/${ZIP}" > "${msg}"
          deldog "${msg}"
-	 DL_LINK="${DEL_RAW}"
+	 DL_LINK="${DEL_NORM}"
          echo -e "Uploading test artifact ${ZIP}"
          sshc "rm -rf /home/ftp/uploads/.test/${DEVICE}"
          sshc "mkdir /home/ftp/uploads/.test/${DEVICE}"
@@ -87,9 +87,9 @@ function upload_ftp() {
 	 {
              echo -e "🏷 *Build Completed*"
              echo 
-             echo -e "Device :- #${DEVICE}"
-             echo -e "Build URL :- [LINK](${BUILD_URL}console)"
-             echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
+             echo -e "*Device* :- #${DEVICE}"
+             echo -e "*Build URL* :- [LINK](${BUILD_URL}console)"
+             echo -e "*Build time* :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
              echo 
              echo -e "*Status* :- Passed ✅"
 	     echo -e "⬇️[Download](${DL_LINK})"
@@ -99,9 +99,9 @@ function upload_ftp() {
  	 {
              echo -e "🏷 *Build Completed*"
              echo 
-             echo -e "Device :- #${DEVICE}"
-             echo -e "Build URL :- [LINK](${BUILD_URL}console)"
-             echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
+             echo -e "*Device* :- #${DEVICE}"
+             echo -e "*Build URL* :- [LINK](${BUILD_URL}console)"
+             echo -e "*Build time* :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
              echo 
              echo -e "*Status* :- Passed ✅"
 	  } > "${msg}"
@@ -111,9 +111,9 @@ function upload_ftp() {
  	  {
              echo -e "🏷 *Build Completed*"
              echo 
-             echo -e "Device :- #${DEVICE}"
-             echo -e "Build URL :- [LINK](${BUILD_URL}console)"
-             echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
+             echo -e "*Device* :- #${DEVICE}"
+             echo -e "*Build URL* :- [LINK](${BUILD_URL}console)"
+             echo -e "*Build time* :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
              echo 
 	     echo -e "*Status* :- Failed ❌"
 	     echo -e "${DEVICE_MAINTAINERS} fix the error."
