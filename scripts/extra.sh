@@ -88,7 +88,7 @@ function upload_ftp() {
              echo -e "🏷 *Build Completed*"
              echo 
              echo -e "Device :- #${DEVICE}"
-             echo -e "Build URL :- [LINK](${BUILD_URL}/console)"
+             echo -e "Build URL :- [LINK](${BUILD_URL}console)"
              echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
              echo 
              echo -e "*Status* :- Passed ✅"
@@ -100,7 +100,7 @@ function upload_ftp() {
              echo -e "🏷 *Build Completed*"
              echo 
              echo -e "Device :- #${DEVICE}"
-             echo -e "Build URL :- [LINK](${BUILD_URL}/console)"
+             echo -e "Build URL :- [LINK](${BUILD_URL}console)"
              echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
              echo 
              echo -e "*Status* :- Passed ✅"
@@ -112,7 +112,7 @@ function upload_ftp() {
              echo -e "🏷 *Build Completed*"
              echo 
              echo -e "Device :- #${DEVICE}"
-             echo -e "Build URL :- [LINK](${BUILD_URL}/console)"
+             echo -e "Build URL :- [LINK](${BUILD_URL}console)"
              echo -e "Build time :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
              echo 
 	     echo -e "*Status* :- Failed ❌"
