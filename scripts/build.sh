@@ -27,13 +27,13 @@ function exports() {
 
 function use_ccache() {
     # CCACHE UMMM!!! Cooks my builds fast
-   if [ "$use_ccache" = "yes" ];
+   if [ "$use_ccache" = "true" ];
    then
       printf "CCACHE is enabled for this build"
       export USE_CCACHE=1
       export CCACHE_DIR=/home/subins/ccache/pixys
       prebuilts/misc/linux-x86/ccache/ccache -M 50G
-    elif [ "$use_ccache" = "clean" ];
+    elif [ "$use_ccache" = "false" ];
     then
        export CCACHE_DIR=/home/subins/ccache/pixys
        ccache -C
