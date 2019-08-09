@@ -21,14 +21,14 @@ function extras() {
 
 function build() {
    # Get information from build.json
-   fname=$(jq -r '.response.filename')
-   md5=$(jq -r '.response.id')
-   url=$(jq -r '.response.url)
+   fname=$(jq -r '.response.filename' <<< ${B_JSON})
+   md5=$(jq -r '.response.id' <<< ${B_JSON})
+   url=$(jq -r '.response.url' <<< ${B_JSON})
    
    # Get information from devices.json
-   name=$(jq -r '.response.filename)
-   murl=$(jq -r '.response.filename)
-   mname=$(jq -r '.response.filename)
+   name=$(jq -r '.response.filename' <<< ${D_JSON})
+   murl=$(jq -r '.response.filename' <<< ${D_JSON})
+   mname=$(jq -r '.response.filename' <<< ${D_JSON})
 }
 function post() {
    msg=$(mktemp)
@@ -49,4 +49,6 @@ function post() {
    
    MESSEGE=$(cat ${msg})
    TG "${MESSEGE}"
+   }
    
+ 
