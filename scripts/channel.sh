@@ -9,21 +9,31 @@
 #
 # PixysOS ROM building script.
 
-DEVICE=${1}
-sshpass -p "${spass}" ssh -p 5615 -o StrictHostKeyChecking=no root@pixys.shreejoydash.me
+function TG() {
+   curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001322414571&parse_mode=Markdown" > /dev/null
+}
 
-cd /home/ftp/uploads
+function extras() {
+   part1="\u003Ca href\u003D\x22"
+   part2="\x22\u003E"
+   part3="\u003C\u002Fa\u003E"
+}
 
-if [ -f .test/${DEVICE} ];
-then 
-   cd .test/${DEVICE}
-   mv PixysOS*.zip /home/ftp/uploads/${DEVICE}
-   cd /home/ftp
-   git clone https://github.com/PixysOS-Devices/official_devices temp
-   cd temp 
-   cd ${DEVICE}
-   cp /home/ftp/uploads/.test/${DEVICE}/${DEVICE}.json /home/ftp/temp/${DEVICE}
-   rm -rf build.json
-   mv ${DEVICE}.json build.json
-fi
-   
+function build() {
+   JSON=$(curl -s ${BJSON})
+}
+function post() {
+   {
+      echo -e "New PixysOS Update on $(date)"
+      echo
+      echo -e "⬇️ Download"
+      echo -e "${part1}${url}${part2}${zip}${part3}"
+      echo
+      echo -e "   📱Device: Asus Zenphone Max Pro M1"
+      echo -e "   ⚡️Build Version: v2.4"
+      echo -e "   ⚡️MD5: 2dcb0417f96333cc1506cda7c6a43322"
+      echo
+      echo -e "By: ${part1}${url}${part2}${zip}${part3}"
+      echo
+      echo -e "Join👉 ${part1}${url}${part2}${zip}${part3} | ${part1}${url}${part2}${zip}${part3}"
+   }
