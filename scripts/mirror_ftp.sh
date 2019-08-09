@@ -16,8 +16,6 @@ function TGlogs() {
 }
 
 function mirror() {
-   mkdir temp
-   cd temp
    git clone https://github.com/PixysOS-Devices/official_devices devices
    cd devices/${DEVICE}
    FILENAME=$(jq -r '.response[].filename' build.json)
@@ -27,8 +25,6 @@ function mirror() {
    export spass
    sshpass -p "${spass}" scp -o StrictHostKeyChecking=no "${ZIP}" pshreejoy15@frs.sourceforge.net:/home/frs/project/pixys-os/pie/${DEVICE}
    TGlogs "${FILENAME} has been mirrored to PixysOS [sourceforge portal](https://sourceforge.net/projects/pixys-os/files/pie/${DEVICE})"
-   cd ..
-   rm -rf temp
 }
 
 mirror
