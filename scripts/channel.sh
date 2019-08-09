@@ -20,20 +20,33 @@ function extras() {
 }
 
 function build() {
-   JSON=$(curl -s ${BJSON})
+   # Get information from build.json
+   fname=$(jq -r '.response.filename')
+   md5=$(jq -r '.response.id')
+   url=$(jq -r '.response.url)
+   
+   # Get information from devices.json
+   name=$(jq -r '.response.filename)
+   murl=$(jq -r '.response.filename)
+   mname=$(jq -r '.response.filename)
 }
 function post() {
+   msg=$(mktemp)
    {
       echo -e "New PixysOS Update on $(date)"
       echo
       echo -e "⬇️ Download"
-      echo -e "${part1}${url}${part2}${zip}${part3}"
+      echo -e "${part1}${url}${part2}${fname}${part3}"
       echo
-      echo -e "   📱Device: Asus Zenphone Max Pro M1"
+      echo -e "   📱Device: ${name}"
       echo -e "   ⚡️Build Version: v2.4"
-      echo -e "   ⚡️MD5: 2dcb0417f96333cc1506cda7c6a43322"
+      echo -e "   ⚡️MD5: ${md5}"
       echo
-      echo -e "By: ${part1}${url}${part2}${zip}${part3}"
+      echo -e "By: ${part1}${murl}${part2}${mname}${part3}"
       echo
-      echo -e "Join👉 ${part1}${url}${part2}${zip}${part3} | ${part1}${url}${part2}${zip}${part3}"
-   }
+      echo -e "Join👉 ${part1}@PixysOS${part2}https://t.me/PixysOS${part3} | ${part1}@PixysOS_chat${part2}https://t.me/PixysOS_chat${part3}"
+   } > "${msg}"
+   
+   MESSEGE=$(cat ${msg})
+   TG "${MESSEGE}"
+   
