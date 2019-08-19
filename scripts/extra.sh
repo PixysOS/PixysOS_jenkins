@@ -42,9 +42,14 @@ function TGlogs() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001322414571&parse_mode=Markdown" > /dev/null
 }
 
-#function to send messages on maintainers group
+# function to send messages on maintainers group
 function sendTG() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=Markdown" > /dev/null
+}
+
+# Additonal function to used in future versions
+function TG() {
+    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=${chat_id}&parse_mode=Markdown" > /dev/null
 }
 
 #function to connect to ssh 
