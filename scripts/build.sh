@@ -84,16 +84,15 @@ function clean_up() {
 function build_init() {
     rm -rf /home/pixys/source/json/"${DEVICE}".json
     rm -rf /home/pixys/source/devices_dep.json
-    DEPS=$(curl -s https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/master/devices_dep.json | jq --arg DEVICE "$DEVICE" '. | .[$DEVICE]')
-    #jq --arg DEVICE "$DEVICE" '. | .[$DEVICE]' /home/pixys/source/devices_dep.json > /home/pixys/source/json/"${DEVICE}".json
-    #export dep_count=$(jq length /home/pixys/source/json/${DEVICE}.json)
-    export dep_count=$(jq length <<< ${DEPS})
+    wget -O /home/pixys/source/devices_dep.json -q https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/master/devices_dep.json
+    jq --arg DEVICE "$DEVICE" '. | .[$DEVICE]' /home/pixys/source/devices_dep.json > /home/pixys/source/json/"${DEVICE}".json
+    export dep_count=$(jq length /home/pixys/source/json/${DEVICE}.json)
     printf "\n${UYellow}Cloning device specific dependencies \n\n${Color_Off}"
     for ((i=0;i<${dep_count};i++));
     do
-       repo_url=$(jq -r --argjson i "$i" '.[$i].url' <<< ${DEPS})
-       branch=$(jq -r --argjson i "$i" '.[$i].branch' <<< ${DEPS})
-       target=$(jq -r --argjson i "$i" '.[$i].target_path' /<<< ${DEPS})
+       repo_url=$(jq -r --argjson i "$i" '.[$i].url' /home/pixys/source/json/${DEVICE}.json)
+       branch=$(jq -r --argjson i "$i" '.[$i].branch' /home/pixys/source/json/${DEVICE}.json)
+       target=$(jq -r --argjson i "$i" '.[$i].target_path' /home/pixys/source/json/${DEVICE}.json)
        printf "\n>>> ${Blue}Cloning to $target...\n${Color_Off}\n"
        git clone --recurse-submodules --depth=1 --quiet $repo_url -b $branch $target
        printf "${Color_Off}"
