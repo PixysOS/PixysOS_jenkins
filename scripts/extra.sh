@@ -15,7 +15,7 @@ function build_json() {
    name=$(stat -c %n "${ZIP}" | sed 's/.*\///')
    filehash=$(md5sum "${ZIP}" | cut -d " " -f 1)
    size=$(cat "${ZIP}" | wc -c)
-   MAIN_URL="https://sourceforge.net/projects/pixys-os/files/pie/${DEVICE}/${ZIP}/download"
+   MAIN_URL="https://downloads.sourceforge.net/project/pixys-os/pie/${DEVICE}/${ZIP}"
    msg=$(mktemp)
    {
       echo -e "{"
