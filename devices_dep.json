@@ -29,7 +29,7 @@
       },
       {
          "url":"https://github.com/akhilnarang/beryllium",
-         "target_path":"beryllium",
+         "target_path":"kernel/xiaomi/beryllium",
          "branch":"pie"
       },
       {
