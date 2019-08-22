@@ -45,7 +45,7 @@
       {
          "url": "https://gitlab.com/PixelExperience/packages_apps_GoogleCameraMod",
          "target_path": "packages/apps/GoogleCameraMod",
-         "branch": "pie",
+         "branch": "pie"
       }
    ],
    "evert":[  
