@@ -41,6 +41,11 @@
          "url":"https://gitlab.com/amarbajpai/vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"xD"
+      },
+      {
+         "url": "https://gitlab.com/PixelExperience/packages_apps_GoogleCameraMod",
+         "target_path": "packages/apps/GoogleCameraMod",
+         "branch": "pie",
       }
    ],
    "evert":[  
