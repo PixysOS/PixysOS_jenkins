@@ -23,9 +23,9 @@
          "branch":"lineage-16.0"
       },
       {
-         "url":"https://github.com/LineageOS/android_device_xiaomi_sdm845-common",
+         "url":"https://github.com/AOSiP-Devices/device_xiaomi_sdm845-common",
          "target_path":"device/xiaomi/sdm845-common",
-         "branch":"lineage-16.0"
+         "branch":"pie"
       },
       {
          "url":"https://github.com/akhilnarang/beryllium",
