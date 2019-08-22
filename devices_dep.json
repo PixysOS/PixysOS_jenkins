@@ -298,60 +298,6 @@
          "branch":"pie"
       }
    ],
-   "jasmine_sprout":[  
-      {  
-         "url": "https://github.com/pqhaz/android_device_xiaomi_jasmine_sprout",
-         "target_path": "device/xiaomi/jasmine_sprout",
-         "branch": "pixys"
-      },
-      {  
-         "url": "https://github.com/pqhaz/vendor_xiaomi_MiuiCamera",
-         "target_path": "vendor/xiaomi/MiuiCamera",
-         "branch": "pie"
-      },
-      {  
-         "url": "https://github.com/LineageOS/android_packages_resources_devicesettings",
-         "target_path": "packages/resources/devicesettings",
-         "branch": "lineage-16.0"
-      },
-      {  
-         "url": "https://github.com/pqhaz/vendor_xiaomi_jasmine_sprout",
-         "target_path": "vendor/xiaomi/jasmine_sprout",
-         "branch": "pie"
-      },
-      {  
-         "url": "https://github.com/pqhaz/kernel_xiaomi_jasmine_sprout",
-         "target_path": "kernel/xiaomi/jasmine_sprout",
-         "branch": "pie"
-      }
-   ],
-   "vince":[  
-      {  
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_vince",
-         "target_path":"device/xiaomi/vince",
-         "branch":"pixy"
-      },
-      {  
-         "url":"https://github.com/thephotogenicbug/android_device_xiaomi_msm8953-common",
-         "target_path":"device/xiaomi/msm8953-common",
-         "branch":"pie"
-      },
-      {  
-         "url":"https://github.com/BeastRoms-Devices/kernel_xiaomi_vince",
-         "target_path":"kernel/xiaomi/msm8953",
-         "branch":"lineage-16.0"
-      },
-      {  
-         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
-         "target_path":"packages/resources/devicesettings",
-         "branch":"lineage-16.0"
-      },
-      {  
-         "url":"https://github.com/thephotogenicbug/vendor_xiaomi_4.9",
-         "target_path":"vendor/xiaomi",
-         "branch":"pixy"
-      }
-   ],
    "whyred":[
       {
          "url":"https://github.com/PixysOS-Devices/android_device_xiaomi_whyred",
