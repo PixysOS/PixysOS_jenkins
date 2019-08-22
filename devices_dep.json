@@ -16,6 +16,33 @@
          "branch":"pie"
       }
    ],
+   "beryllium":[
+      {
+         "url":"https://github.com/AxelBlaz3/android_device_xiaomi_beryllium",
+         "target_path":"device/xiaomi/beryllium",
+         "branch":"lineage-16.0"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_device_xiaomi_sdm845-common",
+         "target_path":"device/xiaomi/sdm845-common",
+         "branch":"lineage-16.0"
+      },
+      {
+         "url":"https://github.com/akhilnarang/beryllium",
+         "target_path":"beryllium",
+         "branch":"pie"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      },
+      {
+         "url":"https://gitlab.com/amarbajpai/vendor_xiaomi",
+         "target_path":"vendor/xiaomi",
+         "branch":"xD"
+      }
+   ],
    "evert":[  
       {  
          "url":"https://github.com/Evert-Dev/proprietary_vendor_motorola_evert",
