@@ -23,9 +23,9 @@
          "branch":"dev"
       },
       {
-         "url":"https://github.com/AxelBlaz3/device_xiaomi_sdm845-common",
+         "url":"https://github.com/AxelBlaz3/android_device_xiaomi_sdm845-common",
          "target_path":"device/xiaomi/sdm845-common",
-         "branch":"pie"
+         "branch":"lineage-16.0"
       },
       {
          "url":"https://github.com/akhilnarang/beryllium",
