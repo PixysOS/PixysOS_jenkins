@@ -38,9 +38,9 @@
          "branch":"lineage-16.0"
       },
       {
-         "url":"https://gitlab.com/amarbajpai/vendor_xiaomi",
+         "url":"https://gitlab.com/AxelBlaz3/proprietary_vendor_xiaomi",
          "target_path":"vendor/xiaomi",
-         "branch":"xD"
+         "branch":"pie-sdm845"
       },
       {
          "url": "https://gitlab.com/PixelExperience/packages_apps_GoogleCameraMod",
