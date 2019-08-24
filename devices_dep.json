@@ -41,11 +41,6 @@
          "url":"https://gitlab.com/AxelBlaz3/proprietary_vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"pie-sdm845"
-      },
-      {
-         "url": "https://gitlab.com/PixelExperience/packages_apps_GoogleCameraMod",
-         "target_path": "packages/apps/GoogleCameraMod",
-         "branch": "pie"
       }
    ],
    "evert":[  
