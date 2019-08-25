@@ -356,7 +356,7 @@
       {  
          "url":"https://github.com/aswin7469/android_kernel_zuk_msm8996",
          "target_path":"kernel/zuk/msm8996",
-         "branch":"pixys-hmp"
+         "branch":"pie-rebase"
       },
       {  
          "url":"https://github.com/aswin7469/device_zuk_msm8996-common",
