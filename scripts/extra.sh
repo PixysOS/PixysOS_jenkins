@@ -39,12 +39,12 @@ function build_json() {
 
 # function to store logs
 function TGlogs() {
-    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001322414571&parse_mode=Markdown" > /dev/null
+    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001322414571&parse_mode=HTML" > /dev/null
 }
 
 # function to send messages on maintainers group
 function sendTG() {
-    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=Markdown" > /dev/null
+    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=HTML" > /dev/null
 }
 
 # Additonal function to used in future versions
@@ -90,37 +90,37 @@ function upload_ftp() {
          scpc "${ZIP}"
          scpc "${JSON}"
 	 {
-             echo -e "🏷 *Build Completed*"
-             echo 
-             echo -e "*Device* :- #${DEVICE}"
-             echo -e "*Build URL* :- [LINK](${BUILD_URL}console)"
-             echo -e "*Build time* :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
-             echo 
-             echo -e "*Status* :- Passed ✅"
-	     echo -e "⬇️[Download](${DL_LINK})"
+	     echo "🏷 <b>Build Completed</b>"
+   	     echo 
+   	     echo "<b>Device</b> :- #${DEVICE}"
+   	     echo "<b>Build URL</b> :- <a href=\"${BUILD_URL}console\">LINK</a>"
+   	     echo "<b>Build time</b> :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
+   	     echo
+   	     echo "<b>Status</b> :- Passed ✅"
+   	     echo "⬇️ <a href=\"${DL_LINK}console\">Download</a>"
 	  } > "${msg}"
        elif [ "$upload" == "false" ]
        then
  	 {
-             echo -e "🏷 *Build Completed*"
-             echo 
-             echo -e "*Device* :- #${DEVICE}"
-             echo -e "*Build URL* :- [LINK](${BUILD_URL}console)"
-             echo -e "*Build time* :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
-             echo 
-             echo -e "*Status* :- Passed ✅"
+	     echo "🏷 <b>Build Completed</b>"
+   	     echo 
+   	     echo "<b>Device</b> :- #${DEVICE}"
+   	     echo "<b>Build URL</b> :- <a href=\"${BUILD_URL}console\">LINK</a>"
+   	     echo "<b>Build time</b> :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
+   	     echo
+   	     echo "<b>Status</b> :- Passed ✅"
 	  } > "${msg}"
        fi
     elif [ "$status" == "failed" ]
     then
  	  {
-             echo -e "🏷 *Build Completed*"
-             echo 
-             echo -e "*Device* :- #${DEVICE}"
-             echo -e "*Build URL* :- [LINK](${BUILD_URL}console)"
-             echo -e "*Build time* :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
-             echo 
-	     echo -e "*Status* :- Failed ❌"
+	     echo "🏷 <b>Build Completed</b>"
+   	     echo 
+   	     echo "<b>Device</b> :- #${DEVICE}"
+   	     echo "<b>Build URL</b> :- <a href=\"${BUILD_URL}console\">LINK</a>"
+   	     echo "<b>Build time</b> :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
+   	     echo
+	     echo -e "<b>Status</b> :- Failed ❌"
 	     echo -e "${DEVICE_MAINTAINERS} fix the error."
 	  } > "${msg}"
    fi
