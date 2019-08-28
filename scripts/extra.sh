@@ -39,7 +39,14 @@ function build_json() {
 
 # function to store logs
 function TGlogs() {
-    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001322414571&parse_mode=HTML" > /dev/null
+    args=$#
+    if [ "${args}" == "1" ]
+    then
+       curl -d '{"chat_id":7455490, "text":"'"${1}"'", "reply_markup": {"inline_keyboard": [[{"text":"Build URL", "url": "'"${BUILD_URL}"'"}]]} }' -H "Content-Type: application/json" -X POST https://api.telegram.org/bot${bottoken}/sendMessage
+    elif [ "${args}" == "2" ]
+    then
+       curl -d '{"chat_id":7455490, "text":"'"${1}"'", "reply_markup": {"inline_keyboard": [[{"text":"Build URL", "url": "'"${BUILD_URL}"'"}],[{"text":"⬇️ Download", "url": "'"${DL_LINK}"'"}]]} }' -H "Content-Type: application/json" -X POST https://api.telegram.org/bot${bottoken}/sendMessage
+    fi
 }
 
 # function to send messages on maintainers group
