@@ -97,7 +97,7 @@ function upload_ftp() {
    	     echo "<b>Build time</b> :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
    	     echo
    	     echo "<b>Status</b> :- Passed ✅"
-   	     echo "⬇️ <a href=\"${DL_LINK}console\">Download</a>"
+   	     echo "⬇️ <a href=\"${DL_LINK}\">Download</a>"
 	  } > "${msg}"
        elif [ "$upload" == "false" ]
        then
