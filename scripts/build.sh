@@ -117,8 +117,8 @@ function build_main() {
     source build/envsetup.sh
     lunch pixys_${DEVICE}-userdebug
     printf "${BICyan}Starting build for ${DEVICE}${Color_Off}"
-    TGlogs "Starting build for [$DEVICE]($BUILD_URL) on ${NODE_NAME}"
-    sendTG "Starting build for [$DEVICE]($BUILD_URL) on ${NODE_NAME}"
+    TGlogs "Starting build for <a href=\"${BUILD_URL}\">${DEVICE}</a> on ${NODE_NAME}"
+    sendTG "Starting build for <a href=\"${BUILD_URL}\">${DEVICE}</a> on ${NODE_NAME}"
     make bacon -j24
     BUILD_END=$(date +"%s")
     BUILD_TIME=$(date +"%Y%m%d-%T")
