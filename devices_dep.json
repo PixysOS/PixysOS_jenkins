@@ -268,7 +268,7 @@
       {  
          "url":"https://github.com/Dhruvgera/RockstarKernel_r4x",
          "target_path":"kernel/xiaomi/msm8937",
-         "branch":"rom-non_oc"
+         "branch":"v7-non_oc"
       }
    ],
    "tissot":[  
