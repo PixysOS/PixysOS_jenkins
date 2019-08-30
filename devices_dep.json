@@ -307,7 +307,7 @@
       {
          "url":"https://github.com/Sajidjnl/vendor_xiaomi_whyred",
          "target_path":"vendor/xiaomi/whyred",
-         "branch":"pie"
+         "branch":"9.0"
       },
       {
          "url":"https://github.com/srfarias/kernel_xiaomi_whyred",
