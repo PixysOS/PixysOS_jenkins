@@ -18,12 +18,12 @@
    ],
    "beryllium":[
       {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_beryllium",
+         "url":"https://github.com/AxelBlaz3/android_device_xiaomi_beryllium",
          "target_path":"device/xiaomi/beryllium",
          "branch":"lineage-16.0"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sdm845-common",
+         "url":"https://github.com/AxelBlaz3/android_device_xiaomi_sdm845-common",
          "target_path":"device/xiaomi/sdm845-common",
          "branch":"lineage-16.0"
       },
@@ -41,11 +41,6 @@
          "url":"https://gitlab.com/AxelBlaz3/proprietary_vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"pie-sdm845"
-      },
-      {
-         "url": "https://gitlab.com/PixelExperience/packages_apps_GoogleCameraMod",
-         "target_path": "packages/apps/GoogleCameraMod",
-         "branch": "pie"
       }
    ],
    "evert":[  
