@@ -11,21 +11,21 @@
 
 command="$1"
 
-if [ "$command" = "Repo Initialization" ];
+if [ "$command" == "Repo Initialization" ];
    then
-       export repo=.repo;
+       export repo=".repo"
        if [ ! -d "$repo" ];
        then
              echo -e "Initializing The Repo"
              repo init -u https://github.com/PixysOS/manifest.git -b pie
-             wait
+             sleep 5
              echo -e "Repo has been Initialized, please sync the source"
 	   fi
 	   echo -e "Repo Already Initialized, please Remove the .repo Directory or Just Start Sync The Source";
 fi
 
 
-if [ "$command" = "Json" ];
+if [ "$command" == "Json" ];
    then
        export DIRECTORY=json;
        if [ ! -d "$DIRECTORY" ];
@@ -37,7 +37,7 @@ if [ "$command" = "Json" ];
 	   echo -e "json Directory Already Exist, Exiting Now.";
 fi
 
-if [ "$command" = "Sync Source" ];
+if [ "$command" == "Sync Source" ];
    then
         echo -e "Syncing Source, will take Little Time."
 		repo sync --force-sync -j48 --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune
@@ -45,7 +45,7 @@ if [ "$command" = "Sync Source" ];
 		echo "Source Synced Successfully"
 fi
 
-if [ "$command" = "Sync Source and Json" ];
+if [ "$command" == "Sync Source and Json" ];
    then
         echo -e "Syncing Source, will take Little Time."
 		repo sync --force-sync -j48 --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune
