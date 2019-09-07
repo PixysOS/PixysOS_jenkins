@@ -177,12 +177,12 @@
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_rosy",
          "target_path":"device/xiaomi/rosy",
-         "branch":"pie"
+         "branch":"pie-test"
       },
       {  
-         "url":"https://github.com/shreejoy/android_kernel_xiaomi_rosy-1",
+         "url":"https://gitlab.com/pshreejoy15/nano-kernel",
          "target_path":"kernel/xiaomi/msm8953",
-         "branch":"p-318"
+         "branch":"pie-test"
       },
       {  
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
