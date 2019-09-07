@@ -177,7 +177,7 @@
       {  
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_rosy",
          "target_path":"device/xiaomi/rosy",
-         "branch":"pie-test"
+         "branch":"pie-test-1"
       },
       {  
          "url":"https://gitlab.com/pshreejoy15/nano-kernel",
