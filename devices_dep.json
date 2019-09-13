@@ -307,12 +307,12 @@
       {
          "url":"https://github.com/Sajidjnl/vendor_xiaomi_whyred",
          "target_path":"vendor/xiaomi/whyred",
-         "branch":"9.0"
+         "branch":"pie"
       },
       {
-         "url":"https://github.com/srfarias/kernel_xiaomi_whyred",
+         "url":"https://github.com/Sajidjnl/kernel_xiaomi_whyred",
          "target_path":"kernel/xiaomi/whyred",
-         "branch":"new-caf-pie"
+         "branch":"pie"
       },
       {
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
