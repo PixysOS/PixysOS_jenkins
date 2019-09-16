@@ -20,12 +20,12 @@
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_beryllium",
          "target_path":"device/xiaomi/beryllium",
-         "branch":"lineage-16.0"
+         "branch":"android-9"
       },
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_sdm845-common",
          "target_path":"device/xiaomi/sdm845-common",
-         "branch":"lineage-16.0"
+         "branch":"android-9"
       },
       {
          "url":"https://github.com/akhilnarang/beryllium",
