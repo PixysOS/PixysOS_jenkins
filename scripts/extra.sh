@@ -73,6 +73,7 @@ function deldog() {
     KEY=$(jq -r .key <<< "${RESULT}")
     DEL_NORM="https://del.dog/${KEY}"
     DEL_RAW="https://del.dog/raw/${KEY}"
+    echo "{DEL_RAW}"
 }
 
 function upload_ftp() {
