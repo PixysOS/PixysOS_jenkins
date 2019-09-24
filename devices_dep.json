@@ -342,6 +342,28 @@
          "branch":"pie"
       }
    ],
+   "ysl":[  
+      {  
+         "url":"https://github.com/Reynold29/ysl_device_tree_pixys.git",
+         "target_path":"device/xiaomi/ysl",
+         "branch":"pixys-9.x"
+      },
+      {  
+         "url":"https://github.com/Reynold29/vendor_xiaomi_ysl.git",
+         "target_path":"vendor/xiaomi",
+         "branch":"lineage-16.0"
+      },
+      {  
+         "url":"https://github.com/Reynold29/kernel_xiaomi_msm8953-ysl.git",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"lineage-16.0"
+      },
+      {  
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-16.0"
+      }
+   ],
    "z2_plus":[  
       {  
          "url":"https://github.com/PixysOS-Devices/device_zuk_z2_plus",
