@@ -17,7 +17,7 @@ then
    if [ ! -d "$repo" ];
    then
       echo -e "Initializing The Repo"
-      repo init -u https://github.com/PixysOS/manifest.git -b pie
+      repo init -u https://github.com/PixysOS/manifest.git -b ten
       sleep 5
       echo -e "Repo has been Initialized, please sync the source"
    fi
