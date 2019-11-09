@@ -32,15 +32,15 @@ function use_ccache() {
       printf "CCACHE is enabled for this build"
       export CCACHE_EXEC=$(which ccache)
       export USE_CCACHE=1
-      export CCACHE_DIR=/home/subins/ccache/pixys
-      ccache -M 50G
+      export CCACHE_DIR=/home/ccache/pixys
+      ccache -M 75G
     elif [ "$use_ccache" = "false" ];
     then
        export CCACHE_EXEC=$(which ccache)
-       export CCACHE_DIR=/home/subins/ccache/pixys
+       export CCACHE_DIR=/home/ccache/pixys
        ccache -C
        export USE_CCACHE=1
-       ccache -M 50G
+       ccache -M 75G
        wait
        printf "CCACHE Cleared"
     fi
@@ -53,6 +53,7 @@ function edition() {
        export BUILD_WITH_GAPPS=true
    fi
 
+  # Non-Gapps Edition
    if [ "$pixys_edition" == "NON GAPPS" ];
    then
        export BUILD_WITH_GAPPS=false
