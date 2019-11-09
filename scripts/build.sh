@@ -14,12 +14,12 @@ function exports() {
    export PIXYS_BUILD_PATH=/home/pixys/source
    export PIXYS_BUILD_TYPE=OFFICIAL
    export KBUILD_BUILD_HOST="PixysBuildBot"
-   export DJSON=$(curl -s https://raw.githubusercontent.com/PixysOS-Devices/official_devices/master/devices.json)
+   export DJSON=$(curl -s https://raw.githubusercontent.com/PixysOS-Devices/official_devices/ten/devices.json)
    export DEVICE_MAINTAINERS=$(jq -r --arg DEVICE "$DEVICE" '.[] | select(.codename==$DEVICE) | .maintainer_name' <<< ${DJSON}) # The maintainer of that device
    if [ -z ${DEVICE_MAINTAINERS} ];
    then
-      sendTG "${DEVICE} maintainer name not found probably device is not listed official" 
-      TGlogs "${DEVICE} maintainer name not found probably device is not listed official" 
+      sendTG "${DEVICE} maintainer name not found probably device is not listed official"
+      TGlogs "${DEVICE} maintainer name not found probably device is not listed official"
       exit 1
    fi
    export KBUILD_BUILD_USER=${DEVICE_MAINTAINERS}
@@ -30,15 +30,17 @@ function use_ccache() {
    if [ "$use_ccache" = "true" ];
    then
       printf "CCACHE is enabled for this build"
+      export CCACHE_EXEC=$(which ccache)
       export USE_CCACHE=1
       export CCACHE_DIR=/home/subins/ccache/pixys
-      prebuilts/misc/linux-x86/ccache/ccache -M 50G
+      ccache -M 50G
     elif [ "$use_ccache" = "false" ];
     then
+       export CCACHE_EXEC=$(which ccache)
        export CCACHE_DIR=/home/subins/ccache/pixys
        ccache -C
        export USE_CCACHE=1
-       prebuilts/misc/linux-x86/ccache/ccache -M 50G
+       ccache -M 50G
        wait
        printf "CCACHE Cleared"
     fi
@@ -84,7 +86,7 @@ function clean_up() {
 function build_init() {
     rm -rf /home/pixys/source/json/"${DEVICE}".json
     rm -rf /home/pixys/source/devices_dep.json
-    wget -O /home/pixys/source/devices_dep.json -q https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/master/devices_dep.json
+    wget -O /home/pixys/source/devices_dep.json -q https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/ten/devices_dep.json
     jq --arg DEVICE "$DEVICE" '. | .[$DEVICE]' /home/pixys/source/devices_dep.json > /home/pixys/source/json/"${DEVICE}".json
     export dep_count=$(jq length /home/pixys/source/json/${DEVICE}.json)
     printf "\n${UYellow}Cloning device specific dependencies \n\n${Color_Off}"
@@ -143,7 +145,7 @@ function build_end() {
    fi
 }
 
-wget -O /home/pixys/source/extra.sh https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/master/scripts/extra.sh
+wget -O /home/pixys/source/extra.sh https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/ten/scripts/extra.sh
 source /home/pixys/source/extra.sh
 DEVICE="$1" # Enter the codename of the device
 use_ccache="$2" # Ccache time
