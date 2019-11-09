@@ -46,6 +46,19 @@ function use_ccache() {
     fi
 }
 
+function edition() {
+  # Gapps Edition
+   if [ "$pixys_edition" == "GAPPS" ];
+   then
+       export BUILD_WITH_GAPPS=true
+   fi
+
+   if [ "$pixys_edition" == "NON GAPPS" ];
+   then
+       export BUILD_WITH_GAPPS=false
+   fi
+}
+
 function clean_up() {
   # Its Clean Time
    if [ "$make_clean" = "true" ]
@@ -126,8 +139,7 @@ function build_main() {
     BUILD_TIME=$(date +"%Y%m%d-%T")
     DIFF=$((BUILD_END - BUILD_START))
 }
-   
-	  
+
 function build_end() {
    if [ -f /home/pixys/source/out/target/product/$DEVICE/PixysOS*.zip ]
    then
@@ -149,12 +161,14 @@ wget -O /home/pixys/source/extra.sh https://raw.githubusercontent.com/PixysOS/Pi
 source /home/pixys/source/extra.sh
 DEVICE="$1" # Enter the codename of the device
 use_ccache="$2" # Ccache time
-clean_device="$3" # if the device is different from last one
-make_clean="$4" # make a clean build or not 
-upload="$5"
+pixys_edition="$3" # Build Either GAPPS Edition or Non GAPPS Edition
+clean_device="$4" # if the device is different from last one
+make_clean="$5" # make a clean build or not 
+upload="$6"
 
 exports
 use_ccache
+edition
 clean_up
 build_main
 upload_ftp
