@@ -15,5 +15,22 @@
          "target_path":"vendor/asus",
          "branch":"ten"
       }
+   ],
+     "ysl":[
+      {
+         "url":"git@github.com:mahajant99/device_xiaomi_ysl",
+         "target_path":"device/xiaomi/ysl",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/mahajant99/kernel_xiaomi_msm8953-ysl",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"lineage-17.0"
+      },
+      {
+         "url":"https://github.com/mahajant99/vendor_xiaomi_ysl",
+         "target_path":"vendor/xiaomi",
+         "branch":"lineage-17.0"
+      }
    ]
 }
