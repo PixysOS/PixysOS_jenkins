@@ -1,4 +1,21 @@
 {
+     "santoni":[
+      {
+         "url":"git@github.com:bionicBUG/android_device_xiaomi_santoni",
+         "target_path":"device/xiaomi/santoni",
+         "branch":"ten"
+      },
+      {
+         "url":"git@github.com:bionicBUG/android_vendor_xiaomi_santoni",
+         "target_path":"vendor/xiaomi",
+         "branch":"ten"
+      },
+      {
+         "url":"git@github.com:Dhruvgera/RockstarKernel_r4x",
+         "target_path":"kernel/xiaomi/msm8937",
+         "branch":"rom-non_oc"
+      }
+   ],
      "X00TD":[
       {
          "url":"git@github.com:Subinsmani/device_asus_X00TD",
