@@ -44,7 +44,7 @@ function TGlogs() {
 
 # function to send messages on maintainers group
 function sendTG() {
-    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001239809576&parse_mode=HTML" > /dev/null
+    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001144148166&parse_mode=HTML" > /dev/null
 }
 
 # Additonal function to used in future versions
