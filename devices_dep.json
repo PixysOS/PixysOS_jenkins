@@ -49,5 +49,27 @@
          "target_path":"vendor/xiaomi",
          "branch":"lineage-17.0"
       }
+   ],
+     "sakura":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sakura",
+         "target_path":"device/xiaomi/sakura",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common-sakura",
+         "target_path":"device/xiaomi/msm8953-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_msm8953-sakura",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_sakura",
+         "target_path":"vendor/xiaomi",
+         "branch":"ten"
+      }
    ]
 }
