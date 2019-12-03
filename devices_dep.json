@@ -92,6 +92,11 @@
          "url":"https://github.com/PixysOS-Devices/vendor_zuk",
          "target_path":"vendor/zuk",
          "branch":"ten"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-17.0"
       }
    ]
 }
