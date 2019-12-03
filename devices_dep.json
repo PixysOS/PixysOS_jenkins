@@ -112,7 +112,7 @@
       },
       {
          "url":"git@github.com:uditkarode/crimson",
-         "target_path":"kernel/xiaomi/sm8150",
+         "target_path":"kernel/xiaomi/sm6150",
          "branch":"ten-minimal"
       },
       {
