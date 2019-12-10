@@ -23,9 +23,9 @@
          "branch":"ten"
       },
       {
-         "url":"git@github.com:Subinsmani/kernel_asus_sdm660",
+         "url":"git@github.com:SagarMakhar/kernel_asus_sdm660.git",
          "target_path":"kernel/asus/sdm660",
-         "branch":"ten"
+         "branch":"lineage-17.0"
       },
       {
          "url":"git@github.com:Subinsmani/proprietary_vendor_asus",
