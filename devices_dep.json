@@ -98,5 +98,27 @@
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-17.0"
       }
+   ],
+     "violet":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_violet",
+         "target_path":"device/xiaomi/violet",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_sm6150",
+         "target_path":"kernel/xioami/sm6150",
+         "branch":"ten-minimal"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_violet",
+         "target_path":"vendor/xiaomi/violet",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-17.0"
+      }
    ]
 }
