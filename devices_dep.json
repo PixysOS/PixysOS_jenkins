@@ -120,5 +120,37 @@
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-17.0"
       }
+   ],
+     "tissot":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_tissot",
+         "target_path":"device/xiaomi/tissot",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common",
+         "target_path":"device/xiaomi/msm8953-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_msm8953",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/proprietary_vendor_xiaomi",
+         "target_path":"vendor/xiaomi",
+         "branch":"tissot"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-17.0"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_device_qcom_sepolicy.git",
+         "target_path":"device/qcom/sepolicy-legacy-um",
+         "branch":"lineage-17.0-legacy-um"
+      }
    ]
 }
