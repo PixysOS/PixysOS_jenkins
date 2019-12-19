@@ -152,5 +152,27 @@
          "target_path":"device/qcom/sepolicy-legacy-um",
          "branch":"lineage-17.0-legacy-um"
       }
+   ],
+     "mido":[
+      {
+         "url":"https://github.com/shashank1436/lol.git",
+         "target_path":"device/xiaomi/mido",
+         "branch":"pixys"
+      },
+      {
+         "url":"https://github.com/shashank1436/proprietary_vendor_xiaomi-1.git",
+         "target_path":"vendor/xiaomi",
+         "branch":"q10x"
+      },
+      {
+         "url":"https://github.com/shashank1436/android_kernel_xiaomi_mido.git",
+         "target_path":"kernel/xiaomi/mido",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
+         "target_path":"packages/resources/devicesettings",
+         "branch":"lineage-17.0"
+      }
    ]
 }
