@@ -165,9 +165,9 @@
          "branch":"ten"
       },
       {
-         "url":"git@github.com:shashank1436/vendor_xiaomi.git",
+         "url":"git@github.com:shashank1436/proprietary_vendor_xiaomi.git",
          "target_path":"vendor/xiaomi",
-         "branch":"q10x"
+         "branch":"final"
       },
       {
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
