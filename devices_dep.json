@@ -167,7 +167,7 @@
       {
          "url":"git@github.com:shashank1436/proprietary_vendor_xiaomi.git",
          "target_path":"vendor/xiaomi",
-         "branch":"final"
+         "branch":"seplocy"
       },
       {
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
