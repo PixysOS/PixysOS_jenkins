@@ -108,7 +108,7 @@
       {
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_sm6150",
          "target_path":"kernel/xiaomi/sm6150",
-         "branch":"ten-minimal"
+         "branch":"ten"
       },
       {
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_violet",
