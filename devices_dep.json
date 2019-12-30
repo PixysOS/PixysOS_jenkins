@@ -155,9 +155,9 @@
    ],
      "mido":[
       {
-         "url":"git@github.com:shashank1436/device_xiaomi_mido.git",
+         "url":"https://github.com/shashank1436/android_device_xiaomi_mido.git",
          "target_path":"device/xiaomi/mido",
-         "branch":"pixys"
+         "branch":"ten"
       },
       {
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_mido",
@@ -165,9 +165,9 @@
          "branch":"ten"
       },
       {
-         "url":"git@github.com:shashank1436/proprietary_vendor_xiaomi.git",
+         "url":"https://github.com/shashank1436/proprietary_vendor_xiaomi-1.git",
          "target_path":"vendor/xiaomi",
-         "branch":"sepolicy"
+         "branch":"ten"
       },
       {
          "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
