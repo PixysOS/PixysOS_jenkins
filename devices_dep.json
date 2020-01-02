@@ -174,5 +174,27 @@
          "target_path":"packages/resources/devicesettings",
          "branch":"lineage-17.0"
       }
+   ],
+     "whyred":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_whyred.git",
+         "target_path":"device/xiaomi/whyred",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_whyred",
+         "target_path":"kernel/xiaomi/whyred",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_whyred.git",
+         "target_path":"vendor/xiaomi/whyred",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/Sweeto143/vendor_xiaomi_MiuiCamera.git",
+         "target_path":"vendor/xiaomi/MiuiCamera",
+         "branch":"ten"
+      }
    ]
 }
