@@ -61,7 +61,7 @@ function sshc() {
 #function to make scp upload
 function scpc() {
   export spass
-  sshpass -p "${spass}" scp -P 5615 -o StrictHostKeyChecking=no "${1}" root@pixys.shreejoydash.me:/home/ftp/uploads/.test/"${DEVICE}"
+  sshpass -p "${spass}" scp -P 5615 -o StrictHostKeyChecking=no "${1}" root@jenkins2.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"
 }
 
 # Function to upload to del.dog
