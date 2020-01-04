@@ -168,11 +168,6 @@
          "url":"https://github.com/shashank1436/proprietary_vendor_xiaomi-1.git",
          "target_path":"vendor/xiaomi",
          "branch":"ten"
-      },
-      {
-         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
-         "target_path":"packages/resources/devicesettings",
-         "branch":"lineage-17.0"
       }
    ],
      "whyred":[
