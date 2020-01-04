@@ -92,11 +92,6 @@
          "url":"https://github.com/PixysOS-Devices/vendor_zuk",
          "target_path":"vendor/zuk",
          "branch":"ten"
-      },
-      {
-         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
-         "target_path":"packages/resources/devicesettings",
-         "branch":"lineage-17.0"
       }
    ],
      "violet":[
@@ -114,11 +109,6 @@
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_violet",
          "target_path":"vendor/xiaomi/violet",
          "branch":"ten"
-      },
-      {
-         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
-         "target_path":"packages/resources/devicesettings",
-         "branch":"lineage-17.0"
       }
    ],
      "tissot":[
@@ -141,16 +131,6 @@
          "url":"https://github.com/PixysOS-Devices/proprietary_vendor_xiaomi",
          "target_path":"vendor/xiaomi",
          "branch":"tissot"
-      },
-      {
-         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
-         "target_path":"packages/resources/devicesettings",
-         "branch":"lineage-17.0"
-      },
-      {
-         "url":"https://github.com/LineageOS/android_device_qcom_sepolicy.git",
-         "target_path":"device/qcom/sepolicy-legacy-um",
-         "branch":"lineage-17.0-legacy-um"
       }
    ],
      "mido":[
