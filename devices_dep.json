@@ -171,5 +171,22 @@
          "target_path":"vendor/xiaomi/MiuiCamera",
          "branch":"ten"
       }
+   ],
+    "onclite":[
+      {
+         "url":"https://github.com/AbhinandAK350/device_xiaomi_onclite.git",
+         "target_path":"device/xiaomi/onclite",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/AbhinandAK350/kernel_xiaomi_onclite.git",
+         "target_path":"kernel/xiaomi/onclite",
+         "branch":"stock-q"
+      },
+      {
+         "url":"https://github.com/AbhinandAK350/vendor_xiaomi_onclite.git",
+         "target_path":"vendor/xiaomi/onclite",
+         "branch":"ten"
+      }
    ]
 }
