@@ -171,5 +171,22 @@
          "target_path":"vendor/xiaomi/MiuiCamera",
          "branch":"ten"
       }
+   ],
+    "onclite":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_onclite.git",
+         "target_path":"device/xiaomi/onclite",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_onclite.git",
+         "target_path":"kernel/xiaomi/onclite",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_onclite.git",
+         "target_path":"vendor/xiaomi/onclite",
+         "branch":"ten"
+      }
    ]
 }
