@@ -187,6 +187,11 @@
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_onclite.git",
          "target_path":"vendor/xiaomi/onclite",
          "branch":"ten"
+      },
+      {
+         "url":"https://github.com/AbhinandAK350/vendor_MiuiCamera.git",
+         "target_path":"vendor/MiuiCamera",
+         "branch":"xq-onclite"
       }
    ]
 }
