@@ -188,5 +188,22 @@
          "target_path":"vendor/xiaomi/onclite",
          "branch":"ten"
       }
+   ],
+    "sanders":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_motorola_sanders.git",
+         "target_path":"device/motorola/sanders",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_motorola_sanders.git",
+         "target_path":"vendor/motorola/sanders",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_motorola_msm8953.git",
+         "target_path":"kernel/motorola/msm8953",
+         "branch":"ten"
+     }   
    ]
 }
