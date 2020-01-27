@@ -204,6 +204,23 @@
          "url":"https://github.com/PixysOS-Devices/kernel_motorola_msm8953.git",
          "target_path":"kernel/motorola/msm8953",
          "branch":"ten"
-     }   
+     }
+   ],
+    "riva":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_riva.git",
+         "target_path":"device/xiaomi/riva",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi.git",
+         "target_path":"vendor/xiaomi",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_msm8917.git",
+         "target_path":"kernel/xiaomi/msm8917",
+         "branch":"ten"
+     }
    ]
 }
