@@ -40,6 +40,7 @@ function exit-process() {
 }
 
 function log() {
+   echo "${*}"
    echo "${*}" > "${log_file}"
 }
 
