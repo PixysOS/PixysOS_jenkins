@@ -9,23 +9,6 @@
 #
 # PixysOS ROM building script.
 
-function remove-users() {
-   [[ -z $users ]] && log "User add process aborted as users variable is empty" && exit 1
-   while IFS= read -r user
-   do
-      user=$(echo -e "${user}" | tr -d '[:space:]')
-	  response=$(curl -s https://api.github.com/users/"$user")
-	  check=$(jq -r '.message' <<< "$response")
-	  verify=$(jq -r '.login' <<< "$response")
-	  if [[ $check != "Not Found" ]] && [[ $verify == "$user" ]]  && [[ -n $user ]]
-	  then
-	     response=$(curl -X DELETE -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
-	  else
-	     log "Fatal error: $user could not be removed from $repo_name"
-	  fi
-   done <<< "$users"
-}
-
 function telegram() {
    curl -s "https://api.telegram.org/bot${telegram_bot_token}/sendmessage" --data "text=${*}&chat_id=${chat_id}&parse_mode=HTML" > /dev/null  
 }  
@@ -126,6 +109,24 @@ function add-users() {
 	  fi
    done <<< "$users"
 }
+
+function remove-users() {
+   [[ -z $users ]] && log "User add process aborted as users variable is empty" && exit 1
+   while IFS= read -r user
+   do
+      user=$(echo -e "${user}" | tr -d '[:space:]')
+	  response=$(curl -s https://api.github.com/users/"$user")
+	  check=$(jq -r '.message' <<< "$response")
+	  verify=$(jq -r '.login' <<< "$response")
+	  if [[ $check != "Not Found" ]] && [[ $verify == "$user" ]]  && [[ -n $user ]]
+	  then
+	     response=$(curl -X DELETE -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
+	  else
+	     log "Fatal error: $user could not be removed from $repo_name"
+	  fi
+   done <<< "$users"
+}
+
  
 # Organization details
 org_name="PixysOS-Devices"
