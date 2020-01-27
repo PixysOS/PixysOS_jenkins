@@ -10,7 +10,7 @@
 # PixysOS ROM building script.
 
 function telegram() {
-   curl -s "https://api.telegram.org/bot${telegram_bot_token}/sendmessage" --data "text=${*}&chat_id=${chat_id}&parse_mode=HTML" > /dev/null  
+   curl -s "https://api.telegram.org/bot${telegram_bot_token}/sendmessage" --data "text=${*}&chat_id=${chat_id}&parse_mode=HTML"
 }  
  
 # Function to upload to del.dog
