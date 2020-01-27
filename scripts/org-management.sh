@@ -24,9 +24,8 @@ function deldog() {
 }
 
 function exit-process() {
-   log "" # Empty log to break line
-   log "####################################"
    paste_url=$(deldog "${log_file}")
+   cat "${log_file}"
    telegram "<b>Organization maintainance completed</b>
 
    <b>Status</b> : ${status}
@@ -52,16 +51,16 @@ function check-repo() {
    then
       if [[ $user_action == "Nothing" ]] || [[ $user_action == "Add" ]]
 	  then
-         log "$repo_name not found on ${org_name} GitHub organization, Creating $repo_name"
+         log "$(date) => $repo_name not found on ${org_name} GitHub organization, Creating $repo_name"
 		 create-repo
 		 [[ $user_action == "Add" ]] && add-users
 	  elif [[ $user_action == "Remove" ]]
 	  then
-	     log "$repo_name not found on ${org_name} GitHub organization, Cannot remove user(s) $users"
+	     log "$(date) => $repo_name not found on ${org_name} GitHub organization, Cannot remove user(s) $users"
 		 status="failed" && exit-process
 	  fi
    else
-      log "$repo_name found on $org_name, Proceeding with further action"
+      log "$(date) => $repo_name found on $org_name, Proceeding with further action"
       if [[ $repo_action == "Remove" ]]
 	  then
 	     delete-repo
@@ -75,9 +74,9 @@ function create-repo() {
    
    if [[ -n $verify ]] 
    then 
-      log "New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
+      log "$(date) => New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
    else 
-      log "Fatal error: Cannot create $repo_name" && exit 1
+      log "$(date) => Fatal error: Cannot create $repo_name" && status="failed" && exit-process
    fi
 }
 
@@ -87,14 +86,14 @@ function delete-repo() {
    
    if [[ -n $verify ]] 
    then 
-      log "New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
+      log "$(date) => New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
    else 
-      log "Fatal error: Cannot create $repo_name" && exit 1
+      log "$(date) => Fatal error: Cannot create $repo_name" && status="failed" && exit-process
    fi
 }
 
 function add-users() {
-   [[ -z $users ]] && log "User add process aborted as users variable is empty" && exit 1
+   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed" && exit-process
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
@@ -105,13 +104,13 @@ function add-users() {
 	  then
 	     response=$(curl -X PUT -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
 	  else
-	     log "Fatal error: $user could not be added to $repo_name"
+	     log "$(date) => Fatal error: $user could not be added to $repo_name" && status="failed" && exit-process
 	  fi
    done <<< "$users"
 }
 
 function remove-users() {
-   [[ -z $users ]] && log "User add process aborted as users variable is empty" && exit 1
+   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && exit 1
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
@@ -122,7 +121,7 @@ function remove-users() {
 	  then
 	     response=$(curl -X DELETE -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
 	  else
-	     log "Fatal error: $user could not be removed from $repo_name"
+	     log "$(date) => Fatal error: $user could not be removed from $repo_name" && status="failed" && exit-process
 	  fi
    done <<< "$users"
 }
@@ -146,9 +145,6 @@ log_file=$(mktemp)
 
 while IFS= read -r repo_name
 do
-  log "############ $repo_name ############"
+  log "$(date) => Starting process for $repo_name"
   check-repo
-  log "####################################"
-  log "" # Empty log for line break
-  ####################
 done <<< "$repo_names"
