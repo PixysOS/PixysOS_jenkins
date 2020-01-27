@@ -204,16 +204,6 @@
          "url":"https://github.com/PixysOS-Devices/kernel_motorola_msm8953.git",
          "target_path":"kernel/motorola/msm8953",
          "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS/packages_apps_FMRadio.git",
-         "target_path":"packages/apps/FMRadio",
-         "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS/hardware_qcom_fm.git",
-         "target_path":"hardware/qcom/fm",
-         "branch":"ten"
-      }   
+     }   
    ]
 }
