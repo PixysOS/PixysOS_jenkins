@@ -131,7 +131,7 @@ function build_main() {
     cd /home/pixys/source
     BUILD_START=$(date +"%s")
     source build/envsetup.sh
-    lunch pixys_${DEVICE}-userdebug
+    lunch pixys_${DEVICE}-${BUILD_VARIANT}
     printf "${BICyan}Starting build for ${DEVICE}${Color_Off}"
     TGlogs "Starting build for <a href=\"${BUILD_URL}\">${DEVICE}</a> on ${NODE_NAME}"
     sendTG "Starting build for <a href=\"${BUILD_URL}\">${DEVICE}</a> on ${NODE_NAME}"
