@@ -51,13 +51,13 @@ function check-repo() {
    then
       if [[ $user_action == "Nothing" ]] || [[ $user_action == "Add" ]]
 	  then
-         log "$(date) => $repo_name not found on ${org_name} GitHub organization, Creating $repo_name"
-		 create-repo
-		 [[ $user_action == "Add" ]] && add-users
+             log "$(date) => $repo_name not found on ${org_name} GitHub organization, Creating $repo_name"
+	     create-repo
+	     [[ $user_action == "Add" ]] && add-users
 	  elif [[ $user_action == "Remove" ]]
 	  then
 	     log "$(date) => $repo_name not found on ${org_name} GitHub organization, Cannot remove user(s) $users"
-		 status="failed" && exit-process
+	     status="failed" && exit-process
 	  fi
    else
       log "$(date) => $repo_name found on $org_name, Proceeding with further action"
@@ -100,6 +100,7 @@ function add-users() {
 	  response=$(curl -s https://api.github.com/users/"$user")
 	  check=$(jq -r '.message' <<< "$response")
 	  verify=$(jq -r '.login' <<< "$response")
+	  response=$(curl -X GET -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
 	  if [[ $check != "Not Found" ]] && [[ $verify == "$user" ]]  && [[ -n $user ]]
 	  then
 	     response=$(curl -X PUT -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
@@ -110,7 +111,7 @@ function add-users() {
 }
 
 function remove-users() {
-   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && exit 1
+   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed" && exit-process
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
