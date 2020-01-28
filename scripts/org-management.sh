@@ -10,7 +10,7 @@
 # PixysOS ROM building script.
 
 function telegram() {
-	curl -s "https://api.telegram.org/bot${telegram_bot_token}/sendmessage" --data "text=${*}&chat_id=${chat_id}&parse_mode=HTML"
+	curl -s "https://api.telegram.org/bot${telegram_bot_token}/sendmessage" --data "text=${*}&chat_id=${chat_id}&parse_mode=HTML" > /dev/null
 }
 
 # Function to upload to del.dog
@@ -25,13 +25,14 @@ function deldog() {
 
 function exit-process() {
 	paste_url=$(deldog "${log_file}")
-	cat "${log_file}"
 	BUILD_END=$(date +"%s")
 	DIFF=$((BUILD_END - BUILD_START))
 	telegram "<b>Organization maintainance completed</b>
 	
    <b>Logs</b> : <a href=\"${paste_url}\">click-here</a>
-   <b>Time taken</b> : ${DIFF} seconds"
+   <b>Time taken</b> : ${DIFF} seconds
+   
+   ${BUILD_URL}"
 	exit 0
 }
 
@@ -156,3 +157,4 @@ while IFS= read -r repo_name; do
 	log "$(date) => Starting process for $repo_name"
 	check-repo
 done <<<"$repo_names"
+exit-process
