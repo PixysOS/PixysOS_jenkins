@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright (C) 2019 PixysOS project.
+# Copyright (C) 2019-20 PixysOS project.
 #
 # Licensed under the General Public License.
 # This program is free software; you can redistribute it and/or modify
@@ -31,7 +31,7 @@ function exit-process() {
    telegram "<b>Organization maintainance completed</b>
 
    <b>Status</b> : ${status}
-   <b>Logs</b> : href=\"${paste_url}\">click-here</a>
+   <b>Logs</b> : <a href=\"${paste_url}\">click-here</a>
    <b>Time taken</b> : ${DIFF} seconds"
 
   if [[ "$status" == "failed" ]]
@@ -89,7 +89,7 @@ function delete-repo() {
    response=$(curl -X GET -H "Authorization: token ${github_token}" -s https://api.github.com/repos/"${org_name}"/"$repo_name")
    check=$(jq -r '.message' <<< "$response")
    verify=$(jq -r '.name' <<< "$response")
-   if [[ $check == "Not Found" ]] && [[ -z $verify ]]
+   if [[ $check == "Not Found" ]] && [[ -z $verify || $verify == "null" ]]
    then
        log "$(date) => Repository named \"${repo_name}\" deleted successfully from ${org_name} GitHub Organization"
    else
@@ -98,7 +98,6 @@ function delete-repo() {
 }
 
 function add-users() {
-   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed"
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
@@ -111,32 +110,38 @@ function add-users() {
 	 then
 	  response=$(curl -X GET -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
 	  verify=$(jq -r '.message' <<< "$response")
-	  if [[ $verify != "Not Found" ||  $verify != "$user  is not a user" ]] && [[ -n "${response}" ]]
+	  if [[ $verify == "Not Found" ]]
 	  then
 	     response=$(curl -X PUT -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
+	     log "$(date) => \"$user\" has been invited as a collaborater in \"$repo_name\" repository."
 	  else
-	     log "$(date) => Fatal error: $user could not be added to $repo_name" && status="failed"
+	     log "$(date) => Warning: \"$user\" is already a collaborater in \"$repo_name\" repository.  Process \"add-users\" aborted"
 	  fi
    done <<< "$users"
 }
 
 function remove-users() {
-   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed"
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
-	  response=$(curl -s https://api.github.com/users/"$user")
-	  check=$(jq -r '.message' <<< "$response")
-	  verify=$(jq -r '.login' <<< "$response")
-	  if [[ $check != "Not Found" ]] && [[ $verify == "$user" ]]  && [[ -n $user ]]
+      if [[ -n $user ]]
+      then
+         response=$(curl -s https://api.github.com/users/"$user")
+	 check=$(jq -r '.message' <<< "$response")
+	 verify=$(jq -r '.login' <<< "$response")
+	 if [[ $check != "Not Found" ]] && [[ $verify == "$user" ]]
+	 then
+	  response=$(curl -X GET -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
+	  verify=$(jq -r '.message' <<< "$response")
+	  if [[ $verify != "Not Found" ]]
 	  then
 	     response=$(curl -X DELETE -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
+	     log "$(date) => \"$user\" has been removed from collaboraters in \"$repo_name\" repository."
 	  else
-	     log "$(date) => Fatal error: $user could not be removed from $repo_name" && status="failed"
+	     log "$(date) => Warning: \"$user\" is not a collaborater in \"$repo_name\" repository. Process \"remove-users\" aborted"
 	  fi
    done <<< "$users"
 }
-
  
 # Organization details
 org_name="PixysOS-Devices"
