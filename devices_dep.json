@@ -133,6 +133,80 @@
          "branch":"tissot"
       }
    ],
+     "jasmine_sprout":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_jasmine_sprout",
+         "target_path":"device/xiaomi/jasmine_sprout"
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_wayne-common",
+         "target_path":"device/xiaomi/wayne-common"
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_jasmine_sprout",
+         "target_path":"vendor/xiaomi/jasmine_sprout",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_wayne-common",
+         "target_path":"vendor/xiaomi/wayne-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_sdm660-common",
+         "target_path":"vendor/xiaomi/sdm660-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sdm660-common",
+         "target_path" "device/xiaomi/sdm660-common",
+         "branch":"ten"
+      },
+      { 
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_wayne-common",
+         "target_path":"kernel/xiaomi/wayne-common"
+         "branch":"ten"
+      }
+   ],
+     "wayne":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_wayne",
+         "target_path":"device/xiaomi/wayne"
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_wayne-common",
+         "target_path":"device/xiaomi/wayne-common"
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_wayne",
+         "target_path":"vendor/xiaomi/jasmine_sprout",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_wayne-common",
+         "target_path":"vendor/xiaomi/wayne-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_sdm660-common",
+         "target_path":"vendor/xiaomi/sdm660-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sdm660-common",
+         "target_path" "device/xiaomi/sdm660-common",
+         "branch":"ten"
+      },
+      { 
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_wayne-common",
+         "target_path":"kernel/xiaomi/wayne-common"
+         "branch":"ten"
+      }
+   ],
      "mido":[
       {
          "url":"https://github.com/shashank1436/android_device_xiaomi_mido.git",
