@@ -29,13 +29,9 @@ function exit-process() {
 	BUILD_END=$(date +"%s")
 	DIFF=$((BUILD_END - BUILD_START))
 	telegram "<b>Organization maintainance completed</b>
-   <b>Status</b> : ${status}
+	
    <b>Logs</b> : <a href=\"${paste_url}\">click-here</a>
    <b>Time taken</b> : ${DIFF} seconds"
-
-	if [[ "$status" == "failed" ]]; then
-		exit 1
-	fi
 	exit 0
 }
 
@@ -48,19 +44,28 @@ function check-repo() {
 	response=$(curl -X GET -H "Authorization: token ${github_token}" -s https://api.github.com/repos/"${org_name}"/"$repo_name")
 	check=$(jq -r '.message' <<<"$response")
 	verify=$(jq -r '.name' <<<"$response")
-	if [[ $check == "Not Found" ]] && [[ -z $verify ]]; then
+	if [[ $check == "Not Found" ]]; then
 		if [[ $user_action == "Nothing" ]] || [[ $user_action == "Add" ]]; then
 			log "$(date) => $repo_name not found on ${org_name} GitHub organization, Creating $repo_name"
 			create-repo
 			[[ $user_action == "Add" ]] && add-users
 		elif [[ $user_action == "Remove" ]]; then
 			log "$(date) => $repo_name not found on ${org_name} GitHub organization, Cannot remove user(s) $users"
-			status="failed"
+		else
+			log "$(date) => Undefined actions selected for \"${repo_name}\", Aborting actions for the current repo"
 		fi
 	else
 		log "$(date) => $repo_name found on $org_name, Proceeding with further action"
 		if [[ $repo_action == "Remove" ]]; then
 			delete-repo
+		elif [[ $user_action == "Remove" ]] && [[ $repo_action != "Remove" ]];
+		then
+	                remove-users
+	        elif [[ $user_action == "Add" ]] && [[ $repo_action != "Remove" ]]
+		then
+		        add-users
+	        else
+		        log "$(date) => Fatal error: performing further actions for \"${repo_name}\", Aborting for the current repo"
 		fi
 	fi
 }
@@ -69,10 +74,10 @@ function create-repo() {
 	response=$(curl -X POST -H "Authorization: token ${github_token}" --data '{ "name":"'"$repo_name"'"}' https://api.github.com/orgs/"${org_name}"/repos)
 	verify=$(jq -r '.name' <<<"$response")
 
-	if [[ -n $verify ]]; then
+	if [[ $verify == $repo_name ]]; then
 		log "$(date) => New repository created : https://github.com/${org_name}/$repo_name"
 	else
-		log "$(date) => Fatal error: Cannot create $repo_name" && status="failed"
+		log "$(date) => Fatal error: Cannot create $repo_name"
 	fi
 }
 
@@ -143,7 +148,6 @@ user_action=${4}
 github_token=${5}
 telegram_bot_token=${6}
 chat_id=${7}
-status="passed"
 # Log file details
 log_file=$(mktemp)
 
@@ -152,4 +156,3 @@ while IFS= read -r repo_name; do
 	log "$(date) => Starting process for $repo_name"
 	check-repo
 done <<<"$repo_names"
-exit-process
