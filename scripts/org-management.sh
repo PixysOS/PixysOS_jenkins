@@ -26,11 +26,13 @@ function deldog() {
 function exit-process() {
    paste_url=$(deldog "${log_file}")
    cat "${log_file}"
+   BUILD_END=$(date +"%s")
+   DIFF=$((BUILD_END - BUILD_START))
    telegram "<b>Organization maintainance completed</b>
 
    <b>Status</b> : ${status}
    <b>Logs</b> : <a href=\"${paste_url}\">click-here</a>
-   <b>Time taken</b> : ${t-taken} seconds"
+   <b>Time taken</b> : ${DIFF} seconds"
 
   if [[ "$status" == "failed" ]]
   then 
@@ -58,7 +60,7 @@ function check-repo() {
 	  elif [[ $user_action == "Remove" ]]
 	  then
 	     log "$(date) => $repo_name not found on ${org_name} GitHub organization, Cannot remove user(s) $users"
-	     status="failed" && exit-process
+	     status="failed"
 	  fi
    else
       log "$(date) => $repo_name found on $org_name, Proceeding with further action"
@@ -77,7 +79,7 @@ function create-repo() {
    then 
       log "$(date) => New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
    else 
-      log "$(date) => Fatal error: Cannot create $repo_name" && status="failed" && exit-process
+      log "$(date) => Fatal error: Cannot create $repo_name" && status="failed"
    fi
 }
 
@@ -89,12 +91,12 @@ function delete-repo() {
    then 
       log "$(date) => New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
    else 
-      log "$(date) => Fatal error: Cannot create $repo_name" && status="failed" && exit-process
+      log "$(date) => Fatal error: Cannot create $repo_name" && status="failed"
    fi
 }
 
 function add-users() {
-   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed" && exit-process
+   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed"
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
@@ -106,13 +108,13 @@ function add-users() {
 	  then
 	     response=$(curl -X PUT -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
 	  else
-	     log "$(date) => Fatal error: $user could not be added to $repo_name" && status="failed" && exit-process
+	     log "$(date) => Fatal error: $user could not be added to $repo_name" && status="failed"
 	  fi
    done <<< "$users"
 }
 
 function remove-users() {
-   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed" && exit-process
+   [[ -z $users ]] && log "$(date) => User add process aborted as users variable is empty" && status="failed"
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
@@ -123,7 +125,7 @@ function remove-users() {
 	  then
 	     response=$(curl -X DELETE -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
 	  else
-	     log "$(date) => Fatal error: $user could not be removed from $repo_name" && status="failed" && exit-process
+	     log "$(date) => Fatal error: $user could not be removed from $repo_name" && status="failed"
 	  fi
    done <<< "$users"
 }
@@ -144,9 +146,12 @@ chat_id=${7}
 status="passed"
 # Log file details
 log_file=$(mktemp)
+console_dump=$(mktemp)
 
+BUILD_START=$(date +"%s")
 while IFS= read -r repo_name
 do
   log "$(date) => Starting process for $repo_name"
   check-repo
 done <<< "$repo_names"
+exit-process
