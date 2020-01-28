@@ -140,18 +140,8 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_wayne-common",
-         "target_path":"device/xiaomi/wayne-common",
-         "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_jasmine_sprout",
-         "target_path":"vendor/xiaomi/jasmine_sprout",
-         "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_wayne-common",
-         "target_path":"vendor/xiaomi/wayne-common",
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_wayne",
+         "target_path":"vendor/xiaomi/wayne",
          "branch":"ten"
       },
       {
@@ -165,8 +155,13 @@
          "branch":"ten"
       },
       { 
-         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_wayne-common",
-         "target_path":"kernel/xiaomi/wayne-common",
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_sdm660",
+         "target_path":"kernel/xiaomi/sdm660",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_MiuiCamera",
+         "target_path":"vendor/xiaomi/MiuiCamera",
          "branch":"ten"
       }
    ],
@@ -177,18 +172,8 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_wayne-common",
-         "target_path":"device/xiaomi/wayne-common",
-         "branch":"ten"
-      },
-      {
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_wayne",
-         "target_path":"vendor/xiaomi/jasmine_sprout",
-         "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_wayne-common",
-         "target_path":"vendor/xiaomi/wayne-common",
+         "target_path":"vendor/xiaomi/wayne",
          "branch":"ten"
       },
       {
@@ -202,8 +187,13 @@
          "branch":"ten"
       },
       { 
-         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_wayne-common",
-         "target_path":"kernel/xiaomi/wayne-common",
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_sdm660",
+         "target_path":"kernel/xiaomi/sdm660",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_MiuiCamera",
+         "target_path":"vendor/xiaomi/MiuiCamera",
          "branch":"ten"
       }
    ],
