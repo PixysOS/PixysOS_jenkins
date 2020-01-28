@@ -31,7 +31,7 @@ function exit-process() {
    telegram "<b>Organization maintainance completed</b>
 
    <b>Status</b> : ${status}
-   <b>Logs</b> : <a href=\"${paste_url}\">click-here</a>
+   <b>Logs</b> : href=\"${paste_url}\">click-here</a>
    <b>Time taken</b> : ${DIFF} seconds"
 
   if [[ "$status" == "failed" ]]
@@ -47,7 +47,7 @@ function log() {
 }
 
 function check-repo() {
-   response=$(curl -X PUT -H "Authorization: token ${github_token}" -s https://api.github.com/repos/"${org_name}"/"$repo_name")
+   response=$(curl -X GET -H "Authorization: token ${github_token}" -s https://api.github.com/repos/"${org_name}"/"$repo_name")
    check=$(jq -r '.message' <<< "$response")
    verify=$(jq -r '.name' <<< "$response")
    if [[ $check == "Not Found" ]] && [[ -z $verify ]]
@@ -72,12 +72,12 @@ function check-repo() {
 }
 
 function create-repo() {
-   response=$(curl -H "Authorization: token ACCESS_TOKEN" --data "name=$repo_name" https://api.github.com/orgs/"${org_name}"/repos)
+   response=$(curl -X POST -H "Authorization: token ${github_token}" --data '{ "name":"'"$repo_name"'"}' https://api.github.com/orgs/"${org_name}"/repos)
    verify=$(jq -r '.name' <<< "$response")
    
    if [[ -n $verify ]] 
    then 
-      log "$(date) => New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
+      log "$(date) => New repository created : https://github.com/${org_name}/$repo_name"
    else 
       log "$(date) => Fatal error: Cannot create $repo_name" && status="failed"
    fi
@@ -85,14 +85,16 @@ function create-repo() {
 
 function delete-repo() {
    response=$(curl -X DELETE -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name")
+   # Check if the repo is deleted or not.
+   response=$(curl -X GET -H "Authorization: token ${github_token}" -s https://api.github.com/repos/"${org_name}"/"$repo_name")
+   check=$(jq -r '.message' <<< "$response")
    verify=$(jq -r '.name' <<< "$response")
-   
-   if [[ -n $verify ]] 
-   then 
-      log "$(date) => New repository created : <a href=\"https://github.com/${org_name}/$repo_name\">$repo_name</a>"
-   else 
-      log "$(date) => Fatal error: Cannot create $repo_name" && status="failed"
-   fi
+   if [[ $check == "Not Found" ]] && [[ -z $verify ]]
+   then
+       log "$(date) => Repository named \"${repo_name}\" deleted successfully from ${org_name} GitHub Organization"
+   else
+       log "$(date) => Fatal error deleting \"${repo_name}\" from ${org_name} GitHub Organization"
+   fi      
 }
 
 function add-users() {
@@ -100,11 +102,16 @@ function add-users() {
    while IFS= read -r user
    do
       user=$(echo -e "${user}" | tr -d '[:space:]')
-	  response=$(curl -s https://api.github.com/users/"$user")
-	  check=$(jq -r '.message' <<< "$response")
-	  verify=$(jq -r '.login' <<< "$response")
+      if [[ -n $user ]]
+      then
+         response=$(curl -s https://api.github.com/users/"$user")
+	 check=$(jq -r '.message' <<< "$response")
+	 verify=$(jq -r '.login' <<< "$response")
+	 if [[ $check != "Not Found" ]] && [[ $verify == "$user" ]]
+	 then
 	  response=$(curl -X GET -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
-	  if [[ $check != "Not Found" ]] && [[ $verify == "$user" ]]  && [[ -n $user ]]
+	  verify=$(jq -r '.message' <<< "$response")
+	  if [[ $verify != "Not Found" ||  $verify != "$user  is not a user" ]] && [[ -n "${response}" ]]
 	  then
 	     response=$(curl -X PUT -H "Authorization: token ${github_token}" -s "https://api.github.com/repos/${org_name}/$repo_name/collaborators/$user")
 	  else
