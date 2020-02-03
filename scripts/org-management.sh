@@ -42,7 +42,7 @@ function log() {
 }
 
 function check-repo() {
-	response=$(curl -X GET -H "Authorization: token ${github_token}" -s https://api.github.com/repos/"${org_name}"/"$repo_name")
+	response=$(curl -s -X GET -H "Authorization: token ${github_token}" -s https://api.github.com/repos/"${org_name}"/"$repo_name")
 	check=$(jq -r '.message' <<<"$response")
 	verify=$(jq -r '.name' <<<"$response")
 	if [[ $check == "Not Found" ]]; then
