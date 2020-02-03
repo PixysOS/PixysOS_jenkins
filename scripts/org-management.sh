@@ -72,7 +72,7 @@ function check-repo() {
 }
 
 function create-repo() {
-	response=$(curl -X POST -H "Authorization: token ${github_token}" --data '{ "name":"'"$repo_name"'"}' https://api.github.com/orgs/"${org_name}"/repos)
+	response=$(curl -s -X POST -H "Authorization: token ${github_token}" --data '{ "name":"'"$repo_name"'"}' https://api.github.com/orgs/"${org_name}"/repos)
 	verify=$(jq -r '.name' <<<"$response")
 
 	if [[ $verify == $repo_name ]]; then
