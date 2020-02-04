@@ -40,14 +40,19 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/mahajant99/kernel_xiaomi_msm8953-ysl",
-         "target_path":"kernel/xiaomi/msm8953",
-         "branch":"lineage-17.0"
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_ysl-common.git",
+         "target_path":"device/xiaomi/msm8953-common",
+         "branch":"ten"
       },
       {
-         "url":"https://github.com/mahajant99/vendor_xiaomi_ysl",
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_msm8953-ysl",
+         "target_path":"kernel/xiaomi/msm8953",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_ysl.git",
          "target_path":"vendor/xiaomi",
-         "branch":"lineage-17.0"
+         "branch":"ten"
       }
    ],
      "sakura":[
