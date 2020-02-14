@@ -211,7 +211,7 @@
       {
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_mido",
          "target_path":"kernel/xiaomi/mido",
-         "branch":"dev/kasumi"
+         "branch":"ten"
       },
       {
          "url":"https://github.com/shashank1436/proprietary_vendor_xiaomi-1.git",
