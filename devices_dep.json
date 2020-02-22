@@ -155,7 +155,7 @@
          "branch":"default"
       },
       {
-         "url":"https://github.com/PixelExperience-Devices/device_xiaomi_sdm660-common",
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sdm660-common",
          "target_path":"device/xiaomi/sdm660-common",
          "branch":"ten"
       },
@@ -187,7 +187,7 @@
          "branch":"default"
       },
       {
-         "url":"https://github.com/PixelExperience-Devices/device_xiaomi_sdm660-common",
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sdm660-common",
          "target_path":"device/xiaomi/sdm660-common",
          "branch":"ten"
       },
