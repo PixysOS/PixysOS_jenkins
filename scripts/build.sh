@@ -112,7 +112,12 @@ function build_init() {
        branch=$(jq -r --argjson i "$i" '.[$i].branch' /home/pixys/source/json/${DEVICE}.json)
        target=$(jq -r --argjson i "$i" '.[$i].target_path' /home/pixys/source/json/${DEVICE}.json)
        printf "\n>>> ${Blue}Cloning to $target...\n${Color_Off}\n"
-       git clone --recurse-submodules --depth=1 --quiet $repo_url -b $branch $target
+       if [ "$branch" = "default" ]
+          then
+       	     git clone --recurse-submodules --depth=1 --quiet $repo_url $target
+          else
+       	     git clone --recurse-submodules --depth=1 --quiet $repo_url -b $branch $target
+       fi
        printf "${Color_Off}"
        if [ -e /home/pixys/source/$target ]
           then
