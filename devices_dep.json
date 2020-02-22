@@ -145,11 +145,11 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/xiaomi-sdm660/vendor_xiaomi_wayne",
+         "url":"https://github.com/xiaomi-sdm660/android_vendor_xiaomi_wayne",
          "target_path":"vendor/xiaomi/wayne"
       },
       {
-         "url":"https://github.com/xiaomi-sdm660/vendor_xiaomi_sdm660-common",
+         "url":"https://github.com/xiaomi-sdm660/android_vendor_xiaomi_sdm660-common",
          "target_path":"vendor/xiaomi/sdm660-common"
       },
       {
@@ -163,7 +163,7 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/xiaomi-sdm660/vendor_xiaomi_MiuiCamera",
+         "url":"https://github.com/xiaomi-sdm660/android_vendor_xiaomi_MiuiCamera",
          "target_path":"vendor/xiaomi/MiuiCamera"
       }
    ],
@@ -174,11 +174,11 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/xiaomi-sdm660/vendor_xiaomi_wayne",
+         "url":"https://github.com/xiaomi-sdm660/android_vendor_xiaomi_wayne",
          "target_path":"vendor/xiaomi/wayne"
       },
       {
-         "url":"https://github.com/xiaomi-sdm660/vendor_xiaomi_sdm660-common",
+         "url":"https://github.com/xiaomi-sdm660/android_vendor_xiaomi_sdm660-common",
          "target_path":"vendor/xiaomi/sdm660-common"
       },
       {
@@ -192,7 +192,7 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/xiaomi-sdm660/vendor_xiaomi_MiuiCamera",
+         "url":"https://github.com/xiaomi-sdm660/android_vendor_xiaomi_MiuiCamera",
          "target_path":"vendor/xiaomi/MiuiCamera"
       }
    ],
