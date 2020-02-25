@@ -204,7 +204,7 @@
    ],
      "mido":[
       {
-         "url":"https://github.com/shashank1436/android_device_xiaomi_mido.git",
+         "url":"git@github.com:shashank1436/android_device_xiaomi_mido.git",
          "target_path":"device/xiaomi/mido",
          "branch":"ten"
       },
@@ -214,7 +214,7 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/shashank1436/proprietary_vendor_xiaomi-1.git",
+         "url":"git@github.com:shashank1436/proprietary_vendor_xiaomi-1.git",
          "target_path":"vendor/xiaomi",
          "branch":"ten"
       }
