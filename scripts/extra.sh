@@ -71,12 +71,13 @@ function upload() {
   rclone copy "${JSON}" Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"
   file-id = $(rclone link Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"/"${ZIP}" | cut -c 19-)
   
-  if [ -z "$file-id" ]
+  if [ "${file-id}" == "" ]
   then
      sendTG "Upload failed the below message is retarded"
-     basic = "http://i-am-retarded.org"
+     basic="http://i-am-retarded.org"
   else
-     basic = "http://seleniums.herokuapp.com/try/${file-id}/dl"
+     basic="http://seleniums.herokuapp.com/try/${file-id}/dl"
+  fi
 }
 
 function upload_ftp() {
