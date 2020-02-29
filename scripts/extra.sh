@@ -69,14 +69,14 @@ function upload() {
   echo -e "Uploading test artifact ${ZIP}"
   rclone copy "${1}" Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"
   rclone copy "${JSON}" Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"
-  file-id = $(rclone link Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"/"${ZIP}" | cut -c 19-)
+  fileid = $(rclone link Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"/"${ZIP}" | cut -c 19-)
   
-  if [ "${file-id}" == "" ]
+  if [ "${fileid}" == "" ]
   then
      sendTG "Upload failed the below message is retarded"
      basic="http://i-am-retarded.org"
   else
-     basic="http://seleniums.herokuapp.com/try/${file-id}/dl"
+     basic="http://seleniums.herokuapp.com/try/${fileid}/dl"
   fi
 }
 
