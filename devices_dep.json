@@ -313,5 +313,32 @@
          "target_path":"kernel/xiaomi/sdm710",
          "branch":"ten"
      }
+   ],
+    "onyx":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_oneplus_onyx.git",
+         "target_path":"device/oneplus/onyx",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_oneplus_onyx.git",
+         "target_path":"vendor/oneplus",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_oneplus_onyx.git",
+         "target_path":"kernel/oneplus/onyx",
+         "branch":"ten"
+     },
+      {
+         "url":"https://github.com/LineageOS/android_device_oppo_common",
+         "target_path":"device/oppo/common",
+         "branch":"lineage-17.1"
+     },
+      {
+         "url":"https://github.com/LineageOS/android_external_sony_boringssl-compat",
+         "target_path":"external/sony/boringssl-compat",
+         "branch":"lineage-17.1"
+     }
    ]
 }
