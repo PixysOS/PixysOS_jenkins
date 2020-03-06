@@ -50,7 +50,7 @@ function edition() {
   # Gapps Edition
    if [ "$pixys_edition" == "GAPPS" ];
    then
-       export FTP_FOLDER="ten_gapps"
+       export FTP_FOLDER="ten-gapps"
        export BUILD_WITH_GAPPS=true
    fi
 

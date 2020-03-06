@@ -24,7 +24,7 @@ function odlink() {
 }
 
 function mirror() {
-   echo "$FILENAME" | grep -q "GAPPS" && FOLDER="ten_gapps" || FOLDER="ten"
+   echo "$FILENAME" | grep -q "GAPPS" && FOLDER="ten-gapps" || FOLDER="ten"
    rclone copy Onedrive:Pixysos-test/"${DEVICE}"/"${FOLDER}"/"${FILENAME}" "${FILENAME}"
    CHECK=$(ls PixysOS*.zip)
    [ "${CHECK}" == "${FILENAME}" ] && echo "${FILENAME} found, Starting upload process" || TG "$FILENAME cannot be downloaded correctly"
