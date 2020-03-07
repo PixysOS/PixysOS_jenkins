@@ -59,4 +59,8 @@ fi
 # Build ROM
 source build/envsetup.sh
 lunch "$lunch_command"_"$device_codename"-"$build_type"
+make api-stubs-docs
+make hiddenapi-lists-docs
+make system-api-stubs-docs
+make test-api-stubs-docs
 make "$target_command" -j8
