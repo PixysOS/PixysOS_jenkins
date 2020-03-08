@@ -64,36 +64,18 @@ function scpc() {
   sshpass -p "${spass}" scp -P 5615 -o StrictHostKeyChecking=no "${1}" root@uploads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"/"${FTP_FOLDER}"
 }
 
-function upload() {
-  rclone delete Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"
-  echo -e "Uploading test artifact ${ZIP}"
-  rclone copy "${1}" Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"
-  rclone copy "${JSON}" Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"
-  fileid=$(rclone link Onedrive:Pixysos-test/"${DEVICE}"/"${FTP_FOLDER}"/"${ZIP}" | cut -c 19-)
-  
-  if [ -z "${fileid}" ]
-  then
-     sendTG "Upload failed the below message is retarded"
-     basic="http://i-am-retarded.org"
-  else
-     basic="http://seleniums.herokuapp.com/try/${fileid}/dl"
-  fi
-}
-
 function upload_ftp() {
    msg=$(mktemp)
    if [ "$status" == "passed" ]
    then 
       if [ "$upload" == "true" ]
       then
-         #basic="http://downloads.pixysos.com/.test/${DEVICE}/${FTP_FOLDER}/${ZIP}"
-         #echo -e "Uploading test artifact ${ZIP}"
-         #sshc "rm -rf /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
-         #sshc "mkdir /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
-         #scpc "${ZIP}"
-         #scpc "${JSON}"
-	 upload "${ZIP}"
-	 
+         basic="http://downloads.pixysos.com/.test/${DEVICE}/${FTP_FOLDER}/${ZIP}"
+         echo -e "Uploading test artifact ${ZIP}"
+         sshc "rm -rf /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
+         sshc "mkdir /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
+         scpc "${ZIP}"
+         scpc "${JSON}"
 	 {
 	     echo "🏷 <b>Build Completed</b>"
    	     echo 

@@ -18,21 +18,14 @@ function TG() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001144148166&parse_mode=HTML" > /dev/null
 }
 
-function odlink() {
-    fileid=$(rclone link Onedrive:Pixysos-test/"${DEVICE}"/"${FOLDER}"/"${FILENAME}" | cut -c 19-)
-    link="http://seleniums.herokuapp.com/try/${fileid}/dl"
-}
-
 function mirror() {
-   echo "$FILENAME" | grep -q "GAPPS" && FOLDER="ten-gapps" || FOLDER="ten"
-   rclone copy Onedrive:Pixysos-test/"${DEVICE}"/"${FOLDER}"/"${FILENAME}" "${FILENAME}"
+   echo "$FILENAME" | grep -q "GAPPS" && FOLDER="ten_gapps" || FOLDER="ten"
+   wget https://downloads.pixysos.com/.test/"${DEVICE}"/${FOLDER}/"${FILENAME}"
    CHECK=$(ls PixysOS*.zip)
    [ "${CHECK}" == "${FILENAME}" ] && echo "${FILENAME} found, Starting upload process" || TG "$FILENAME cannot be downloaded correctly"
    sshpass -p "${opass}" scp -P 5615 -o StrictHostKeyChecking=no "${FILENAME}" root@uploads.pixysos.com:/home/ftp/uploads/"${DEVICE}"/ten/
    sshpass -p "${spass}" scp -o StrictHostKeyChecking=no "${FILENAME}" pixysuploads@frs.sourceforge.net:/home/frs/project/pixys-os/ten/"${DEVICE}"/
-   rclone copy "${FILENAME}" Onedrive:PixysOS/"${DEVICE}"/"${FOLDER}"/
-   odlink
-   TG "${FILENAME} has been uploaded to <a href=\"https://downloads.sourceforge.net/project/pixys-os/ten/${DEVICE}/${FILENAME}\">Sourceforge</a>, <a href=\"https://downloads.pixysos.com/${DEVICE}/ten/${FILENAME}\">FTP</a> and <a href=\"${link}\">OneDrive</a>"
+   TG "${FILENAME} has been uploaded to <a href=\"https://downloads.sourceforge.net/project/pixys-os/ten/${DEVICE}/${FILENAME}\">Sourceforge</a> and <a href=\"https://downloads.pixysos.com/${DEVICE}/ten/${FILENAME}\">FTP</a>"
    rm -rf *.zip
 }
 
