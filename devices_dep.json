@@ -323,5 +323,20 @@
          "target_path":"external/sony/boringssl-compat",
          "branch":"lineage-17.1"
      }
-   ]
+   ],
+     "mido":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_mido",
+         "target_path":"device/xiaomi/mido",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_mido",
+         "target_path":"kernel/xiaomi/mido",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_mido",
+         "target_path":"vendor/xiaomi",
+         "branch":"ten"
 }
