@@ -338,5 +338,7 @@
       {
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_mido",
          "target_path":"vendor/xiaomi",
-         "branch":"ten"
+         "branch":"ten
+      }
+    ]
 }
