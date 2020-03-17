@@ -340,9 +340,8 @@
          "target_path":"vendor/xiaomi",
          "branch":"ten"
       }
-    ]
-}
-"Lavender":[
+    ],
+    "Lavender":[
       {
          "url":"git@github.com:z3nitsu/device_xiaomi_lavender",
          "target_path":"device/xiaomi/lavender",
@@ -358,4 +357,5 @@
          "target_path":"vendor/xiaomi/lavender",
          "branch":"ten"
       }
-   ],
+   ]
+}
