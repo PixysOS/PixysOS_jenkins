@@ -342,3 +342,20 @@
       }
     ]
 }
+"Lavender":[
+      {
+         "url":"git@github.com:z3nitsu/device_xiaomi_lavender",
+         "target_path":"device/xiaomi/lavender",
+         "branch":"ten"
+      },
+      {
+         "url":"git@github.com:z3nitsu/kernel_xiaomi_lavender",
+         "target_path":"kernel/xiaomi/lavender",
+         "branch":"caf"
+      },
+      {
+         "url":"git@github.com:z3nitsu/vendor_xiaomi_lavender",
+         "target_path":"vendor/xiaomi/lavender",
+         "branch":"ten"
+      }
+   ],
