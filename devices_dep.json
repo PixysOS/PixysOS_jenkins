@@ -204,17 +204,17 @@
    ],
      "phoenix":[
       {
-         "url":"git@github.com:RandomRetard4676/android_device_xiaomi_phoenix.git",
+         "url":"https://github.com/RandomRetard4676/android_device_xiaomi_phoenix.git",
          "target_path":"device/xiaomi/phoenix",
          "branch":"pixys"
       },
       {
-         "url":"git@github.com:RandomRetard4676/android_vendor_xiaomi_phoenix.git",
+         "url":"https://github.com/RandomRetard4676/android_vendor_xiaomi_phoenix.git",
          "target_path":"vendor/xiaomi/phoenix",
          "branch":"default"
       },
       {
-         "url":"git@github.com:RandomRetard4676/android_kernel_xiaomi_sm6150.git",
+         "url":"https://github.com/RandomRetard4676/android_kernel_xiaomi_sm6150.git",
          "target_path":"kernel/xiaomi/sm6150",
          "branch":"default"
       }
