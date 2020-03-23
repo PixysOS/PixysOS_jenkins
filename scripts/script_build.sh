@@ -9,15 +9,6 @@
 #
 # PixysOS ROM building script.
 
-# Colors makes things beautiful
-export TERM=xterm
-
-    red=$(tput setaf 1)             #  red
-    grn=$(tput setaf 2)             #  green
-    blu=$(tput setaf 4)             #  blue
-    cya=$(tput setaf 6)             #  cyan
-    txtrst=$(tput sgr0)             #  Reset
-
 # CCACHE UMMM!!! Cooks my builds fast
 
 if [ "$use_ccache" = "yes" ];
@@ -25,14 +16,14 @@ then
 echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-export CCACHE_DIR=/home/ccache/$username
+export CCACHE_DIR=/home/user/ccache/$username
 ccache -M 50G
 fi
 
 if [ "$use_ccache" = "clean" ];
 then
 export CCACHE_EXEC=$(which ccache)
-export CCACHE_DIR=/home/ccache/$username
+export CCACHE_DIR=/home/ccache/user/$username
 ccache -C
 export USE_CCACHE=1
 ccache -M 50G
