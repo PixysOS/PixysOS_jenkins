@@ -54,14 +54,12 @@ function TG() {
 
 #function to connect to ssh 
 function sshc() {
-  export spass
-  sshpass -p "${spass}" ssh -p 5615 -o StrictHostKeyChecking=no root@uploads.pixysos.com "${1}"
+  ssh -p 5615 -o StrictHostKeyChecking=no ftp@uploads.pixysos.com "${1}"
 }
 
 #function to make scp upload
 function scpc() {
-  export spass
-  sshpass -p "${spass}" scp -P 5615 -o StrictHostKeyChecking=no "${1}" root@uploads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"/"${FTP_FOLDER}"
+  scp -P 5615 -o StrictHostKeyChecking=no "${1}" ftp@uploads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"/"${FTP_FOLDER}"
 }
 
 function upload_ftp() {
