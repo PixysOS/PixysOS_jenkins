@@ -23,7 +23,7 @@ function mirror() {
    wget https://downloads.pixysos.com/.test/"${DEVICE}"/${FOLDER}/"${FILENAME}"
    CHECK=$(ls PixysOS*.zip)
    [ "${CHECK}" == "${FILENAME}" ] && echo "${FILENAME} found, Starting upload process" || TG "$FILENAME cannot be downloaded correctly"
-   scp -P 5615 -o StrictHostKeyChecking=no "${FILENAME}" root@uploads.pixysos.com:/home/ftp/uploads/"${DEVICE}"/ten/
+   scp -P 5615 -o StrictHostKeyChecking=no "${FILENAME}" ftp@uploads.pixysos.com:/home/ftp/uploads/"${DEVICE}"/ten/
    scp -o StrictHostKeyChecking=no "${FILENAME}" pixysuploads@frs.sourceforge.net:/home/frs/project/pixys-os/ten/"${DEVICE}"/
    TG "${FILENAME} has been uploaded to <a href=\"https://downloads.sourceforge.net/project/pixys-os/ten/${DEVICE}/${FILENAME}\">Sourceforge</a> and <a href=\"https://downloads.pixysos.com/${DEVICE}/ten/${FILENAME}\">FTP</a>"
    rm -rf *.zip
