@@ -75,6 +75,11 @@
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_sakura",
          "target_path":"vendor/xiaomi",
          "branch":"ten"
+      },
+      {
+         "url":"https://github.com/mahajant99/vendor_MiuiCamera",
+         "target_path":"vendor/MiuiCamera",
+         "branch":"master"
       }
    ],
      "z2_plus":[
