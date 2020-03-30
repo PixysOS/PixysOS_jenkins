@@ -357,5 +357,27 @@
          "target_path":"vendor/xiaomi",
          "branch":"ten"
       }
-    ]
+    ],
+     "beryllium":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_beryllium",
+         "target_path":"device/xiaomi/beryllium",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sdm845-common",
+         "target_path":"device/xiaomi/sdm845-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_sdm845",
+         "target_path":"kernel/xiaomi/sdm845",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_beryllium",
+         "target_path":"vendor/xiaomi",
+         "branch":"ten"
+      }
+   ]
 }
