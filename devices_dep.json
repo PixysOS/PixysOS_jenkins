@@ -336,11 +336,6 @@
          "branch":"ten"
      },
       {
-         "url":"https://github.com/LineageOS/android_device_oppo_common",
-         "target_path":"device/oppo/common",
-         "branch":"lineage-17.1"
-     },
-      {
          "url":"https://github.com/LineageOS/android_external_sony_boringssl-compat",
          "target_path":"external/sony/boringssl-compat",
          "branch":"lineage-17.1"
