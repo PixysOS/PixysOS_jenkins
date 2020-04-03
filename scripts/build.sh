@@ -18,6 +18,8 @@ function exports() {
    export DJSON=$(curl -s https://raw.githubusercontent.com/PixysOS/official_devices/ten/devices.json)
    export DEVICE_MAINTAINERS=$(jq -r --arg DEVICE "$DEVICE" '.[] | select(.codename==$DEVICE) | .maintainer_name' <<< ${DJSON}) # The maintainer of that device
    if [ -z ${DEVICE_MAINTAINERS} ];
+   export BRANDCASE=$(jq -r --arg DEVICE "$DEVICE" '.[] | select(.codename==$DEVICE) | .brand' <<< ${DJSON})
+   export BRAND=$(echo "$BRANDCASE" | perl -ne 'print lc')
    then
       sendTG "${DEVICE} maintainer name not found probably device is not listed official"
       TGlogs "${DEVICE} maintainer name not found probably device is not listed official"
@@ -103,8 +105,7 @@ function clean_up() {
 function build_init() {
     rm -rf /home/pixys/source/json/"${DEVICE}".json
     rm -rf /home/pixys/source/devices_dep.json
-    wget -O /home/pixys/source/devices_dep.json -q https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/ten/devices_dep.json
-    jq --arg DEVICE "$DEVICE" '. | .[$DEVICE]' /home/pixys/source/devices_dep.json > /home/pixys/source/json/"${DEVICE}".json
+    wget -O /home/pixys/source/json/"${DEVICE}".json -q https://raw.githubusercontent.com/PixysOS-Devices/device_"${BRAND}"_"${DEVICE}"/ten/pixys.dependencies
     export dep_count=$(jq length /home/pixys/source/json/${DEVICE}.json)
     printf "\n${UYellow}Cloning device specific dependencies \n\n${Color_Off}"
     for ((i=0;i<${dep_count};i++));
