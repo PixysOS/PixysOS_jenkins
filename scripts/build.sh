@@ -96,43 +96,7 @@ function clean_up() {
         echo "clone_path.txt doesnt exist"
         touch /home/pixys/source/clone_path.txt
     fi
-    build_init
    fi
-}
-
-function build_init() {
-    rm -rf /home/pixys/source/json/"${DEVICE}".json
-    rm -rf /home/pixys/source/devices_dep.json
-    wget -O /home/pixys/source/devices_dep.json -q https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/ten/devices_dep.json
-    jq --arg DEVICE "$DEVICE" '. | .[$DEVICE]' /home/pixys/source/devices_dep.json > /home/pixys/source/json/"${DEVICE}".json
-    export dep_count=$(jq length /home/pixys/source/json/${DEVICE}.json)
-    printf "\n${UYellow}Cloning device specific dependencies \n\n${Color_Off}"
-    for ((i=0;i<${dep_count};i++));
-    do
-       repo_url=$(jq -r --argjson i "$i" '.[$i].url' /home/pixys/source/json/${DEVICE}.json)
-       branch=$(jq -r --argjson i "$i" '.[$i].branch' /home/pixys/source/json/${DEVICE}.json)
-       target=$(jq -r --argjson i "$i" '.[$i].target_path' /home/pixys/source/json/${DEVICE}.json)
-       printf "\n>>> ${Blue}Cloning to $target...\n${Color_Off}\n"
-       if [ "$branch" = "default" ]
-          then
-       	     git clone --recurse-submodules --depth=1 --quiet $repo_url $target
-          else
-       	     git clone --recurse-submodules --depth=1 --quiet $repo_url -b $branch $target
-       fi
-       printf "${Color_Off}"
-       if [ -e /home/pixys/source/$target ]
-          then
-             printf "\n${Green}Repo clone success...\n${Color_Off}"
-             echo "$target" >> /home/pixys/source/clone_path.txt
-           else
-             sendTG "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
-	         TGlogs "Could not clone some dependecies for [$DEVICE]($BUILD_URL)"
-             printf "\n\n${Red}Repo clone fail...\n\n${Color_Off}"
-             printf "${Cyan}Exiting${Color_Off}"
-             sleep 5
-             exit 1
-            fi
-    done
 }
 
 function build_main() {
