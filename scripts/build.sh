@@ -143,7 +143,7 @@ function build_main() {
     printf "${BICyan}Starting build for ${DEVICE}${Color_Off}"
     TGlogs "Starting build for <a href=\"${BUILD_URL}\">${DEVICE}</a> on ${NODE_NAME}"
     sendTG "Starting build for <a href=\"${BUILD_URL}\">${DEVICE}</a> on ${NODE_NAME}"
-    make bacon -j24
+    make bacon -j12
     BUILD_END=$(date +"%s")
     BUILD_TIME=$(date +"%Y%m%d-%T")
     DIFF=$((BUILD_END - BUILD_START))
