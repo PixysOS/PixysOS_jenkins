@@ -14,6 +14,7 @@ function exports() {
    export PIXYS_BUILD_PATH=/home/pixys/source
    export PIXYS_BUILD_TYPE=OFFICIAL
    export KBUILD_BUILD_HOST="PixysBuildBot"
+   export TEMPORARY_DISABLE_PATH_RESTRICTIONS=true
    export DJSON=$(curl -s https://raw.githubusercontent.com/PixysOS/official_devices/ten/devices.json)
    export DEVICE_MAINTAINERS=$(jq -r --arg DEVICE "$DEVICE" '.[] | select(.codename==$DEVICE) | .maintainer_name' <<< ${DJSON}) # The maintainer of that device
    if [ -z ${DEVICE_MAINTAINERS} ];
