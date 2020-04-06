@@ -219,9 +219,9 @@
          "branch":"default"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_sm6150",
+         "url":"https://github.com/GZR-Kernels/Optimus_Drunk_Phoenix",
          "target_path":"kernel/xiaomi/sm6150",
-         "branch":"phoenix"
+         "branch":"default"
       }
    ],
      "whyred":[
