@@ -103,6 +103,28 @@
          "target_path":"vendor/zuk",
          "branch":"ten"
       }
+  ],
+    "z2_row":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_zuk_z2_row",
+         "target_path":"device/zuk/z2_row",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_zuk_msm8996-common",
+         "target_path":"device/zuk/msm8996-common",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_zuk_msm8996",
+         "target_path":"kernel/zuk/msm8996",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_zuk",
+         "target_path":"vendor/zuk",
+         "branch":"ten"
+      }
    ],
      "violet":[
       {
