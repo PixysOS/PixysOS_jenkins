@@ -11,9 +11,14 @@
          "branch":"ten"
       },
       {
-         "url":"git@github.com:ProtoDump/kernel_xiaomi_santoni.git",
+         "url":"git@github.com:PixelExperience-Devices/kernel_xiaomi_santoni.git",
          "target_path":"kernel/xiaomi/santoni",
-         "branch":"LA.UM.8.6.r1/treble"
+         "branch":"ten"
+      },
+      {
+         "url":"https://gitlab.com/PixelExperience/packages_apps_PixelLiveWallpaper.git",
+         "target_path":"packages/apps/PixelLiveWallpaper",
+         "branch":"ten"
       }
    ],
      "X00TD":[
