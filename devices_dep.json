@@ -1,19 +1,24 @@
 {
      "santoni":[
       {
-         "url":"git@github.com:PixysOS-Devices/device_xiaomi_santoni.git",
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_santoni.git",
          "target_path":"device/xiaomi/santoni",
          "branch":"ten"
       },
       {
-         "url":"git@github.com:pranaya2005/vendor_xiaomi_santoni.git",
+         "url":"https://github.com/pranaya2005/vendor_xiaomi_santoni.git",
          "target_path":"vendor/xiaomi",
          "branch":"ten"
       },
       {
-         "url":"git@github.com:PixelExperience-Devices/kernel_xiaomi_santoni.git",
+         "url":"https://github.com/PixelExperience-Devices/kernel_xiaomi_santoni.git",
          "target_path":"kernel/xiaomi/santoni",
          "branch":"ten"
+      },
+      {
+         "url":"https://github.com/LineageOS/android_packages_resources_devicesettings.git",
+         "target_path":"packages/resources/device settings",
+         "branch":"lineage-17.1"
       },
       {
          "url":"https://gitlab.com/PixelExperience/packages_apps_PixelLiveWallpaper.git",
