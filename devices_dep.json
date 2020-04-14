@@ -314,17 +314,17 @@
    ],
     "riva":[
       {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_riva.git",
+         "url":"git@github.com:Subinsmani/device_xiaomi_riva.git",
          "target_path":"device/xiaomi/riva",
          "branch":"ten"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi.git",
-         "target_path":"vendor/xiaomi",
+         "url":"git@github.com:Subinsmani/vendor_xiaomi.git",
+         "target_path":"vendor/xiaomi/riva",
          "branch":"ten"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_msm8917.git",
+         "url":"git@github.com:Subinsmani/kernel_xiaomi_msm8917.git",
          "target_path":"kernel/xiaomi/msm8917",
          "branch":"ten"
      },
