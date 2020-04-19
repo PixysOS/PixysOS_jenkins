@@ -1,19 +1,19 @@
 {
      "santoni":[
       {
-         "url":"git@github.com:PixysOS-Devices/device_xiaomi_santoni.git",
+         "url":"git@github.com:bionicBUG/android_device_xiaomi_santoni",
          "target_path":"device/xiaomi/santoni",
          "branch":"ten"
       },
       {
-         "url":"git@github.com:pranaya2005/vendor_xiaomi_santoni.git",
+         "url":"git@github.com:bionicBUG/android_vendor_xiaomi_santoni",
          "target_path":"vendor/xiaomi",
          "branch":"ten"
       },
       {
-         "url":"git@github.com:ProtoDump/kernel_xiaomi_santoni.git",
-         "target_path":"kernel/xiaomi/santoni",
-         "branch":"LA.UM.8.6.r1/treble"
+         "url":"git@github.com:Dhruvgera/RockstarKernel_r4x",
+         "target_path":"kernel/xiaomi/msm8937",
+         "branch":"rom-non_oc"
       }
    ],
      "X00TD":[
