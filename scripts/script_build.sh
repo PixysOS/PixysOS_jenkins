@@ -25,14 +25,14 @@ then
 echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-export CCACHE_DIR=/home/ccache/$username
+export CCACHE_DIR=/home/$username/.jenkins/ccache/
 ccache -M 50G
 fi
 
 if [ "$use_ccache" = "clean" ];
 then
 export CCACHE_EXEC=$(which ccache)
-export CCACHE_DIR=/home/ccache/$username
+export CCACHE_DIR=/home/$username/.jenkins/ccache/
 ccache -C
 export USE_CCACHE=1
 ccache -M 50G
