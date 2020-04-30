@@ -34,7 +34,7 @@ function use_ccache() {
       export CCACHE_EXEC=$(which ccache)
       export USE_CCACHE=1
       export CCACHE_DIR=/home/ccache/pixys
-      ccache -M 75G
+      ccache -M 50G
     elif [ "$use_ccache" = "false" ];
     then
        export CCACHE_EXEC=$(which ccache)
