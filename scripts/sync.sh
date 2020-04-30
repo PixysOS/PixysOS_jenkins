@@ -41,7 +41,7 @@ if [ "$command" == "Sync Source" ];
 then
    echo -e "Syncing Source, will take Little Time."
    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=Syncing Source&chat_id=-1001144148166&parse_mode=Markdown" > /dev/null
-   repo sync --force-sync -j48 --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune
+   repo sync --force-sync -j12 --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune
    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=Syncing Source Completed&chat_id=-1001144148166&parse_mode=Markdown" > /dev/null
    sleep 5
    echo "Source Synced Successfully"
