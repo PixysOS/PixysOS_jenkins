@@ -1,5 +1,5 @@
 {
-     "santoni":[
+   "santoni":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_santoni.git",
          "target_path":"device/xiaomi/santoni",
@@ -21,7 +21,7 @@
          "branch":"ten"
       }
    ],
-     "X00T":[
+   "X00T":[
       {
          "url":"https://github.com/d-shaktiranjan/device_asus_X00T",
          "target_path":"device/asus/X00T",
@@ -38,7 +38,7 @@
          "branch":"ten"
       }
    ],
-     "ysl":[
+   "ysl":[
       {
          "url":"git@github.com:mahajant99/device_xiaomi_ysl",
          "target_path":"device/xiaomi/ysl",
@@ -60,7 +60,7 @@
          "branch":"ten"
       }
    ],
-     "sakura":[
+   "sakura":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_sakura",
          "target_path":"device/xiaomi/sakura",
@@ -87,7 +87,7 @@
          "branch":"master"
       }
    ],
-     "z2_plus":[
+   "z2_plus":[
       {
          "url":"https://github.com/PixysOS-Devices/device_zuk_z2_plus",
          "target_path":"device/zuk/z2_plus",
@@ -108,8 +108,8 @@
          "target_path":"vendor/zuk",
          "branch":"ten"
       }
-  ],
-    "z2_row":[
+   ],
+   "z2_row":[
       {
          "url":"https://github.com/PixysOS-Devices/device_zuk_z2_row",
          "target_path":"device/zuk/z2_row",
@@ -131,7 +131,7 @@
          "branch":"ten"
       }
    ],
-     "violet":[
+   "violet":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_violet",
          "target_path":"device/xiaomi/violet",
@@ -153,7 +153,7 @@
          "branch":"48mp"
       }
    ],
-     "tissot":[
+   "tissot":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_tissot",
          "target_path":"device/xiaomi/tissot",
@@ -175,7 +175,7 @@
          "branch":"tissot"
       }
    ],
-     "jasmine_sprout":[
+   "jasmine_sprout":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_jasmine_sprout",
          "target_path":"device/xiaomi/jasmine_sprout",
@@ -207,7 +207,7 @@
          "branch":"default"
       }
    ],
-     "wayne":[
+   "wayne":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_wayne",
          "target_path":"device/xiaomi/wayne",
@@ -239,7 +239,7 @@
          "branch":"default"
       }
    ],
-     "phoenix":[
+   "phoenix":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_phoenix",
          "target_path":"device/xiaomi/phoenix",
@@ -256,7 +256,7 @@
          "branch":"default"
       }
    ],
-     "whyred":[
+   "whyred":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_whyred.git",
          "target_path":"device/xiaomi/whyred",
@@ -278,7 +278,7 @@
          "branch":"ten"
       }
    ],
-    "onclite":[
+   "onclite":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_onclite.git",
          "target_path":"device/xiaomi/onclite",
@@ -300,7 +300,7 @@
          "branch":"onclite"
       }
    ],
-    "sanders":[
+   "sanders":[
       {
          "url":"https://github.com/PixysOS-Devices/device_motorola_sanders.git",
          "target_path":"device/motorola/sanders",
@@ -315,9 +315,9 @@
          "url":"https://github.com/PixysOS-Devices/kernel_motorola_msm8953.git",
          "target_path":"kernel/motorola/msm8953",
          "branch":"ten"
-     }
+      }
    ],
-    "riva":[
+   "riva":[
       {
          "url":"git@github.com:Subinsmani/device_xiaomi_riva.git",
          "target_path":"device/xiaomi/riva",
@@ -332,14 +332,14 @@
          "url":"git@github.com:Subinsmani/kernel_xiaomi_msm8917.git",
          "target_path":"kernel/xiaomi/msm8917",
          "branch":"ten"
-     },
+      },
       {
          "url":"https://github.com/PixelExperience/packages_resources_devicesettings-custom.git",
          "target_path":"packages/resources/devicesettings-custom",
          "branch":"ten"
-     }
+      }
    ],
-    "grus":[
+   "grus":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_grus.git",
          "target_path":"device/xiaomi/grus",
@@ -354,9 +354,9 @@
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_grus.git",
          "target_path":"kernel/xiaomi/sdm710",
          "branch":"ten"
-     }
+      }
    ],
-    "onyx":[
+   "onyx":[
       {
          "url":"https://github.com/PixysOS-Devices/device_oneplus_onyx.git",
          "target_path":"device/oneplus/onyx",
@@ -371,14 +371,14 @@
          "url":"https://github.com/PixysOS-Devices/kernel_oneplus_onyx.git",
          "target_path":"kernel/oneplus/onyx",
          "branch":"ten"
-     },
+      },
       {
          "url":"https://github.com/LineageOS/android_external_sony_boringssl-compat",
          "target_path":"external/sony/boringssl-compat",
          "branch":"lineage-17.1"
-     }
+      }
    ],
-     "mido":[
+   "mido":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_mido",
          "target_path":"device/xiaomi/mido",
@@ -394,8 +394,8 @@
          "target_path":"vendor/xiaomi",
          "branch":"ten"
       }
-    ],
-     "RMX1921":[
+   ],
+   "RMX1921":[
       {
          "url":"https://github.com/PixysOS-Devices/android_device_realme_RMX1921",
          "target_path":"device/realme/RMX1921",
@@ -416,8 +416,8 @@
          "target_path":"vendor/realme",
          "branch":"pixys"
       }
-   ]‚
-     "beryllium":[
+   ],
+   "beryllium":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_beryllium",
          "target_path":"device/xiaomi/beryllium",
