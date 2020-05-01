@@ -395,6 +395,28 @@
          "branch":"ten"
       }
     ],
+     "RMX1921":[
+      {
+         "url":"https://github.com/PixysOS-Devices/android_device_realme_RMX1921",
+         "target_path":"device/realme/RMX1921",
+         "branch":"pixys"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/android_device_realme_sdm710-common",
+         "target_path":"device/realme/sdm710-common",
+         "branch":"pixys"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_realme_sdm710",
+         "target_path":"kernel/realme/sdm710",
+         "branch":"pixys"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_realme",
+         "target_path":"vendor/realme",
+         "branch":"pixys"
+      }
+   ]‚
      "beryllium":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_beryllium",
