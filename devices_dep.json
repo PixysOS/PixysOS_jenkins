@@ -21,19 +21,19 @@
          "branch":"ten"
       }
    ],
-     "X00TD":[
+     "X00T":[
       {
-         "url":"git@github.com:Subinsmani/device_asus_X00TD",
-         "target_path":"device/asus/X00TD",
+         "url":"https://github.com/d-shaktiranjan/device_asus_X00T",
+         "target_path":"device/asus/X00T",
          "branch":"ten"
       },
       {
-         "url":"git@github.com:Subinsmani/kernel_asus_sdm660",
+         "url":"https://github.com/travarilo/kernel_asus_sdm660",
          "target_path":"kernel/asus/sdm660",
          "branch":"ten"
       },
       {
-         "url":"git@github.com:Subinsmani/proprietary_vendor_asus",
+         "url":"https://github.com/d-shaktiranjan/vendor_asus",
          "target_path":"vendor/asus",
          "branch":"ten"
       }
