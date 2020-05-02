@@ -73,6 +73,7 @@ function upload_ftp() {
          basic="http://downloads.pixysos.com/.test/${DEVICE}/${FTP_FOLDER}/${ZIP}"
          echo -e "Uploading test artifact ${ZIP}"
          sshc "rm -rf /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
+         sshc "mkdir -p /home/ftp/uploads/.test/${DEVICE}"
          sshc "mkdir -p /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
          scpc "${ZIP}"
          scpc "${JSON}"
