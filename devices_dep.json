@@ -438,5 +438,22 @@
          "target_path":"vendor/xiaomi",
          "branch":"ten"
       }
+   ],
+   "rosy":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_rosy.git",
+         "target_path":"device/xiaomi/rosy",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_rosy.git",
+         "target_path":"vendor/xiaomi/rosy",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_rosy.git",
+         "target_path":"kernel/xiaomi/rosy",
+         "branch":"ten"
+      }
    ]
 }
