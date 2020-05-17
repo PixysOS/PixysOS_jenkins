@@ -148,9 +148,9 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/kdrag0n/proton-clang",
+         "url":"https://github.com/Panchajanya1999/azure-clang",
          "target_path":"prebuilts/clang/host/linux-x86/clang-11",
-         "branch":"master"
+         "branch":"inline"
       }
    ],
    "tissot":[
