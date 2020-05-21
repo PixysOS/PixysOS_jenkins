@@ -395,7 +395,7 @@
          "branch":"ten"
       },
       {
-         "url":"git@github.com:Fox-kernel/kernel_xiaomi-mido.git",
+         "url":"git@github.com:Fox-kernel/Fox_kernel_mido.git",
          "target_path":"kernel/xiaomi/mido",
          "branch":"next"
       },
