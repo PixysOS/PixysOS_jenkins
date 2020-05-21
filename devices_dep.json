@@ -465,5 +465,22 @@
          "target_path":"kernel/xiaomi/rosy",
          "branch":"ten"
       }
+   ],
+   "RMX1991":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_realme_x2.git",
+         "target_path":"device/realme/x2",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_realme_x2.git",
+         "target_path":"vendor/realme/x2",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_realme_x2.git",
+         "target_path":"kernel/realme/sm6150",
+         "branch":"ten"
+      }
    ]
 }
