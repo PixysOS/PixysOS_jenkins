@@ -256,13 +256,23 @@
          "branch":"ten-phoenix"
       },
       {
-         "url":"https://github.com/GZR-Kernels/Optimus_Drunk_Phoenix",
+         "url":"https://github.com/stormbreaker-project/android_kernel_xiaomi_pheonix",
          "target_path":"kernel/xiaomi/sm6150",
          "branch":"default"
       },
       {
          "url":"https://github.com/crdroidandroid/android_hardware_xiaomi",
          "target_path":"hardware/xiaomi",
+         "branch":"default"
+      },
+      {
+         "url":"https://gitlab.com/sarveshrulz/platform_vendor_aeonax_anxcamera",
+         "target_path":"vendor/aeonax/ANXCamera",
+         "branch":"default"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_pheonix-firmware",
+         "target_path":"device_xiaomi_phoenix-firmware",
          "branch":"default"
       }
    ],
