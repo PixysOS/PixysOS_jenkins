@@ -266,7 +266,7 @@
          "branch":"default"
       },
       {
-         "url":"https://gitlab.com/sarveshrulz/platform_vendor_aeonax_anxcamera",
+         "url":"https://github.com/sarveshrulz/android_vendor_aeonax_ANXCamera",
          "target_path":"vendor/aeonax/ANXCamera",
          "branch":"default"
       },
