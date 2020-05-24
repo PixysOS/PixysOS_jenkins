@@ -271,7 +271,7 @@
          "branch":"default"
       },
       {
-         "url":"https://gitlab.com/CryllicBuster273/device_xiaomi_pheonix-firmware",
+         "url":"https://gitlab.com/CryllicBuster273/device_xiaomi_phoenix-firmware",
          "target_path":"device_xiaomi_phoenix-firmware",
          "branch":"default"
       }
