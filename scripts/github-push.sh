@@ -28,7 +28,7 @@ function push() {
 cwd=$PWD
 branch="ten"
 org="PixysOS"
-cd ~/source || exit
+cd ~/pixys || exit
 if [ ! -f ".repo/manifests/snippets/pixys.xml" ];
 then
     echo "Manifest file not found exiting....."
@@ -48,7 +48,8 @@ do
     [[ -z "${project}" || "${project}" = "pixys" || "${project}" = "pixys-devices" || "${project}" = "pixys-gitlab" ]] && echo "ignored the breaking stuffs" && continue
     cd "$project" || exit
     echo "$project"
-    repo_name=$(git remote -v | head -1 | awk '{print $2}' | sed -e 's/https:\/\/github.com\/PixysOS\///')
+    repo_url=$(git remote -v | head -1 | awk '{print $2}' | sed -e 's/https:\/\/github.com\/PixysOS\///')
+    repo_name="${repo_url##*/}"
     if [ "$USE_API_KEY" = "true" ];
     then
         #echo "git push ${FORCE_PUSH} https://${GITHUB_API_KEY}@github.com/${org}/${repo_name} HEAD:${branch}"
