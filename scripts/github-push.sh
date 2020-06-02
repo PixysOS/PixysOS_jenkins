@@ -56,7 +56,7 @@ do
     elif [ "$USE_SSH_KEY" = "true" ];
     then
          #echo "git push ${FORCE_PUSH} ssh://git@github.com/${org}/${repo_name} HEAD:${branch}"
-         git push "${FORCE_PUSH}" ssh://git@github.com/${org}/"${repo_name}" HEAD:${branch}
+         git push "${FORCE_PUSH}" git@github.com:${org}/"${repo_name}" HEAD:${branch}
     else
         #echo "git push ${FORCE_PUSH} https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}:@github.com/${org}/${repo_name} HEAD:${branch}"
         git push  "${FORCE_PUSH}" https://"${GITHUB_USERNAME}:${GITHUB_PASSWORD}":@github.com/${org}/"${repo_name}" HEAD:${branch}
@@ -67,12 +67,13 @@ cd "$cwd" || exit
 exit
 }
 
-echo "Do you want to push using username and password? Reply with \"yes\" or \"no\""
+echo "Do you want to push using username and password or api key? Reply with \"yes\" or \"no\""
 read -r response
 if [ "$response" = "yes" ];
 then
     [[ -z "${GITHUB_USERNAME}" || -z "${GITHUB_PASSWORD}" ]] && echo "Variable GITHUB_USERNAME or GITHUB_PASSWORD is not defined!" && post_auth_error || push
 else
     echo "Using non password method"
+    export USE_SSH_KEY="true"
     push
 fi
