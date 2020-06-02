@@ -52,15 +52,15 @@ do
     repo_name="${repo_url##*/}"
     if [ "$USE_API_KEY" = "true" ];
     then
-        #echo "git push ${FORCE_PUSH} https://${GITHUB_API_KEY}@github.com/${org}/${repo_name} HEAD:${branch}"
-        git push "${FORCE_PUSH}" https://"${GITHUB_API_KEY}"@github.com/${org}/"${repo_name}" HEAD:${branch}
+        #echo "git push ${FORCE_PUSH} https://${GITHUB_API_KEY}@github.com/${org}/${repo_name} HEAD:refs/heads/${branch}"
+        git push "${FORCE_PUSH}" https://"${GITHUB_API_KEY}"@github.com/${org}/"${repo_name}" HEAD:refs/heads/${branch}
     elif [ "$USE_SSH_KEY" = "true" ];
     then
-         #echo "git push ${FORCE_PUSH} ssh://git@github.com/${org}/${repo_name} HEAD:${branch}"
-         git push "${FORCE_PUSH}" git@github.com:${org}/"${repo_name}" HEAD:${branch}
+         #echo "git push ${FORCE_PUSH} ssh://git@github.com/${org}/${repo_name} HEAD:refs/heads/${branch}"
+         git push "${FORCE_PUSH}" git@github.com:${org}/"${repo_name}" HEAD:refs/heads/${branch}
     else
-        #echo "git push ${FORCE_PUSH} https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}:@github.com/${org}/${repo_name} HEAD:${branch}"
-        git push  "${FORCE_PUSH}" https://"${GITHUB_USERNAME}:${GITHUB_PASSWORD}":@github.com/${org}/"${repo_name}" HEAD:${branch}
+        #echo "git push ${FORCE_PUSH} https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}:@github.com/${org}/${repo_name} HEAD:refs/heads/${branch}"
+        git push  "${FORCE_PUSH}" https://"${GITHUB_USERNAME}:${GITHUB_PASSWORD}":@github.com/${org}/"${repo_name}" HEAD:refs/heads/${branch}
     fi
     cd - || exit
 done
