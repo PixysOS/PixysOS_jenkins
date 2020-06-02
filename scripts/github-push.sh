@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright (C) 2019 PixysOS project.
+# Copyright (C) 2020 PixysOS project.
 #
 # Licensed under the General Public License.
 # This program is free software; you can redistribute it and/or modify
