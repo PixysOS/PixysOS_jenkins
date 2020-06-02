@@ -67,4 +67,12 @@ cd "$cwd" || exit
 exit
 }
 
-[[ -z "${GITHUB_USERNAME}" || -z "${GITHUB_PASSWORD}" ]] && echo "Variable GITHUB_USERNAME or GITHUB_PASSWORD is not defined!" && post_auth_error || push
+echo "Do you want to push using username and password? Reply with \"yes\" or \"no\""
+read -r response
+if [ "$response" = "yes" ];
+then
+    [[ -z "${GITHUB_USERNAME}" || -z "${GITHUB_PASSWORD}" ]] && echo "Variable GITHUB_USERNAME or GITHUB_PASSWORD is not defined!" && post_auth_error || push
+else
+    echo "Using non password method"
+    push
+fi
