@@ -284,11 +284,6 @@
          "url":"https://github.com/sarveshrulz/android_vendor_aeonax_ANXCamera",
          "target_path":"vendor/aeonax/ANXCamera",
          "branch":"default"
-      },
-      {
-         "url":"https://gitlab.com/CryllicBuster273/device_xiaomi_phoenix-firmware",
-         "target_path":"device_xiaomi_phoenix-firmware",
-         "branch":"default"
       }
    ],
    "whyred":[
