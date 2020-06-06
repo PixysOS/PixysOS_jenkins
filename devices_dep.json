@@ -491,7 +491,7 @@
          "branch":"ten"
       }
    ],
-   "RMX1991":[
+   "x2":[
       {
          "url":"https://github.com/PixysOS-Devices/device_realme_x2.git",
          "target_path":"device/realme/x2",
