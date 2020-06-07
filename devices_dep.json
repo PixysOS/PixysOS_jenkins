@@ -507,5 +507,27 @@
          "target_path":"kernel/realme/sm6150",
          "branch":"ten"
       }
+   ],
+   "lavender":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_lavender.git",
+         "target_path":"device/xiaomi/lavender",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_lavender.git",
+         "target_path":"vendor/xiaomi/lavender",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_lavender.git",
+         "target_path":"kernel/xiaomi/lavender",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_sdm660-common.git",
+         "target_path":"vendor/xiaomi/sdm660-common",
+         "branch":"ten"
+      },
    ]
 }
