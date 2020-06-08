@@ -529,5 +529,27 @@
          "target_path":"vendor/xiaomi/sdm660-common",
          "branch":"ten"
       }
+   ],
+    "ginkgo":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_ginkgo.git",
+         "target_path":"device/xiaomi/ginkgo",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_ginkgo.git",
+         "target_path":"vendor/xiaomi/ginkgo",
+         "branch":"ten"
+      },
+      {
+         "url":"https://github.com/trinket-devs/kernel_xiaomi_ginkgo.git",
+         "target_path":"kernel/xiaomi/lavender",
+         "branch":"10.0"
+      },
+      {
+         "url":"https://github.com/trinket-devs/hardware_qcom-caf_sm8150_display.git",
+         "target_path":"hardware/qcom-caf/sm8150/display",
+         "branch":"ten"
+      }
    ]
 }
