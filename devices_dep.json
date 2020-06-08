@@ -482,7 +482,7 @@
       },
       {
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_rosy.git",
-         "target_path":"vendor/xiaomi",
+         "target_path":"vendor/xiaomi/rosy",
          "branch":"ten"
       },
       {
