@@ -528,6 +528,6 @@
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_sdm660-common.git",
          "target_path":"vendor/xiaomi/sdm660-common",
          "branch":"ten"
-      },
+      }
    ]
 }
