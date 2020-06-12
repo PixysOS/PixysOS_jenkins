@@ -10,6 +10,15 @@
 
 import datetime, requests, json, os, jenkins
 
+from telegram import Bot
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import Updater
+
+BOT = Bot(token=bottoken)
+UPDATER = Updater(bot=BOT, use_context=True)
+TG_ADMIN = "-1001180192731"
+TG_MAINTAINER = "-1001144148166"
+
 def count_builds(today, device):
   JENKINS_BUILDS_API = 'https://jenkins.pixysos.com/job/PixysOS-Ten/api/json?tree=builds[timestamp,actions[parameters[name,value]]]&pretty=true'
   api = requests.get(JENKINS_BUILDS_API)
@@ -36,7 +45,6 @@ password = os.environ.get('password')
 jenkins_url = 'https://' + username + ':' + password + '@jenkins.pixysos.com'
 server = jenkins.Jenkins(jenkins_url)
 
-
 targets_url = 'https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/ten/pixysos-build-targets'
 targets = requests.get(targets_url).text
 for target in targets.splitlines():
@@ -53,7 +61,9 @@ count = count_builds(today, device)
 
 if day == allowed_day and count <= int(allowed_count):
   server.build_job('PixysOS-Ten',{'DEVICE':device, 'pixys_edition':version})
-  print('Build triggered. Find it on build job https://jenkins.pixysos.com/job/PixysOS-Ten/')
+  message = 'Build triggered for ' + device + ' (' + version + ')' + ' . Find it on build job https://jenkins.pixysos.com/job/PixysOS-Ten/'
 else:
-  print('Build trigger failed. The requested device has either exceeded its quota or its not allowed to be made today.')
-  print('Please refer to build targets https://github.com/PixysOS/PixysOS_jenkins/blob/ten/pixysos-build-targets')
+  message = 'Build trigger failed for ' + device + ' (' + version + ')' + '. The requested device has either exceeded its quota or its not allowed to be made today. Please refer to build targets https://github.com/PixysOS/PixysOS_jenkins/blob/ten/pixysos-build-targets'
+
+UPDATER.bot.send_message(chat_id=TG_ADMIN, text=message, parse_mode='HTML', disable_web_page_preview='yes')
+UPDATER.bot.send_message(chat_id=TG_MAINTAINER, text=message, parse_mode='HTML', disable_web_page_preview='yes')
