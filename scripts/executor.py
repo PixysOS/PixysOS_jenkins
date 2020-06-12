@@ -14,6 +14,7 @@ from telegram import Bot
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater
 
+bottoken = os.environ.get('bottoken')
 BOT = Bot(token=bottoken)
 UPDATER = Updater(bot=BOT, use_context=True)
 TG_ADMIN = "-1001180192731"
@@ -65,5 +66,6 @@ if day == allowed_day and count <= int(allowed_count):
 else:
   message = 'Build trigger failed for ' + device + ' (' + version + ')' + '. The requested device has either exceeded its quota or its not allowed to be made today. Please refer to build targets https://github.com/PixysOS/PixysOS_jenkins/blob/ten/pixysos-build-targets'
 
+print(message)
 UPDATER.bot.send_message(chat_id=TG_ADMIN, text=message, parse_mode='HTML', disable_web_page_preview='yes')
 UPDATER.bot.send_message(chat_id=TG_MAINTAINER, text=message, parse_mode='HTML', disable_web_page_preview='yes')
