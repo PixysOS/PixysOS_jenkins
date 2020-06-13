@@ -70,7 +70,7 @@ count, failed, success = count_builds(today, device)
 
 if day == allowed_day and count <= int(allowed_count):
   server.build_job('PixysOS-Ten',{'DEVICE':device, 'pixys_edition':version, 'clean_device':clean_device, 'make_clean':make_clean})
-  message = 'Build triggered for ' + device + ' (' + version + ')' + '.\n\n' + str(int(allowed_count) - int(count) - 1) + ' builds left out of ' + str(allowed_count) + '\n\nFailed :- ' + str(failed) + '\nSuccess' + str(success)
+  message = 'Build triggered for ' + device + ' (' + version + ')' + '.\n\n' + str(int(allowed_count) - int(count) - 1) + ' builds left out of ' + str(allowed_count) + '\n\nFailed :- ' + str(failed) + '\nSuccess :- ' + str(success)
 else:
   message = 'Build trigger failed for ' + device + ' (' + version + ')' + '. The requested device has either exceeded its quota or its not allowed to be made today. Please refer to build targets https://github.com/PixysOS/official_devices/blob/ten/pixys-build-target.'
 
