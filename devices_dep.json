@@ -545,6 +545,11 @@
          "url":"https://github.com/trinket-devs/kernel_xiaomi_ginkgo.git",
          "target_path":"kernel/xiaomi/ginkgo",
          "branch":"10.0"
-      }
+      },
+      {
+         "url":"https://github.com/trinket-devs/proton-clang.git",
+         "target_path":"prebuilts/clang/host/linux-x86/clang-11.0",
+         "branch":"master"
+      } 
    ]
 }
