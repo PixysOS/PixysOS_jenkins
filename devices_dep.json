@@ -530,7 +530,7 @@
          "branch":"ten"
       }
    ],
-    "ginkgo":[
+   "ginkgo":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_ginkgo.git",
          "target_path":"device/xiaomi/ginkgo",
@@ -565,8 +565,9 @@
          "url":"https://github.com/PixysOS/hardware_qcom_media",
          "target_path":"hardware/qcom-caf/sm6150/media",
          "branch":"ten-sm8150"
-      },
-       "begonia":[
+      }
+   ],
+   "begonia":[
       {
          "url":"https://github.com/PixysOS-Devices/device_redmi_begonia.git",
          "target_path":"device/redmi/begonia",
