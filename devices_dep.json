@@ -557,9 +557,9 @@
          "branch":"ten-sm8150"
       },
       {
-         "url":"https://github.com/PixysOS/hardware_qcom_display",
+         "url":"https://github.com/PixelExperience/hardware_qcom-caf_sm8150_display.git",
          "target_path":"hardware/qcom-caf/sm6150/display",
-         "branch":"ten-sm8150"
+         "branch":"ten"
       },
       {
          "url":"https://github.com/PixysOS/hardware_qcom_media",
