@@ -151,21 +151,6 @@
          "url":"https://github.com/Panchajanya1999/azure-clang",
          "target_path":"prebuilts/clang/host/linux-x86/clang-11",
          "branch":"inline"
-      },
-      {
-         "url":"https://github.com/PixysOS/hardware_qcom_audio",
-         "target_path":"hardware/qcom-caf/sm6150/audio",
-         "branch":"ten-sm8150"
-      },
-      {
-         "url":"https://github.com/PixysOS/hardware_qcom_display",
-         "target_path":"hardware/qcom-caf/sm6150/display",
-         "branch":"ten-sm8150"
-      },
-      {
-         "url":"https://github.com/PixysOS/hardware_qcom_media",
-         "target_path":"hardware/qcom-caf/sm6150/media",
-         "branch":"ten-sm8150"
       }
    ],
    "tissot":[
