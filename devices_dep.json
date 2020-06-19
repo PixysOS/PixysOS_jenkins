@@ -268,18 +268,13 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_whyred-common",
-         "target_path":"device/xiaomi/sdm660-common",
-         "branch":"ten"
-      },
-      {
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_whyred",
          "target_path":"kernel/xiaomi/whyred",
          "branch":"ten"
       },
       {
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_whyred.git",
-         "target_path":"vendor/xiaomi",
+         "target_path":"vendor/xiaomi/whyred",
          "branch":"ten"
       },
       {
