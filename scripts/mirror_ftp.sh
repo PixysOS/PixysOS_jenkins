@@ -30,16 +30,16 @@ function mirror() {
    cd official_devices
       mkdir -p ${DEVICE}
       cp /home/ftp/uploads/.test/"${DEVICE}"/${FOLDER}/"${DEVICE}.json" "${DEVICE}"
+      cd "${DEVICE}"
       if [ $FOLDER = "ten"];
       then
-         rm -rf "${DEVICE}/build.json"
-         mv "${DEVICE}/${DEVICE}.json" "${DEVICE}/build.json"
+         mv ${DEVICE}.json build.json
       elif [ $FOLDER = "ten_gapps"];
       then
-         rm -rf "${DEVICE}/gapps_build.json"
-         mv "${DEVICE}/${DEVICE}.json" "${DEVICE}/gapps_build.json"
+         mv ${DEVICE}.json gapps_build.json
       fi
-      git add .
+      cd ..
+      git add . 
       git commit -m "official_devices: ${DEVICE} (${FOLDER}) update"
       git push
    cd ..
