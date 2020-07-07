@@ -241,7 +241,7 @@
          "branch":"default"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi",
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_phoenix",
          "target_path":"vendor/xiaomi/phoenix",
          "branch":"default"
       },
