@@ -295,8 +295,8 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/AbhinandAK350/MiuiCamera.git",
-         "target_path":"vendor/MiuiCamera",
+         "url":"https://gitlab.com/AbhinandAK350/vendor_ANXCamera.git",
+         "target_path":"vendor/ANXCamera",
          "branch":"onclite"
       }
    ],
