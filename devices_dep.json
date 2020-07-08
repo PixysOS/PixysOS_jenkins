@@ -40,13 +40,8 @@
    ],
    "ysl":[
       {
-         "url":"git@github.com:mahajant99/device_xiaomi_ysl",
+         "url":"git@github.com:mahajant99/android_device_xiaomi_ysl",
          "target_path":"device/xiaomi/ysl",
-         "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_ysl-common.git",
-         "target_path":"device/xiaomi/msm8953-common",
          "branch":"ten"
       },
       {
