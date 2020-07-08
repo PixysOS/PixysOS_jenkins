@@ -16,6 +16,7 @@ function build_json() {
    filehash=$(md5sum "${ZIP}" | cut -d " " -f 1)
    size=$(cat "${ZIP}" | wc -c)
    MAIN_URL="https://downloads.sourceforge.net/project/pixys-os/ten/${DEVICE}/${ZIP}"
+   mode_version=$(cat system/build.prop | grep ro.modversion | cut -d'=' -f2)
    msg=$(mktemp)
    {
       echo -e "{"
@@ -27,7 +28,7 @@ function build_json() {
       echo -e "      \x22size\x22: ${size},"
       echo -e "      \x22romtype\x22: \x22official\x22,"
       echo -e "      \x22url\x22: \x22${MAIN_URL}\x22,"
-      echo -e "      \x22version\x22: \x22v2.4\x22"
+      echo -e "      \x22version\x22: ${mode_version}"
       echo -e "    }"
       echo -e "  ]"
       echo -e "}"
