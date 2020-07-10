@@ -138,7 +138,7 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_violet",
+         "url":"https://gitlab.com/PixysOS-Devices/vendor_xiaomi_violet",
          "target_path":"vendor/xiaomi/violet",
          "branch":"ten"
       }
