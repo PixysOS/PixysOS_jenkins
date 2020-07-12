@@ -385,9 +385,9 @@
          "branch":"ten"
       },
       {
-         "url":"git@github.com:Fox-kernel/Fox_kernel_mido.git",
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_mido",
          "target_path":"kernel/xiaomi/mido",
-         "branch":"next"
+         "branch":"ten"
       },
       {
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_mido",
