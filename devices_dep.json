@@ -507,13 +507,13 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/trinket-devs/kernel_xiaomi_ginkgo.git",
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_ginkgo.git",
          "target_path":"kernel/xiaomi/ginkgo",
-         "branch":"10.0"
+         "branch":"ten"
       },
       {
          "url":"https://github.com/trinket-devs/proton-clang.git",
-         "target_path":"prebuilts/clang/host/linux-x86/clang-11.0",
+         "target_path":"prebuilts/clang/host/linux-x86/clang-11",
          "branch":"master"
       },
       {
