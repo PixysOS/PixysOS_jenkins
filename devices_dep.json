@@ -512,6 +512,11 @@
          "branch":"ten"
       },
       {
+         "url":"https://github.com/STRIX247/android_vendor_miuicamera.git",
+         "target_path":"vendor/miuicamera",
+         "branch":"quartz"
+      },
+      {
          "url":"https://github.com/trinket-devs/proton-clang.git",
          "target_path":"prebuilts/clang/host/linux-x86/clang-11",
          "branch":"master"
