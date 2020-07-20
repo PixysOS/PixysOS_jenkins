@@ -154,7 +154,7 @@ function build_end() {
    then
       cd /home/pixys/source/out/target/product/$DEVICE
       ZIP=$(ls PixysOS*.zip)
-	  JSON="${DEVICE}.json"
+	  JSON="${FTP_FOLDER}.json"
 	  status="passed"
 	  build_json
           upload_ftp
