@@ -15,7 +15,7 @@ function build_json() {
    name=$(stat -c %n "${ZIP}" | sed 's/.*\///')
    filehash=$(md5sum "${ZIP}" | cut -d " " -f 1)
    size=$(cat "${ZIP}" | wc -c)
-   MAIN_URL="https://downloads.sourceforge.net/project/pixys-os/ten/${DEVICE}/${ZIP}"
+   MAIN_URL="https://get.pixysos.com/${DEVICE}/ten/${ZIP}"
    mod_version=$(cat system/build.prop | grep ro.modversion | cut -d'=' -f2)
    msg=$(mktemp)
    {
@@ -48,33 +48,21 @@ function sendTG() {
     curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=-1001144148166&parse_mode=HTML" > /dev/null
 }
 
-# Additonal function to used in future versions
-function TG() {
-    curl -s "https://api.telegram.org/bot${bottoken}/sendmessage" --data "text=${*}&chat_id=${chat_id}&parse_mode=Markdown" > /dev/null
-}
-
-#function to connect to ssh 
-function sshc() {
-  ssh -p 5615 -o StrictHostKeyChecking=no ftp@uploads.pixysos.com "${1}"
-}
-
-#function to make scp upload
-function scpc() {
-  scp -P 5615 -o StrictHostKeyChecking=no "${1}" ftp@uploads.pixysos.com:/home/ftp/uploads/.test/"${DEVICE}"/"${FTP_FOLDER}"
-}
-
 function upload_ftp() {
    msg=$(mktemp)
    if [ "$status" == "passed" ]
    then 
       if [ "$upload" == "true" ]
       then
-         basic="http://downloads.pixysos.com/.test/${DEVICE}/${FTP_FOLDER}/${ZIP}"
-         echo -e "Uploading test artifact ${ZIP}"
-         sshc "rm -rf /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
-         sshc "mkdir /home/ftp/uploads/.test/${DEVICE}/${FTP_FOLDER}"
-         scpc "${ZIP}"
-         scpc "${JSON}"
+         echo "Syncing FTP server with build server..."
+         wget https://ota.pixysos.com/${DEVICE}/ten/${FTP_FOLDER}.json
+	 old_filename=$(curl -s https://ota.pixysos.com/${DEVICE}/ten/${FTP_FOLDER}.json | jq -r ".response[].filename")
+	 rclone delete ${remote_name}:${DEVICE}/ten/${old_filename}
+	 rclone delete ${remote_name}:${DEVICE}/ten/${FTP_FOLDER}.json
+	 rclone --progress copy ${ZIP} ${remote_name}:${DEVICE}/ten
+	 rclone --progress copy ${JSON} ${remote_name}:${DEVICE}/ten
+	 download_url="https://ota.pixysos.com/${DEVICE}/ten/${ZIP}"
+	 json_url="https://ota.pixysos.com/${DEVICE}/ten/${FTP_FOLDER}.json"
 	 {
 	     echo "🏷 <b>Build Completed</b>"
    	     echo 
@@ -84,7 +72,11 @@ function upload_ftp() {
    	     echo "<b>Build time</b> :- $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds"
    	     echo
    	     echo "<b>Status</b> :- Passed ✅"
-   	     echo "⬇️ <a href=\"${basic}\">Download</a>"
+   	     echo "⬇️ <a href=\"${download_url}\">Download</a>"
+	     echo "⬇️ <a href=\"${json_url}\">JSON</a>"
+	     echo
+	     echo "After releasing the build the maintainer must use the above json to make PR @ <a href=\"https:github.com/PixysOS-Devices/official_devices\">PixysOS-Devices/official_devices</a>"
+	     
 	  } > "${msg}"
        elif [ "$upload" == "false" ]
        then
