@@ -55,19 +55,19 @@ function upload_ftp() {
       if [ "$upload" == "true" ]
       then
          echo "Syncing FTP server with build server..."
-         wget https://ota.pixysos.com/${DEVICE}/ten/${FTP_FOLDER}.json
-	 old_filename=$(curl -s https://ota.pixysos.com/${DEVICE}/ten/${FTP_FOLDER}.json | | jq -rn 'try inputs.response[].filename catch "error"')
+         wget https://ota.pixysos.com/"${DEVICE}"/ten/"${FTP_FOLDER}".json
+	 old_filename=$(curl -s https://ota.pixysos.com/"${DEVICE}"/ten/"${FTP_FOLDER}".json | jq -rn 'try inputs.response[].filename catch "error"')
 	 if [ "$old_filename" == "error" ]
 	 then
 	    echo "Cannot clean old files from the server"
 	 else
 	    echo "Cleaning up old test files..."
 	    echo "Deleting --> ${old_filename}"
-	    rclone delete ${remote_name}:${DEVICE}/ten/${old_filename}
-	    rclone delete ${remote_name}:${DEVICE}/ten/${FTP_FOLDER}.json
+	    rclone delete "${remote_name}":"${DEVICE}"/ten/"${old_filename}"
+	    rclone delete "${remote_name}":"${DEVICE}"/ten/"${FTP_FOLDER}".json
 	 fi
-	 rclone --progress copy ${ZIP} ${remote_name}:${DEVICE}/ten
-	 rclone --progress copy ${JSON} ${remote_name}:${DEVICE}/ten
+	 rclone --progress copy "${ZIP}" "${remote_name}":"${DEVICE}"/ten
+	 rclone --progress copy "${JSON}" "${remote_name}":"${DEVICE}"/ten
 	 download_url="https://ota.pixysos.com/${DEVICE}/ten/${ZIP}"
 	 json_url="https://ota.pixysos.com/${DEVICE}/ten/${FTP_FOLDER}.json"
 	 {
