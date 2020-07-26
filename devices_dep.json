@@ -251,7 +251,7 @@
          "branch":"default"
       },
       {
-         "url":"https://github.com/PixelExperience-Devices/kernel_xiaomi_pheonix",
+         "url":"https://github.com/PixelExperience-Devices/kernel_xiaomi_phoenix",
          "target_path":"kernel/xiaomi/sm6150",
          "branch":"default"
       },
