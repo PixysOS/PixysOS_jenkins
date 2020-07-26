@@ -236,17 +236,27 @@
          "branch":"default"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_phoenix",
+         "url":"https://github.com/PixelExperience-Devices/device_xiaomi_sm6150-common",
+         "target_path":"device/xiaomi/sm6150-common",
+         "branch":"ten-phoenix"
+      },
+      {
+         "url":"https://gitlab.com/PixysOS-Devices/vendor_xiaomi_phoenix",
          "target_path":"vendor/xiaomi/phoenix",
          "branch":"default"
       },
       {
-         "url":"https://github.com/stormbreaker-project/android_kernel_xiaomi_pheonix",
+         "url":"https://gitlab.com/PixysOS-Devices/vendor_xiaomi_sm6150-common",
+         "target_path":"vendor/xiaomi/sm6150-common",
+         "branch":"default"
+      },
+      {
+         "url":"https://github.com/PixelExperience-Devices/kernel_xiaomi_pheonix",
          "target_path":"kernel/xiaomi/sm6150",
          "branch":"default"
       },
       {
-         "url":"https://github.com/crdroidandroid/android_hardware_xiaomi",
+         "url":"https://github.com/LineageOS/android_hardware_xiaomi",
          "target_path":"hardware/xiaomi",
          "branch":"default"
       },
