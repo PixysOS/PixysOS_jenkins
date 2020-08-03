@@ -246,9 +246,9 @@
          "branch":"default"
       },
       {
-         "url":"https://github.com/PixelExperience-Devices/device_xiaomi_sm6150-common",
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sm6150-common",
          "target_path":"device/xiaomi/sm6150-common",
-         "branch":"ten-phoenix"
+         "branch":"ten"
       },
       {
          "url":"https://gitlab.com/PixysOS-Devices/vendor_xiaomi_phoenix",
@@ -268,11 +268,6 @@
       {
          "url":"https://github.com/LineageOS/android_hardware_xiaomi",
          "target_path":"hardware/xiaomi",
-         "branch":"default"
-      },
-      {
-         "url":"https://github.com/sarveshrulz/android_vendor_aeonax_ANXCamera",
-         "target_path":"vendor/aeonax/ANXCamera",
          "branch":"default"
       }
    ],
