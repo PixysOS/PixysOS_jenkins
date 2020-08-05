@@ -28,7 +28,7 @@ else:
   folder = 'ten'
   edition = 'NORMAL'
 
-url = 'https://ota.pixysos.com/' + device + '/' + folder + '/' + folder + '.json'
+url = 'https://ota.pixysos.com/' + device + '/ten/' + folder + '.json'
 build_json = json.loads(requests.get(url).text)
 url = 'https://raw.githubusercontent.com/PixysOS/official_devices/ten/devices.json'
 devices_json = json.loads(requests.get(url).text)
