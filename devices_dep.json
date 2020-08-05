@@ -503,11 +503,6 @@
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_lavender.git",
          "target_path":"kernel/xiaomi/lavender",
          "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_sdm660-common.git",
-         "target_path":"vendor/xiaomi/sdm660-common",
-         "branch":"ten"
       }
    ],
    "ginkgo":[
