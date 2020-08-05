@@ -22,7 +22,7 @@ function mirror() {
    echo "$FILENAME" | grep -q "GAPPS" && FOLDER="ten_gapps" || FOLDER="ten"
    TG "Initializing the release of <code>${FILENAME}</code> for device. View progress <a href=\"${BUILD_URL}\">here</a>"
    cd /home/ftp/ft-uploads/
-   wget https://ota.pixysos.com/"${DEVICE}"/${FOLDER}/"${FILENAME}"
+   wget https://ota.pixysos.com/"${DEVICE}"/ten/"${FILENAME}"
    CHECK=$(ls PixysOS*.zip)
    [ "${CHECK}" == "${FILENAME}" ] && echo "${FILENAME} found, Starting upload process" || TG "$FILENAME cannot be downloaded correctly"
    mkdir -p /home/ftp/uploads/"${DEVICE}"/ten/
