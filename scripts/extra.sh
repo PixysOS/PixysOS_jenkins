@@ -55,8 +55,7 @@ function upload_ftp() {
       if [ "$upload" == "true" ]
       then
          echo "Syncing FTP server with build server..."
-         wget https://ota.pixysos.com/"${DEVICE}"/ten/"${FTP_FOLDER}".json
-	 old_filename=$(curl -s https://ota.pixysos.com/"${DEVICE}"/ten/"${FTP_FOLDER}".json | jq -rn 'try inputs.response[].filename catch "error"')
+         old_filename=$(curl -s https://ota.pixysos.com/"${DEVICE}"/ten/"${FTP_FOLDER}".json | jq -rn 'try inputs.response[].filename catch "error"')
 	 if [ "$old_filename" == "error" ]
 	 then
 	    echo "Cannot clean old files from the server"
