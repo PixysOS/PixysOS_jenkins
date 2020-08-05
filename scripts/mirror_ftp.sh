@@ -21,11 +21,12 @@ function TG() {
 function mirror() {
    echo "$FILENAME" | grep -q "GAPPS" && FOLDER="ten_gapps" || FOLDER="ten"
    TG "Initializing the release of <code>${FILENAME}</code> for device. View progress <a href=\"${BUILD_URL}\">here</a>"
-   cp /home/ftp/uploads/.test/"${DEVICE}"/${FOLDER}/"${FILENAME}" /home/ftp/ft-uploads/
+   cd /home/ftp/ft-uploads/
+   wget https://ota.pixysos.com/"${DEVICE}"/${FOLDER}/"${FILENAME}"
    CHECK=$(ls PixysOS*.zip)
    [ "${CHECK}" == "${FILENAME}" ] && echo "${FILENAME} found, Starting upload process" || TG "$FILENAME cannot be downloaded correctly"
    mkdir -p /home/ftp/uploads/"${DEVICE}"/ten/
-   mv /home/ftp/uploads/.test/"${DEVICE}"/${FOLDER}/"${FILENAME}" /home/ftp/uploads/"${DEVICE}"/ten/
+   cp "${FILENAME}" /home/ftp/uploads/"${DEVICE}"/ten/
    lftp sftp://pixysuploads:${spass}@frs.sourceforge.net -e "mkdir -f /home/frs/project/pixys-os/ten/${DEVICE}; bye"
    sshpass -p "${spass}" scp -o StrictHostKeyChecking=no "${FILENAME}" pixysuploads@frs.sourceforge.net:/home/frs/project/pixys-os/ten/"${DEVICE}"/
    wget https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/ten/scripts/post_message.py
