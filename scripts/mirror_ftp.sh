@@ -28,24 +28,10 @@ function mirror() {
    mv /home/ftp/uploads/.test/"${DEVICE}"/${FOLDER}/"${FILENAME}" /home/ftp/uploads/"${DEVICE}"/ten/
    lftp sftp://pixysuploads:${spass}@frs.sourceforge.net -e "mkdir -f /home/frs/project/pixys-os/ten/${DEVICE}; bye"
    sshpass -p "${spass}" scp -o StrictHostKeyChecking=no "${FILENAME}" pixysuploads@frs.sourceforge.net:/home/frs/project/pixys-os/ten/"${DEVICE}"/
-   git clone git@github.com:PixysOS-Devices/official_devices -b ten
-   cd official_devices
-      mkdir -p ${DEVICE}
-      if [ $FOLDER = "ten"];
-      then
-         cp -rf /home/ftp/uploads/.test/"${DEVICE}"/${FOLDER}/"${DEVICE}.json" "${DEVICE}/build.json"
-      elif [ $FOLDER = "ten_gapps"];
-      then
-         cp -rf /home/ftp/uploads/.test/"${DEVICE}"/${FOLDER}/"${DEVICE}.json" "${DEVICE}/gapps_build.json"
-      fi
-      git add .
-      git commit -m "official_devices: ${DEVICE} (${FOLDER}) update"
-      git push
-   cd ..
    wget https://raw.githubusercontent.com/PixysOS/PixysOS_jenkins/ten/scripts/post_message.py
    pip3 install python-telegram-bot
    python3 post_message.py
-   rm -rf *.zip official_devices post_message.py
+   rm -rf *.zip post_message.py
 }
 
 mirror
