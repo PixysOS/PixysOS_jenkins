@@ -27,8 +27,8 @@ if 'GAPPS' in filename:
 else:
   folder = 'ten'
   edition = 'NORMAL'
-  
-url = 'https://downloads.pixysos.com/.test/' + device + '/' + folder + '/' + device + '.json'
+
+url = 'https://ota.pixysos.com/' + device + '/' + folder + '/' + folder + '.json'
 build_json = json.loads(requests.get(url).text)
 url = 'https://raw.githubusercontent.com/PixysOS/official_devices/ten/devices.json'
 devices_json = json.loads(requests.get(url).text)
