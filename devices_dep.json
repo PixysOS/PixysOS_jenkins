@@ -349,23 +349,6 @@
          "branch":"ten"
       }
    ],
-   "grus":[
-      {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_grus.git",
-         "target_path":"device/xiaomi/grus",
-         "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_grus.git",
-         "target_path":"vendor/xiaomi/grus",
-         "branch":"ten"
-      },
-      {
-         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_grus.git",
-         "target_path":"kernel/xiaomi/sdm710",
-         "branch":"ten"
-      }
-   ],
    "onyx":[
       {
          "url":"https://github.com/PixysOS-Devices/device_oneplus_onyx.git",
