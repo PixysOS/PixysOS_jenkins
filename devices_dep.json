@@ -62,11 +62,6 @@
          "branch":"ten"
       },
       {
-         "url":"https://github.com/PixysOS-Devices/device_xiaomi_msm8953-common-sakura",
-         "target_path":"device/xiaomi/msm8953-common",
-         "branch":"ten"
-      },
-      {
          "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_msm8953-sakura",
          "target_path":"kernel/xiaomi/msm8953",
          "branch":"ten"
