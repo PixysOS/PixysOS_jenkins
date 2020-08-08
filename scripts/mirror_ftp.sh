@@ -33,6 +33,7 @@ function mirror() {
    pip3 install python-telegram-bot
    python3 post_message.py
    rm -rf *.zip post_message.py
+   rclone delete "${remote_name}":"${DEVICE}"/ten/"${FOLDER}".json
 }
 
 mirror
