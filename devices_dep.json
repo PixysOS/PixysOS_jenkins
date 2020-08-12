@@ -281,11 +281,6 @@
          "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_whyred.git",
          "target_path":"vendor/xiaomi/whyred",
          "branch":"ten"
-      },
-      {
-         "url":"https://github.com/Sweeto143/vendor_xiaomi_MiuiCamera.git",
-         "target_path":"vendor/xiaomi/MiuiCamera",
-         "branch":"ten"
       }
    ],
    "onclite":[
