@@ -405,6 +405,28 @@
          "branch":"pixys"
       }
    ],
+   "miatoll":[
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_miatoll.git",
+         "target_path":"device/xiaomi/miatoll",
+         "branch":"lineage-17.1"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/device_xiaomi_sm6250-common.git",
+         "target_path":"device/xiaomi/sm6250-common",
+         "branch":"lineage-17.1"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/kernel_xiaomi_sm6250.git",
+         "target_path":"kernel/xiaomi/sm6250",
+         "branch":"lineage-17.1"
+      },
+      {
+         "url":"https://github.com/PixysOS-Devices/vendor_xiaomi_miatoll.git",
+         "target_path":"vendor/xiaomi",
+         "branch":"lineage-17.1"
+      }
+   ],
    "beryllium":[
       {
          "url":"https://github.com/PixysOS-Devices/device_xiaomi_beryllium",
