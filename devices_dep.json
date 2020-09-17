@@ -254,6 +254,11 @@
          "url":"https://github.com/PixelExperience-Devices/kernel_xiaomi_phoenix",
          "target_path":"kernel/xiaomi/phoenix",
          "branch":"default"
+      },
+      {
+         "url":"https://github.com/kdrag0n/proton-clang",
+         "target_path":"prebuilts/clang/host/linux-x86/clang-proton",
+         "branch":"master"
       }
    ],
    "whyred":[
