@@ -252,7 +252,7 @@
       },
       {
          "url":"https://github.com/PixelExperience-Devices/kernel_xiaomi_phoenix",
-         "target_path":"kernel/xiaomi/sm6150",
+         "target_path":"kernel/xiaomi/phoenix",
          "branch":"default"
       }
    ],
