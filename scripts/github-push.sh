@@ -26,7 +26,7 @@ function post_auth_error() {
 
 function push() {
 cwd=$PWD
-branch="ten"
+branch="eleven"
 org="PixysOS"
 cd ~/pixys || exit
 if [ ! -f ".repo/manifests/snippets/pixys.xml" ];
